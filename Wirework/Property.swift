@@ -12,10 +12,8 @@ public class Property<T>: PropertyType {
 }
 
 public class Variable<T>: Property<T>, VariableType {
-    
     private var _value: Value
     private let _changed = Event<Value>()
-    private var _references = [AnyObject]()
     
     public override var changed: Signal<Value> {
         return _changed
