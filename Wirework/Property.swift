@@ -6,8 +6,7 @@ public class Property<T>: PropertyType {
     public var changed: Signal<Value> {
         fatalError("not implemented")
     }
-  public   
-    var value: Value {
+    public var value: Value {
         fatalError("not implemented")
     }
 }
@@ -30,53 +29,25 @@ public class Variable<T>: Property<T> {
         }
     }
     
-    init(_ value: Value) {
+    public init(_ value: Value) {
         _value = value
     }
 }
 
-class MapProperty<T, U>: Property<U> {
-    private let _source: Property<T>
-    private let _transform: (T) -> U
-    private let _changed: Signal<U>
+class IntermediateProperty<T>: Property<T> {
+    private let _getValue: () -> T
+    private let _changed: Signal<T>
     
-    override var changed: Signal<U> {
+    init(_ changed: Signal<T>, _ getValue: () -> T) {
+        _getValue = getValue
+        _changed = changed
+    }
+    
+    override var changed: Signal<T> {
         return _changed
     }
     
-    override var value: U {
-        return _transform(_source.value)
-    }
-    
-    init(_ source: Property<T>, _ transform: (T) -> U) {
-        _source = source
-        _transform = transform
-        _changed = source.changed.map { transform($0) }
-    }
-}
-
-class CombineProperty<T, U>: Property<(T, U)> {
-    private let _s1: Property<T>
-    private let _s2: Property<U>
-    private let _changed = Event<(T, U)>()
-    
-    override var changed: Signal<(T, U)> {
-        return _changed
-    }
-    
-    override var value: (T, U) {
-        return (_s1.value, _s2.value)
-    }
-    
-    init(_ s1: Property<T>, _ s2: Property<U>) {
-        _s1 = s1
-        _s2 = s2
-        super.init()
-        _s1.changed.subscribe { [weak self] _ in self?._notify() }
-        _s2.changed.subscribe { [weak self] _ in self?._notify() }
-    }
-    
-    private func _notify() {
-        _changed.emit(value)
+    override var value: T {
+        return _getValue()
     }
 }

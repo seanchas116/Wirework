@@ -55,17 +55,16 @@ public class Signal<T>: SignalType {
 }
 
 public class Event<T>: Signal<T> {
-    
     public func emit(value: T) {
         _emit(value)
     }
 }
 
-public class IntermediateSignal<T>: Signal<T> {
-    let _subscribe: ((T) -> Void) -> AnyObject
-    var _subscription: AnyObject?
+class IntermediateSignal<T>: Signal<T> {
+    private let _subscribe: ((T) -> Void) -> AnyObject
+    private var _subscription: AnyObject?
     
-    public init(subscribe: ((T) -> Void) -> AnyObject) {
+    init(_ subscribe: ((T) -> Void) -> AnyObject) {
         _subscribe = subscribe
     }
     

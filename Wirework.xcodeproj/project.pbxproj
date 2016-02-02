@@ -7,12 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE0035CD1C60AC8B007EAFD7 /* PropertySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0035CC1C60AC8B007EAFD7 /* PropertySpec.swift */; };
+		BE0035CE1C60AC8B007EAFD7 /* PropertySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0035CC1C60AC8B007EAFD7 /* PropertySpec.swift */; };
+		BE0035D11C60ACE2007EAFD7 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE0035CF1C60ACE2007EAFD7 /* Nimble.framework */; };
+		BE0035D21C60ACE2007EAFD7 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE0035D01C60ACE2007EAFD7 /* Quick.framework */; };
+		BE0035D41C60ACFD007EAFD7 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE0035CF1C60ACE2007EAFD7 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BE0035D51C60ACFD007EAFD7 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE0035D01C60ACE2007EAFD7 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BE0035D81C60AD10007EAFD7 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE0035D61C60AD10007EAFD7 /* Nimble.framework */; };
+		BE0035D91C60AD10007EAFD7 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE0035D71C60AD10007EAFD7 /* Quick.framework */; };
+		BE0035DB1C60AD1A007EAFD7 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE0035D61C60AD10007EAFD7 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BE0035DC1C60AD1A007EAFD7 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE0035D71C60AD10007EAFD7 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE613B2A1C5F35B5005D01FB /* Wirework.h in Headers */ = {isa = PBXBuildFile; fileRef = BE613B291C5F35B5005D01FB /* Wirework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE613B311C5F35B5005D01FB /* Wirework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE613B261C5F35B5005D01FB /* Wirework.framework */; };
-		BE613B361C5F35B5005D01FB /* WireworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE613B351C5F35B5005D01FB /* WireworkTests.swift */; };
 		BE613B4D1C5F35C8005D01FB /* Wirework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE613B431C5F35C8005D01FB /* Wirework.framework */; };
 		BE613B5A1C5F3606005D01FB /* Wirework.h in Headers */ = {isa = PBXBuildFile; fileRef = BE613B291C5F35B5005D01FB /* Wirework.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BE613B5B1C5F360B005D01FB /* WireworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE613B351C5F35B5005D01FB /* WireworkTests.swift */; };
 		BE613B6C1C5F39BE005D01FB /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE613B6B1C5F39BE005D01FB /* Subscription.swift */; };
 		BE613B6D1C5F39BE005D01FB /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE613B6B1C5F39BE005D01FB /* Subscription.swift */; };
 		BE613B7B1C5F6B7C005D01FB /* PropertyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE613B7A1C5F6B7C005D01FB /* PropertyType.swift */; };
@@ -42,12 +50,41 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		BE0035D31C60ACF3007EAFD7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BE0035D41C60ACFD007EAFD7 /* Nimble.framework in CopyFiles */,
+				BE0035D51C60ACFD007EAFD7 /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE0035DA1C60AD13007EAFD7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BE0035DB1C60AD1A007EAFD7 /* Nimble.framework in CopyFiles */,
+				BE0035DC1C60AD1A007EAFD7 /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		BE0035CC1C60AC8B007EAFD7 /* PropertySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertySpec.swift; sourceTree = "<group>"; };
+		BE0035CF1C60ACE2007EAFD7 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		BE0035D01C60ACE2007EAFD7 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		BE0035D61C60AD10007EAFD7 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
+		BE0035D71C60AD10007EAFD7 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
 		BE613B261C5F35B5005D01FB /* Wirework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Wirework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE613B291C5F35B5005D01FB /* Wirework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wirework.h; sourceTree = "<group>"; };
 		BE613B2B1C5F35B5005D01FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE613B301C5F35B5005D01FB /* WireworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WireworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE613B351C5F35B5005D01FB /* WireworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireworkTests.swift; sourceTree = "<group>"; };
 		BE613B371C5F35B5005D01FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE613B431C5F35C8005D01FB /* Wirework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Wirework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE613B4C1C5F35C8005D01FB /* WireworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WireworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +107,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE0035D11C60ACE2007EAFD7 /* Nimble.framework in Frameworks */,
+				BE0035D21C60ACE2007EAFD7 /* Quick.framework in Frameworks */,
 				BE613B311C5F35B5005D01FB /* Wirework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,6 +124,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE0035D81C60AD10007EAFD7 /* Nimble.framework in Frameworks */,
+				BE0035D91C60AD10007EAFD7 /* Quick.framework in Frameworks */,
 				BE613B4D1C5F35C8005D01FB /* Wirework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +136,10 @@
 		BE613B1A1C5F35A8005D01FB = {
 			isa = PBXGroup;
 			children = (
+				BE0035D61C60AD10007EAFD7 /* Nimble.framework */,
+				BE0035D71C60AD10007EAFD7 /* Quick.framework */,
+				BE0035CF1C60ACE2007EAFD7 /* Nimble.framework */,
+				BE0035D01C60ACE2007EAFD7 /* Quick.framework */,
 				BE613B271C5F35B5005D01FB /* Products */,
 				BE613B281C5F35B5005D01FB /* Wirework */,
 				BE613B341C5F35B5005D01FB /* WireworkTests */,
@@ -130,7 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				BE613B371C5F35B5005D01FB /* Info.plist */,
-				BE613B351C5F35B5005D01FB /* WireworkTests.swift */,
+				BE0035CC1C60AC8B007EAFD7 /* PropertySpec.swift */,
 			);
 			path = WireworkTests;
 			sourceTree = "<group>";
@@ -182,6 +227,7 @@
 				BE613B2C1C5F35B5005D01FB /* Sources */,
 				BE613B2D1C5F35B5005D01FB /* Frameworks */,
 				BE613B2E1C5F35B5005D01FB /* Resources */,
+				BE0035D31C60ACF3007EAFD7 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -218,6 +264,7 @@
 				BE613B481C5F35C8005D01FB /* Sources */,
 				BE613B491C5F35C8005D01FB /* Frameworks */,
 				BE613B4A1C5F35C8005D01FB /* Resources */,
+				BE0035DA1C60AD13007EAFD7 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -320,7 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE613B361C5F35B5005D01FB /* WireworkTests.swift in Sources */,
+				BE0035CD1C60AC8B007EAFD7 /* PropertySpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE613B5B1C5F360B005D01FB /* WireworkTests.swift in Sources */,
+				BE0035CE1C60AC8B007EAFD7 /* PropertySpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +552,10 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -553,6 +604,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -707,6 +762,10 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -756,6 +815,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
