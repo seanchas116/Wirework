@@ -11,7 +11,7 @@ public class Property<T>: PropertyType {
     }
 }
 
-public class Variable<T>: Property<T>, InPropertyType {
+public class Variable<T>: Property<T>, VariableType {
     
     private var _value: Value
     private let _changed = Event<Value>()
@@ -28,16 +28,7 @@ public class Variable<T>: Property<T>, InPropertyType {
             _changed.emit(newValue)
         }
     }
-    
-    public func bind<T: PropertyType where T.Value == Value>(source: T) {
-        let subscription = source.changed.subscribe { [weak self] value -> Void in
-            self?.value = value
-        }
-        value = source.value
-        _references.append(subscription)
-        _references.append(source)
-    }
-    
+
     public init(_ value: Value) {
         _value = value
     }

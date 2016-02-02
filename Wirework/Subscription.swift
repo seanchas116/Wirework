@@ -10,16 +10,21 @@ public class Subscription {
     deinit {
         disposer()
     }
-    
-    func addTo(bag: SubscriptionBag) {
-        bag.add(self)
+}
+
+extension Subscription {
+    public func storeIn(bag: SubscriptionBag) {
+        bag.store(self)
     }
 }
 
 public class SubscriptionBag {
     private var _subscriptions = [Subscription]()
     
-    func add(subscription: Subscription) {
+    public init() {
+    }
+    
+    public func store(subscription: Subscription) {
         _subscriptions.append(subscription)
     }
 }

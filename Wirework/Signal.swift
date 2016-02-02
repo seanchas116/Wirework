@@ -22,8 +22,8 @@ public class Signal<T>: SignalType {
     
     public func subscribe(subscriber: Subscriber) -> Subscription {
         let id = addSubscriber(subscriber)
-        return Subscription { [weak self] in
-           self?.removeSubscriber(id)
+        return Subscription {
+           self.removeSubscriber(id)
         }
     }
     
