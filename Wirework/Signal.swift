@@ -15,6 +15,10 @@ public class Signal<T>: SignalType {
     private var _subscribers = [UInt64: Subscriber]()
     private var _currentObserverID = UInt64(0)
     
+    public var subscriptionCount: Int {
+        return _subscribers.count
+    }
+    
     public func subscribe(subscriber: Subscriber) -> Subscription {
         let id = addSubscriber(subscriber)
         return Subscription { [weak self] in
