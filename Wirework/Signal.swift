@@ -8,12 +8,13 @@
 
 import Foundation
 
+private var _currentSubscriberID = UInt64(0)
+
 public class Signal<T>: SignalType {
     public typealias Value = T
     public typealias Subscriber = (Value) -> Void
     
     private var _subscribers = [UInt64: Subscriber]()
-    private var _currentObserverID = UInt64(0)
     
     public var subscriptionCount: Int {
         return _subscribers.count
@@ -33,8 +34,8 @@ public class Signal<T>: SignalType {
     }
     
     private func addSubscriber(subscriber: Subscriber) -> UInt64 {
-        let id = _currentObserverID
-        _currentObserverID += 1
+        let id = _currentSubscriberID
+        _currentSubscriberID += 1
         _subscribers[id] = subscriber
         if _subscribers.count == 1 {
             firstSubscriberAdded()

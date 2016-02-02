@@ -9,22 +9,13 @@ public class Property<T>: PropertyType {
     public var value: Value {
         fatalError("not implemented")
     }
-    
-    public func bindTo(other: Variable<Value>) {
-        let subscription = changed.subscribe { [weak other] value -> Void in
-            other?.value = value
-        }
-        other.value = value
-        other.references.append(subscription)
-        other.references.append(self)
-    }
 }
 
-public class Variable<T>: Property<T> {
+public class Variable<T>: Property<T>, InPropertyType {
     
     private var _value: Value
     private let _changed = Event<Value>()
-    var references = [AnyObject]()
+    private var _references = [AnyObject]()
     
     public override var changed: Signal<Value> {
         return _changed
@@ -36,6 +27,15 @@ public class Variable<T>: Property<T> {
             _value = newValue
             _changed.emit(newValue)
         }
+    }
+    
+    public func bind<T: PropertyType where T.Value == Value>(source: T) {
+        let subscription = source.changed.subscribe { [weak self] value -> Void in
+            self?.value = value
+        }
+        value = source.value
+        _references.append(subscription)
+        _references.append(source)
     }
     
     public init(_ value: Value) {
