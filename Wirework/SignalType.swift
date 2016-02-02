@@ -12,7 +12,7 @@ extension SignalType {
     }
     
     public func map<T>(transform: (Value) -> T) -> Signal<T> {
-        return IntermediateSignal { emit in
+        return AdapterSignal { emit in
             self.subscribe { value in
                 emit(transform(value))
             }
@@ -21,7 +21,7 @@ extension SignalType {
 }
 
 public func merge<T: SignalType, U: SignalType where T.Value == U.Value>(s1: T, _ s2: U) -> Signal<T.Value> {
-    return IntermediateSignal { emit in
+    return AdapterSignal { emit in
         let bag = SubscriptionBag()
         s1.subscribeIn(bag) { emit($0) }
         s2.subscribeIn(bag) { emit($0) }

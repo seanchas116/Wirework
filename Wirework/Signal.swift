@@ -60,7 +60,7 @@ public class Event<T>: Signal<T> {
     }
 }
 
-class IntermediateSignal<T>: Signal<T> {
+class AdapterSignal<T>: Signal<T> {
     private let _subscribe: ((T) -> Void) -> AnyObject
     private var _subscription: AnyObject?
     

@@ -34,7 +34,7 @@ public class Variable<T>: Property<T> {
     }
 }
 
-class IntermediateProperty<T>: Property<T> {
+class AdapterProperty<T>: Property<T> {
     private let _getValue: () -> T
     private let _changed: Signal<T>
     
