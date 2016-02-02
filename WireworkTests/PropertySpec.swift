@@ -36,6 +36,8 @@ class PropertySpec: QuickSpec {
                     expect(fullNameStore.value).to(equal("Foo Bar"))
                     firstName.value = "Piyo"
                     expect(fullNameStore.value).to(equal("Piyo Bar"))
+                    lastName.value = "Nyan"
+                    expect(fullNameStore.value).to(equal("Piyo Nyan"))
                 }
             }
             it("unsubscribes upstream on destruction") {
