@@ -3,7 +3,7 @@ import Foundation
 public class Subscription {
     private let disposer: () -> Void
     
-    init(disposer: () -> Void) {
+    public init(disposer: () -> Void) {
         self.disposer = disposer
     }
     

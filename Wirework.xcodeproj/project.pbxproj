@@ -44,6 +44,8 @@
 		BE29D5421C625FF7002E61EE /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE0035CF1C60ACE2007EAFD7 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE29D5431C625FF7002E61EE /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE0035D01C60ACE2007EAFD7 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE29D5441C626001002E61EE /* Wirework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE613B431C5F35C8005D01FB /* Wirework.framework */; };
+		BE29D5461C6260C5002E61EE /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29D5451C6260C5002E61EE /* NSObject.swift */; };
+		BE29D5471C6260C5002E61EE /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29D5451C6260C5002E61EE /* NSObject.swift */; };
 		BE613B2A1C5F35B5005D01FB /* Wirework.h in Headers */ = {isa = PBXBuildFile; fileRef = BE613B291C5F35B5005D01FB /* Wirework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE613B311C5F35B5005D01FB /* Wirework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE613B261C5F35B5005D01FB /* Wirework.framework */; };
 		BE613B4D1C5F35C8005D01FB /* Wirework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE613B431C5F35C8005D01FB /* Wirework.framework */; };
@@ -178,6 +180,7 @@
 		BE29D5231C625E05002E61EE /* WireworkFoundationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WireworkFoundationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE29D5311C625EBC002E61EE /* WireworkFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WireworkFoundation.h; sourceTree = "<group>"; };
 		BE29D5331C625EC5002E61EE /* WireworkFoundationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WireworkFoundationSpec.swift; sourceTree = "<group>"; };
+		BE29D5451C6260C5002E61EE /* NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		BE613B261C5F35B5005D01FB /* Wirework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Wirework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE613B291C5F35B5005D01FB /* Wirework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wirework.h; sourceTree = "<group>"; };
 		BE613B2B1C5F35B5005D01FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -306,6 +309,7 @@
 			children = (
 				BE29D5021C625DE8002E61EE /* Info.plist */,
 				BE29D5311C625EBC002E61EE /* WireworkFoundation.h */,
+				BE29D5451C6260C5002E61EE /* NSObject.swift */,
 			);
 			path = WireworkFoundation;
 			sourceTree = "<group>";
@@ -769,6 +773,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE29D5461C6260C5002E61EE /* NSObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,6 +789,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE29D5471C6260C5002E61EE /* NSObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
