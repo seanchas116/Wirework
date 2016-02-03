@@ -18,14 +18,15 @@ private class ChangesRecorder {
     var moves = [(Range<Int>, Int)]()
     
     init<T>(_ array: ObservableArray<T>) {
-        array.removed.subscribe { [weak self] in
-            self?.removals.append($0)
-        }.storeIn(bag)
-        array.inserted.subscribe { [weak self] in
-            self?.insertions.append($0)
-        }.storeIn(bag)
-        array.moved.subscribe { [weak self] in
-            self?.moves.append($0)
+        array.updated.subscribe { [unowned self] in
+            switch $0 {
+            case .Remove(let range):
+                self.removals.append(range)
+            case .Insert(let range):
+                self.insertions.append(range)
+            case .Move(let range, let at):
+                self.moves.append((range, at))
+            }
         }.storeIn(bag)
     }
 }

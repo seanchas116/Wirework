@@ -8,14 +8,14 @@
 
 import Foundation
 
-@noreturn func notImplemented() {
-    fatalError("not implemented")
+public enum CollectionUpdate {
+    case Insert(Range<Int>)
+    case Remove(Range<Int>)
+    case Move(Range<Int>, Int)
 }
 
 public protocol ObservableCollectionType: CollectionType, PropertyType {
-    var inserted: Signal<Range<Int>> { get }
-    var removed: Signal<Range<Int>> { get }
-    var moved: Signal<(Range<Int>, Int)> { get }
+    var updated: Signal<CollectionUpdate> { get }
 }
 
 public protocol MutableObservableCollectionType: ObservableCollectionType, MutableCollectionType, MutablePropertyType {
@@ -28,34 +28,20 @@ public class ObservableArray<T>: MutableObservableCollectionType {
     public typealias Index = Array<Element>.Index
     
     private var _data: [Element]
-    private let _inserted = Event<Range<Int>>()
-    private let _removed = Event<Range<Int>>()
-    private let _moved = Event<(Range<Int>, Int)>()
+    private let _updated = Event<CollectionUpdate>()
     private var _changed: Signal<[Element]>!
     
     public init<C: CollectionType where C.Generator.Element == Element>(_ xs: C) {
         _data = Array(xs)
-        _changed = merge(
-            _inserted.map { _ in },
-            _removed.map { _ in },
-            _moved.map { _ in }
-        ).map { [unowned self] _ in self._data }
+        _changed = _updated.map { [unowned self] _ in self._data }
     }
     
     public convenience init() {
         self.init([])
     }
     
-    public var inserted: Signal<Range<Int>> {
-        return _inserted
-    }
-    
-    public var removed: Signal<Range<Int>> {
-        return _removed
-    }
-    
-    public var moved: Signal<(Range<Int>, Int)> {
-        return _moved
+    public var updated: Signal<CollectionUpdate> {
+        return _updated
     }
     
     public var changed: Signal<[Element]> {
@@ -90,11 +76,11 @@ public class ObservableArray<T>: MutableObservableCollectionType {
         let insertedRange = start ..< start + Int(xs.count.toIntMax())
         if removedRange.count > 0 {
             _data.replaceRange(removedRange, with: [])
-            _removed.emit(removedRange)
+            _updated.emit(.Remove(removedRange))
         }
         if insertedRange.count > 0 {
             _data.replaceRange(start ..< start, with: xs)
-            _inserted.emit(insertedRange)
+            _updated.emit(.Insert(insertedRange))
         }
     }
     
@@ -102,7 +88,7 @@ public class ObservableArray<T>: MutableObservableCollectionType {
         let sub = _data[subRange]
         _data.replaceRange(subRange, with: [])
         _data.insertContentsOf(sub, at: i - subRange.count)
-        _moved.emit((subRange, i))
+        _updated.emit(.Move(subRange, i))
     }
     
     public subscript (i: Int) -> Element {
