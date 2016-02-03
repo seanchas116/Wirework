@@ -6,7 +6,7 @@ public protocol PropertyType {
     var value: Value { get }
 }
 
-public protocol VariableType: class, PropertyType {
+public protocol MutablePropertyType: class, PropertyType {
     var value: Value { get set }
 }
 
@@ -15,7 +15,7 @@ extension PropertyType {
         return AdapterProperty(changed.map(transform)) { transform(self.value) }
     }
     
-    public func bindTo<T: VariableType where T.Value == Value>(dest: T) -> Subscription {
+    public func bindTo<T: MutablePropertyType where T.Value == Value>(dest: T) -> Subscription {
         dest.value = value
         return changed.subscribe { newValue in
             dest.value = newValue

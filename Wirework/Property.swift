@@ -11,7 +11,7 @@ public class Property<T>: PropertyType {
     }
 }
 
-public class Variable<T>: Property<T>, VariableType {
+public class Variable<T>: Property<T>, MutablePropertyType {
     private var _value: Value
     private let _changed = Event<Value>()
     
