@@ -14,7 +14,10 @@ public protocol ObservableCollectionType: CollectionType, PropertyType {
     var moved: Signal<(Range<Int>, Int)> { get }
 }
 
-public class ObservableArray<T>: ObservableCollectionType, MutableCollectionType {
+public protocol MutableObservableCollectionType: ObservableCollectionType, MutableCollectionType, MutablePropertyType {
+}
+
+public class ObservableArray<T>: MutableObservableCollectionType {
     public typealias Value = Array<Element>
     public typealias Element = T
     public typealias Generator = Array<Element>.Generator
@@ -51,7 +54,12 @@ public class ObservableArray<T>: ObservableCollectionType, MutableCollectionType
     }
     
     public var value: [Element] {
-        return _data
+        get {
+            return _data
+        }
+        set {
+            replaceRange(startIndex ..< endIndex, with: newValue)
+        }
     }
     
     public func generate() -> Generator {
