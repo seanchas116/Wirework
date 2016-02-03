@@ -139,13 +139,13 @@
 		BE613B1A1C5F35A8005D01FB = {
 			isa = PBXGroup;
 			children = (
-				BE0035D61C60AD10007EAFD7 /* Nimble.framework */,
-				BE0035D71C60AD10007EAFD7 /* Quick.framework */,
-				BE0035CF1C60ACE2007EAFD7 /* Nimble.framework */,
-				BE0035D01C60ACE2007EAFD7 /* Quick.framework */,
 				BE613B271C5F35B5005D01FB /* Products */,
 				BE613B281C5F35B5005D01FB /* Wirework */,
 				BE613B341C5F35B5005D01FB /* WireworkTests */,
+				BE0035CF1C60ACE2007EAFD7 /* Nimble.framework */,
+				BE0035D61C60AD10007EAFD7 /* Nimble.framework */,
+				BE0035D01C60ACE2007EAFD7 /* Quick.framework */,
+				BE0035D71C60AD10007EAFD7 /* Quick.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,13 +164,13 @@
 			isa = PBXGroup;
 			children = (
 				BE613B2B1C5F35B5005D01FB /* Info.plist */,
+				BE29D4B41C610578002E61EE /* ObservableCollection.swift */,
 				BECC8EA41C5F932400E5BFCE /* Property.swift */,
 				BE613B7A1C5F6B7C005D01FB /* PropertyType.swift */,
 				BECC8EA11C5F89BB00E5BFCE /* Signal.swift */,
 				BECC8E9B1C5F843A00E5BFCE /* SignalType.swift */,
 				BE613B6B1C5F39BE005D01FB /* Subscription.swift */,
 				BE613B291C5F35B5005D01FB /* Wirework.h */,
-				BE29D4B41C610578002E61EE /* ObservableCollection.swift */,
 			);
 			path = Wirework;
 			sourceTree = "<group>";
