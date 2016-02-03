@@ -29,11 +29,9 @@ public class ObservableArray<T>: MutableObservableCollectionType {
     
     private var _data: [Element]
     private let _updated = Event<CollectionUpdate>()
-    private var _changed: Signal<[Element]>!
     
     public init<C: CollectionType where C.Generator.Element == Element>(_ xs: C) {
         _data = Array(xs)
-        _changed = _updated.map { [unowned self] _ in self._data }
     }
     
     public convenience init() {
@@ -45,7 +43,7 @@ public class ObservableArray<T>: MutableObservableCollectionType {
     }
     
     public var changed: Signal<[Element]> {
-        return _changed
+        return updated.map { _ in self._data }
     }
     
     public var value: [Element] {
