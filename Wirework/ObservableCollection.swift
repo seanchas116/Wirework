@@ -101,7 +101,7 @@ public class ObservableArray<T>: MutableObservableCollectionType {
     public func moveRange(subRange: Range<Int>, to i: Int) {
         let sub = _data[subRange]
         _data.replaceRange(subRange, with: [])
-        _data.insertContentsOf(sub, at: i)
+        _data.insertContentsOf(sub, at: i - subRange.count)
         _moved.emit((subRange, i))
     }
     

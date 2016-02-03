@@ -44,6 +44,17 @@ class ObservableArraySpec: QuickSpec {
                     expect(recorder.insertions).to(equal([1 ... 5]))
                 }
             }
+            describe("moveRange") {
+                it("moves values and emits changes") {
+                    let array = ObservableArray<Int>([1, 2, 3, 4, 5])
+                    let recorder = ChangesRecorder(array)
+                    
+                    array.moveRange(1 ... 3, to: 5)
+                    expect(array.value).to(equal([1, 5, 2, 3, 4]))
+                    expect(recorder.moves[0].0).to(equal(1 ... 3))
+                    expect(recorder.moves[0].1).to(equal(5))
+                }
+            }
             describe("append") {
                 it("appends a value and emit changes") {
                     let array = ObservableArray<Int>([1, 2, 3, 4, 5])
