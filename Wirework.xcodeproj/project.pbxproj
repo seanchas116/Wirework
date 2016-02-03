@@ -21,6 +21,13 @@
 		BE29D4B61C610578002E61EE /* ObservableCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29D4B41C610578002E61EE /* ObservableCollection.swift */; };
 		BE29D4B81C61E7FC002E61EE /* ObservableArraySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29D4B71C61E7FC002E61EE /* ObservableArraySpec.swift */; };
 		BE29D4B91C61E7FC002E61EE /* ObservableArraySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29D4B71C61E7FC002E61EE /* ObservableArraySpec.swift */; };
+		BE29D4C21C625882002E61EE /* WireworkUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BE29D4C11C625882002E61EE /* WireworkUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE29D4C91C625882002E61EE /* WireworkUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE29D4BF1C625882002E61EE /* WireworkUIKit.framework */; };
+		BE29D4CE1C625882002E61EE /* WireworkUIKitSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29D4CD1C625882002E61EE /* WireworkUIKitSpec.swift */; };
+		BE29D4D61C62592C002E61EE /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE0035CF1C60ACE2007EAFD7 /* Nimble.framework */; };
+		BE29D4D71C62592C002E61EE /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE0035D01C60ACE2007EAFD7 /* Quick.framework */; };
+		BE29D4D91C62593F002E61EE /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE0035CF1C60ACE2007EAFD7 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BE29D4DA1C62593F002E61EE /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE0035D01C60ACE2007EAFD7 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE613B2A1C5F35B5005D01FB /* Wirework.h in Headers */ = {isa = PBXBuildFile; fileRef = BE613B291C5F35B5005D01FB /* Wirework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE613B311C5F35B5005D01FB /* Wirework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE613B261C5F35B5005D01FB /* Wirework.framework */; };
 		BE613B4D1C5F35C8005D01FB /* Wirework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE613B431C5F35C8005D01FB /* Wirework.framework */; };
@@ -38,6 +45,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		BE29D4CA1C625882002E61EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE613B1B1C5F35A8005D01FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE29D4BE1C625882002E61EE;
+			remoteInfo = WireworkUIKit;
+		};
 		BE613B321C5F35B5005D01FB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BE613B1B1C5F35A8005D01FB /* Project object */;
@@ -77,6 +91,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BE29D4D81C625933002E61EE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BE29D4D91C62593F002E61EE /* Nimble.framework in CopyFiles */,
+				BE29D4DA1C62593F002E61EE /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +112,12 @@
 		BE0035D71C60AD10007EAFD7 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
 		BE29D4B41C610578002E61EE /* ObservableCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableCollection.swift; sourceTree = "<group>"; };
 		BE29D4B71C61E7FC002E61EE /* ObservableArraySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableArraySpec.swift; sourceTree = "<group>"; };
+		BE29D4BF1C625882002E61EE /* WireworkUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WireworkUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE29D4C11C625882002E61EE /* WireworkUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WireworkUIKit.h; sourceTree = "<group>"; };
+		BE29D4C31C625882002E61EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE29D4C81C625882002E61EE /* WireworkUIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WireworkUIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE29D4CD1C625882002E61EE /* WireworkUIKitSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireworkUIKitSpec.swift; sourceTree = "<group>"; };
+		BE29D4CF1C625882002E61EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE613B261C5F35B5005D01FB /* Wirework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Wirework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE613B291C5F35B5005D01FB /* Wirework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wirework.h; sourceTree = "<group>"; };
 		BE613B2B1C5F35B5005D01FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,6 +133,23 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BE29D4BB1C625882002E61EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE29D4C51C625882002E61EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE29D4D61C62592C002E61EE /* Nimble.framework in Frameworks */,
+				BE29D4D71C62592C002E61EE /* Quick.framework in Frameworks */,
+				BE29D4C91C625882002E61EE /* WireworkUIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BE613B221C5F35B5005D01FB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -139,12 +187,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE29D4C01C625882002E61EE /* WireworkUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				BE29D4C31C625882002E61EE /* Info.plist */,
+				BE29D4C11C625882002E61EE /* WireworkUIKit.h */,
+			);
+			path = WireworkUIKit;
+			sourceTree = "<group>";
+		};
+		BE29D4CC1C625882002E61EE /* WireworkUIKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				BE29D4CF1C625882002E61EE /* Info.plist */,
+				BE29D4CD1C625882002E61EE /* WireworkUIKitSpec.swift */,
+			);
+			path = WireworkUIKitTests;
+			sourceTree = "<group>";
+		};
 		BE613B1A1C5F35A8005D01FB = {
 			isa = PBXGroup;
 			children = (
 				BE613B271C5F35B5005D01FB /* Products */,
 				BE613B281C5F35B5005D01FB /* Wirework */,
 				BE613B341C5F35B5005D01FB /* WireworkTests */,
+				BE29D4C01C625882002E61EE /* WireworkUIKit */,
+				BE29D4CC1C625882002E61EE /* WireworkUIKitTests */,
 				BE0035CF1C60ACE2007EAFD7 /* Nimble.framework */,
 				BE0035D61C60AD10007EAFD7 /* Nimble.framework */,
 				BE0035D01C60ACE2007EAFD7 /* Quick.framework */,
@@ -159,6 +227,8 @@
 				BE613B301C5F35B5005D01FB /* WireworkTests.xctest */,
 				BE613B431C5F35C8005D01FB /* Wirework.framework */,
 				BE613B4C1C5F35C8005D01FB /* WireworkTests.xctest */,
+				BE29D4BF1C625882002E61EE /* WireworkUIKit.framework */,
+				BE29D4C81C625882002E61EE /* WireworkUIKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,6 +261,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		BE29D4BC1C625882002E61EE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE29D4C21C625882002E61EE /* WireworkUIKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BE613B231C5F35B5005D01FB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -210,6 +288,43 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		BE29D4BE1C625882002E61EE /* WireworkUIKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE29D4D41C625882002E61EE /* Build configuration list for PBXNativeTarget "WireworkUIKit" */;
+			buildPhases = (
+				BE29D4BA1C625882002E61EE /* Sources */,
+				BE29D4BB1C625882002E61EE /* Frameworks */,
+				BE29D4BC1C625882002E61EE /* Headers */,
+				BE29D4BD1C625882002E61EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WireworkUIKit;
+			productName = WireworkUIKit;
+			productReference = BE29D4BF1C625882002E61EE /* WireworkUIKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BE29D4C71C625882002E61EE /* WireworkUIKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE29D4D51C625882002E61EE /* Build configuration list for PBXNativeTarget "WireworkUIKitTests" */;
+			buildPhases = (
+				BE29D4C41C625882002E61EE /* Sources */,
+				BE29D4C51C625882002E61EE /* Frameworks */,
+				BE29D4C61C625882002E61EE /* Resources */,
+				BE29D4D81C625933002E61EE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE29D4CB1C625882002E61EE /* PBXTargetDependency */,
+			);
+			name = WireworkUIKitTests;
+			productName = WireworkUIKitTests;
+			productReference = BE29D4C81C625882002E61EE /* WireworkUIKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		BE613B251C5F35B5005D01FB /* Wirework-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE613B381C5F35B5005D01FB /* Build configuration list for PBXNativeTarget "Wirework-iOS" */;
@@ -293,6 +408,12 @@
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
 				TargetAttributes = {
+					BE29D4BE1C625882002E61EE = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					BE29D4C71C625882002E61EE = {
+						CreatedOnToolsVersion = 7.2;
+					};
 					BE613B251C5F35B5005D01FB = {
 						CreatedOnToolsVersion = 7.2;
 					};
@@ -323,11 +444,27 @@
 				BE613B2F1C5F35B5005D01FB /* Wirework-iOSTests */,
 				BE613B421C5F35C8005D01FB /* Wirework-Mac */,
 				BE613B4B1C5F35C8005D01FB /* Wirework-MacTests */,
+				BE29D4BE1C625882002E61EE /* WireworkUIKit */,
+				BE29D4C71C625882002E61EE /* WireworkUIKitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BE29D4BD1C625882002E61EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE29D4C61C625882002E61EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BE613B241C5F35B5005D01FB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -359,6 +496,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BE29D4BA1C625882002E61EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE29D4C41C625882002E61EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE29D4CE1C625882002E61EE /* WireworkUIKitSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BE613B211C5F35B5005D01FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -406,6 +558,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		BE29D4CB1C625882002E61EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE29D4BE1C625882002E61EE /* WireworkUIKit */;
+			targetProxy = BE29D4CA1C625882002E61EE /* PBXContainerItemProxy */;
+		};
 		BE613B331C5F35B5005D01FB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BE613B251C5F35B5005D01FB /* Wirework-iOS */;
@@ -419,6 +576,214 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		BE29D4D01C625882002E61EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = WireworkUIKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanchas116.WireworkUIKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BE29D4D11C625882002E61EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = WireworkUIKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanchas116.WireworkUIKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BE29D4D21C625882002E61EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = WireworkUIKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanchas116.WireworkUIKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BE29D4D31C625882002E61EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = WireworkUIKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanchas116.WireworkUIKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		BE613B1F1C5F35A8005D01FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -852,6 +1217,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BE29D4D41C625882002E61EE /* Build configuration list for PBXNativeTarget "WireworkUIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE29D4D01C625882002E61EE /* Debug */,
+				BE29D4D11C625882002E61EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE29D4D51C625882002E61EE /* Build configuration list for PBXNativeTarget "WireworkUIKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE29D4D21C625882002E61EE /* Debug */,
+				BE29D4D31C625882002E61EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BE613B1E1C5F35A8005D01FB /* Build configuration list for PBXProject "Wirework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
