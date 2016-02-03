@@ -11,7 +11,7 @@ import Quick
 import Nimble
 import Wirework
 
-private class ChangesRecorder {
+class ChangesRecorder {
     private let bag = SubscriptionBag()
     var removals = [Range<Int>]()
     var insertions = [Range<Int>]()
