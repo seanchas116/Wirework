@@ -79,6 +79,14 @@ class ObservableArraySpec: QuickSpec {
                     expect(recorder.insertions).to(equal([]))
                 }
             }
+            it("can bind to variable") {
+                let bag = SubscriptionBag()
+                let array = ObservableArray<Int>([1, 2, 3, 4, 5])
+                let bound = Variable([Int]())
+                array.bindTo(bound).storeIn(bag)
+                array.replaceRange(1 ... 3, with: [10, 20, 30, 40, 50])
+                expect(bound.value).to(equal([1, 10, 20, 30, 40, 50, 5]))
+            }
         }
     }
 }
