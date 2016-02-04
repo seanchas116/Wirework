@@ -32,6 +32,17 @@ class WireworkNSObjectSpec: QuickSpec {
                     expect(obj.value).to(equal(100))
                 }
             }
+            describe("ww_bag") {
+                it("holds subscriptions") {
+                    var released = false
+                    ({
+                        let obj = NSObject()
+                        Subscription { released = true }.storeIn(obj.ww_bag)
+                        expect(released).to(equal(false))
+                    })()
+                    expect(released).to(equal(true))
+                }
+            }
         }
     }
 }
