@@ -21,13 +21,13 @@ class ChangesRecorder {
     init<T>(_ array: ObservableArray<T>) {
         array.updated.subscribe { [unowned self] in
             switch $0 {
-            case .Remove(let range):
+            case .Removed(let range):
                 self.removals.append(range)
-            case .Insert(let range):
+            case .Inserted(let range):
                 self.insertions.append(range)
-            case .Move(let range, let at):
+            case .Moved(let range, let at):
                 self.moves.append((range, at))
-            case .ItemChange(let at):
+            case .ItemChanged(let at):
                 self.itemChanges.append(at)
             }
         }.storeIn(bag)
@@ -92,7 +92,7 @@ class ObservableArraySpec: QuickSpec {
                     array[3] = 20
                     
                     expect(array.value).to(equal([1, 2, 10, 20, 5]))
-                    expect(recorder.itemChanges).to(equal([2,t 3]))
+                    expect(recorder.itemChanges).to(equal([2, 3]))
                 }
             }
             it("can bind to variable") {

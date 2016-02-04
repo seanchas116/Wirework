@@ -9,10 +9,10 @@
 import Foundation
 
 public enum CollectionUpdate {
-    case Insert(Range<Int>)
-    case Remove(Range<Int>)
-    case Move(Range<Int>, Int)
-    case ItemChange(Int)
+    case Inserted(Range<Int>)
+    case Removed(Range<Int>)
+    case Moved(Range<Int>, Int)
+    case ItemChanged(Int)
 }
 
 public protocol ObservableCollectionType: CollectionType, PropertyType {
@@ -75,11 +75,11 @@ public class ObservableArray<T>: MutableObservableCollectionType {
         let insertedRange = start ..< start + Int(xs.count.toIntMax())
         if removedRange.count > 0 {
             _data.replaceRange(removedRange, with: [])
-            _updated.emit(.Remove(removedRange))
+            _updated.emit(.Removed(removedRange))
         }
         if insertedRange.count > 0 {
             _data.replaceRange(start ..< start, with: xs)
-            _updated.emit(.Insert(insertedRange))
+            _updated.emit(.Inserted(insertedRange))
         }
     }
     
@@ -87,7 +87,7 @@ public class ObservableArray<T>: MutableObservableCollectionType {
         let sub = _data[subRange]
         _data.replaceRange(subRange, with: [])
         _data.insertContentsOf(sub, at: i - subRange.count)
-        _updated.emit(.Move(subRange, i))
+        _updated.emit(.Moved(subRange, i))
     }
     
     public subscript (i: Int) -> Element {
@@ -96,7 +96,7 @@ public class ObservableArray<T>: MutableObservableCollectionType {
         }
         set {
             _data[i] = newValue
-            _updated.emit(.ItemChange(i))
+            _updated.emit(.ItemChanged(i))
         }
     }
     
