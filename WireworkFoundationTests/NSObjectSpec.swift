@@ -1,5 +1,5 @@
 //
-//  WireworkNSObjectSpec.swift
+//  NSObjectSpec.swift
 //  Wirework
 //
 //  Created by Ryohei Ikegami on 2016/02/04.
@@ -16,7 +16,7 @@ class WWKVOObject: NSObject {
     dynamic var value = 1
 }
 
-class WireworkNSObjectSpec: QuickSpec {
+class NSObjectSpec: QuickSpec {
     override func spec() {
         describe("NSObject") {
             describe("ww_propertyForKeyPath") {
@@ -24,11 +24,11 @@ class WireworkNSObjectSpec: QuickSpec {
                     let bag = SubscriptionBag()
                     let obj = WWKVOObject()
                     let value = Variable(0)
-                    obj.ww_propertyForKeyPath("value").bindTo(value).storeIn(bag)
+                    obj.wwKeyValue("value").bindTo(value).storeIn(bag)
                     expect(value.value).to(equal(1))
                     obj.value = 10
                     expect(value.value).to(equal(10))
-                    obj.ww_propertyForKeyPath("value").value = 100
+                    obj.wwKeyValue("value").value = 100
                     expect(obj.value).to(equal(100))
                 }
             }
@@ -37,7 +37,7 @@ class WireworkNSObjectSpec: QuickSpec {
                     var released = false
                     ({
                         let obj = NSObject()
-                        Subscription { released = true }.storeIn(obj.ww_bag)
+                        Subscription { released = true }.storeIn(obj.wwBag)
                         expect(released).to(equal(false))
                     })()
                     expect(released).to(equal(true))

@@ -66,7 +66,7 @@ public class KeyValueProperty<T>: MutablePropertyType {
 }
 
 extension NSObject {
-    public var ww_bag: SubscriptionBag {
+    public var wwBag: SubscriptionBag {
         if let bag = objc_getAssociatedObject(self, &subscriptionBagKey) {
             return bag as! SubscriptionBag
         } else {
@@ -76,7 +76,7 @@ extension NSObject {
         }
     }
     
-    public func ww_propertyForKeyPath<T>(keyPath: String) -> KeyValueProperty<T> {
+    public func wwKeyValue<T>(keyPath: String) -> KeyValueProperty<T> {
         return KeyValueProperty(object: self, keyPath: keyPath)
     }
 }
