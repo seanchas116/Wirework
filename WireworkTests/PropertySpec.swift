@@ -26,7 +26,7 @@ class PropertySpec: QuickSpec {
                 }
             }
             describe("combine") {
-                it("combines values") {
+                it("combines 2 values") {
                     let bag = SubscriptionBag()
                     let firstName = Variable("Foo")
                     let lastName = Variable("Bar")
@@ -38,6 +38,22 @@ class PropertySpec: QuickSpec {
                     expect(fullNameStore.value).to(equal("Piyo Bar"))
                     lastName.value = "Nyan"
                     expect(fullNameStore.value).to(equal("Piyo Nyan"))
+                }
+                it("combines 3 values") {
+                    let bag = SubscriptionBag()
+                    let firstName = Variable("Foo")
+                    let middleName = Variable("aaa")
+                    let lastName = Variable("Bar")
+                    let fullName = combine(firstName, middleName, lastName) { "\($0) \($1) \($2)" }
+                    let fullNameStore = Variable("")
+                    fullName.bindTo(fullNameStore).storeIn(bag)
+                    expect(fullNameStore.value).to(equal("Foo aaa Bar"))
+                    firstName.value = "Piyo"
+                    expect(fullNameStore.value).to(equal("Piyo aaa Bar"))
+                    lastName.value = "Nyan"
+                    expect(fullNameStore.value).to(equal("Piyo aaa Nyan"))
+                    middleName.value = "bbb"
+                    expect(fullNameStore.value).to(equal("Piyo bbb Nyan"))
                 }
             }
             it("unsubscribes upstream on destruction") {

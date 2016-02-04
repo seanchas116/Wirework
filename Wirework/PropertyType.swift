@@ -23,15 +23,19 @@ extension PropertyType {
     }
 }
 
-public func combine<T1: PropertyType, T2: PropertyType>(p1: T1, _ p2: T2) -> Property<(T1.Value, T2.Value)> {
+public func combine<P1: PropertyType, P2: PropertyType, V>(p1: P1, _ p2: P2, transform: (P1.Value, P2.Value) -> V) -> Property<V> {
     let changed = merge(
-        p1.changed.map { _ in (p1.value, p2.value) },
-        p2.changed.map { _ in (p1.value, p2.value) }
+        p1.changed.map { _ in transform(p1.value, p2.value) },
+        p2.changed.map { _ in transform(p1.value, p2.value) }
     )
-    return AdapterProperty(changed) { (p1.value, p2.value) }
+    return AdapterProperty(changed) { transform(p1.value, p2.value) }
 }
 
-public func combine<T1: PropertyType, T2: PropertyType, U>(p1: T1, _ p2: T2, transform: (T1.Value, T2.Value) -> U) -> Property<U> {
-    return combine(p1, p2).map(transform)
+public func combine<P1: PropertyType, P2: PropertyType, P3: PropertyType, V>(p1: P1, _ p2: P2, _ p3: P3, transform: (P1.Value, P2.Value, P3.Value) -> V) -> Property<V> {
+    let changed = merge(
+        p1.changed.map { _ in transform(p1.value, p2.value, p3.value) },
+        p2.changed.map { _ in transform(p1.value, p2.value, p3.value) },
+        p3.changed.map { _ in transform(p1.value, p2.value, p3.value) }
+    )
+    return AdapterProperty(changed) { transform(p1.value, p2.value, p3.value) }
 }
-
