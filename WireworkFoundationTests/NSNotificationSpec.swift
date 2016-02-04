@@ -19,15 +19,20 @@ class NSNotificationSpeec: QuickSpec {
         describe("NSNotification") {
             describe("wwNotification") {
                 it("returns a signal that emits notifications") {
-                    let bag = SubscriptionBag()
                     let obj = NSObject()
                     let signal = NSNotificationCenter.defaultCenter().wwNotification("test", object: obj)
                     var receivedValue: String?
-                    signal.subscribe {
-                        receivedValue = $0.userInfo?["value"] as? String
-                    }.storeIn(bag)
-                    NSNotificationCenter.defaultCenter().postNotificationName("test", object: obj, userInfo: ["value": "foobar"])
-                    expect(receivedValue).to(equal("foobar"))
+                    ({
+                        let bag = SubscriptionBag()
+                        signal.subscribe {
+                            receivedValue = $0.userInfo?["value"] as? String
+                            }.storeIn(bag)
+                        NSNotificationCenter.defaultCenter().postNotificationName("test", object: obj, userInfo: ["value": "foobar"])
+                        expect(receivedValue).to(equal("foobar"))
+                    })()
+                    receivedValue = nil
+                    NSNotificationCenter.defaultCenter().postNotificationName("test", object: obj, userInfo: ["value": "hogehoge"])
+                    expect(receivedValue).to(beNil())
                 }
             }
         }
