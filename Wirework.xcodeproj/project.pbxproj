@@ -56,6 +56,10 @@
 		BE613B7C1C5F6B7C005D01FB /* PropertyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE613B7A1C5F6B7C005D01FB /* PropertyType.swift */; };
 		BEC113771C63027A00A68B35 /* WireworkNSObjectSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC113761C63027A00A68B35 /* WireworkNSObjectSpec.swift */; };
 		BEC113781C63027A00A68B35 /* WireworkNSObjectSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC113761C63027A00A68B35 /* WireworkNSObjectSpec.swift */; };
+		BEC1137A1C631C9A00A68B35 /* NSNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC113791C631C9A00A68B35 /* NSNotificationCenter.swift */; };
+		BEC1137B1C631C9A00A68B35 /* NSNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC113791C631C9A00A68B35 /* NSNotificationCenter.swift */; };
+		BEC1137D1C631DF300A68B35 /* NSNotificationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC1137C1C631DF300A68B35 /* NSNotificationSpec.swift */; };
+		BEC1137E1C631DF300A68B35 /* NSNotificationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC1137C1C631DF300A68B35 /* NSNotificationSpec.swift */; };
 		BECC8E9C1C5F843A00E5BFCE /* SignalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC8E9B1C5F843A00E5BFCE /* SignalType.swift */; };
 		BECC8E9D1C5F843A00E5BFCE /* SignalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC8E9B1C5F843A00E5BFCE /* SignalType.swift */; };
 		BECC8EA21C5F89BB00E5BFCE /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC8EA11C5F89BB00E5BFCE /* Signal.swift */; };
@@ -193,6 +197,8 @@
 		BE613B6B1C5F39BE005D01FB /* Subscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
 		BE613B7A1C5F6B7C005D01FB /* PropertyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyType.swift; sourceTree = "<group>"; };
 		BEC113761C63027A00A68B35 /* WireworkNSObjectSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WireworkNSObjectSpec.swift; sourceTree = "<group>"; };
+		BEC113791C631C9A00A68B35 /* NSNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationCenter.swift; sourceTree = "<group>"; };
+		BEC1137C1C631DF300A68B35 /* NSNotificationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationSpec.swift; sourceTree = "<group>"; };
 		BECC8E9B1C5F843A00E5BFCE /* SignalType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalType.swift; sourceTree = "<group>"; };
 		BECC8EA11C5F89BB00E5BFCE /* Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
 		BECC8EA41C5F932400E5BFCE /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
@@ -313,6 +319,7 @@
 				BE29D5021C625DE8002E61EE /* Info.plist */,
 				BE29D5311C625EBC002E61EE /* WireworkFoundation.h */,
 				BE29D5451C6260C5002E61EE /* NSObject.swift */,
+				BEC113791C631C9A00A68B35 /* NSNotificationCenter.swift */,
 			);
 			path = WireworkFoundation;
 			sourceTree = "<group>";
@@ -323,6 +330,7 @@
 				BE29D50E1C625DE8002E61EE /* Info.plist */,
 				BE29D5331C625EC5002E61EE /* WireworkFoundationSpec.swift */,
 				BEC113761C63027A00A68B35 /* WireworkNSObjectSpec.swift */,
+				BEC1137C1C631DF300A68B35 /* NSNotificationSpec.swift */,
 			);
 			path = WireworkFoundationTests;
 			sourceTree = "<group>";
@@ -777,6 +785,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEC1137A1C631C9A00A68B35 /* NSNotificationCenter.swift in Sources */,
 				BE29D5461C6260C5002E61EE /* NSObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -785,6 +794,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEC1137D1C631DF300A68B35 /* NSNotificationSpec.swift in Sources */,
 				BEC113771C63027A00A68B35 /* WireworkNSObjectSpec.swift in Sources */,
 				BE29D5371C625F2C002E61EE /* WireworkFoundationSpec.swift in Sources */,
 			);
@@ -794,6 +804,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEC1137B1C631C9A00A68B35 /* NSNotificationCenter.swift in Sources */,
 				BE29D5471C6260C5002E61EE /* NSObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -802,6 +813,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEC1137E1C631DF300A68B35 /* NSNotificationSpec.swift in Sources */,
 				BEC113781C63027A00A68B35 /* WireworkNSObjectSpec.swift in Sources */,
 				BE29D5381C625F2C002E61EE /* WireworkFoundationSpec.swift in Sources */,
 			);
