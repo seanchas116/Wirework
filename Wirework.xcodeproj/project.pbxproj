@@ -90,6 +90,20 @@
 			remoteGlobalIDString = BE29D5191C625E05002E61EE;
 			remoteInfo = "WireworkFoundation-Mac";
 		};
+		BE3229AC1C63AFAF0097A766 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE613B1B1C5F35A8005D01FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE613B421C5F35C8005D01FB;
+			remoteInfo = "Wirework-Mac";
+		};
+		BE3229AE1C63AFC30097A766 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE613B1B1C5F35A8005D01FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE613B251C5F35B5005D01FB;
+			remoteInfo = "Wirework-iOS";
+		};
 		BE613B321C5F35B5005D01FB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BE613B1B1C5F35A8005D01FB /* Project object */;
@@ -489,6 +503,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				BE3229AF1C63AFC30097A766 /* PBXTargetDependency */,
 			);
 			name = "WireworkFoundation-iOS";
 			productName = "WireworkFoundation-iOS";
@@ -526,6 +541,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				BE3229AD1C63AFAF0097A766 /* PBXTargetDependency */,
 			);
 			name = "WireworkFoundation-Mac";
 			productName = "WireworkFoundation-Mac";
@@ -880,6 +896,16 @@
 			isa = PBXTargetDependency;
 			target = BE29D5191C625E05002E61EE /* WireworkFoundation-Mac */;
 			targetProxy = BE29D5251C625E05002E61EE /* PBXContainerItemProxy */;
+		};
+		BE3229AD1C63AFAF0097A766 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE613B421C5F35C8005D01FB /* Wirework-Mac */;
+			targetProxy = BE3229AC1C63AFAF0097A766 /* PBXContainerItemProxy */;
+		};
+		BE3229AF1C63AFC30097A766 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE613B251C5F35B5005D01FB /* Wirework-iOS */;
+			targetProxy = BE3229AE1C63AFC30097A766 /* PBXContainerItemProxy */;
 		};
 		BE613B331C5F35B5005D01FB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
