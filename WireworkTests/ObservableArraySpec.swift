@@ -16,6 +16,7 @@ class ChangesRecorder {
     var removals = [Range<Int>]()
     var insertions = [Range<Int>]()
     var moves = [(Range<Int>, Int)]()
+    var itemChanges = [Int]()
     
     init<T>(_ array: ObservableArray<T>) {
         array.updated.subscribe { [unowned self] in
@@ -26,6 +27,8 @@ class ChangesRecorder {
                 self.insertions.append(range)
             case .Move(let range, let at):
                 self.moves.append((range, at))
+            case .ItemChange(let at):
+                self.itemChanges.append(at)
             }
         }.storeIn(bag)
     }
@@ -78,6 +81,18 @@ class ObservableArraySpec: QuickSpec {
                     expect(array.value).to(equal([]))
                     expect(recorder.removals).to(equal([0 ... 4]))
                     expect(recorder.insertions).to(equal([]))
+                }
+            }
+            describe("subscript assignment") {
+                it("emits item change") {
+                    let array = ObservableArray<Int>([1, 2, 3, 4, 5])
+                    let recorder = ChangesRecorder(array)
+                    
+                    array[2] = 10
+                    array[3] = 20
+                    
+                    expect(array.value).to(equal([1, 2, 10, 20, 5]))
+                    expect(recorder.itemChanges).to(equal([2,t 3]))
                 }
             }
             it("can bind to variable") {

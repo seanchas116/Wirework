@@ -12,6 +12,7 @@ public enum CollectionUpdate {
     case Insert(Range<Int>)
     case Remove(Range<Int>)
     case Move(Range<Int>, Int)
+    case ItemChange(Int)
 }
 
 public protocol ObservableCollectionType: CollectionType, PropertyType {
@@ -95,6 +96,7 @@ public class ObservableArray<T>: MutableObservableCollectionType {
         }
         set {
             _data[i] = newValue
+            _updated.emit(.ItemChange(i))
         }
     }
     
