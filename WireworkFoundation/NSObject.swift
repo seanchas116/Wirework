@@ -9,13 +9,13 @@
 import Foundation
 import Wirework
 
-private var subscriptionBagKey: Void
+private var subscriptionBagKey = 0
 
 class WWKeyValueObserver: NSObject {
     private let _object: NSObject
     private let _keyPath: String
     private let _callback: () -> Void
-    private var _context: Void
+    private var _context = 0
     
     init(_ object: NSObject, _ keyPath: String, callback: () -> Void) {
         _object = object
@@ -26,11 +26,42 @@ class WWKeyValueObserver: NSObject {
     }
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        _callback()
+        if context == &_context {
+            _callback()
+        }
     }
     
     func remove() {
         _object.removeObserver(self, forKeyPath: _keyPath)
+    }
+}
+
+public class KeyValueProperty<T>: MutablePropertyType {
+    public typealias Value = T
+    private let _object: NSObject
+    private let _keyPath: String
+    public let changed: Signal<T>
+    
+    public init(object: NSObject, keyPath: String) {
+        _object = object
+        _keyPath = keyPath
+        changed = AdapterSignal { emit in
+            let observer = WWKeyValueObserver(object, keyPath) {
+                emit(object.valueForKeyPath(keyPath) as! T)
+            }
+            return Subscription {
+                observer.remove()
+            }
+        }
+    }
+    
+    public var value: T {
+        get {
+            return _object.valueForKeyPath(_keyPath) as! T
+        }
+        set {
+            _object.setValue(newValue as? AnyObject, forKeyPath: _keyPath)
+        }
     }
 }
 
@@ -45,16 +76,7 @@ extension NSObject {
         }
     }
     
-    public func ww_propertyForKeyPath<T>(keyPath: String) -> Property<T> {
-        let getValue = { self.valueForKeyPath(keyPath) as! T }
-        let signal = AdapterSignal<T> { emit in
-            let observer = WWKeyValueObserver(self, keyPath) {
-                emit(getValue())
-            }
-            return Subscription {
-                observer.remove()
-            }
-        }
-        return AdapterProperty(signal, getValue)
+    public func ww_propertyForKeyPath<T>(keyPath: String) -> KeyValueProperty<T> {
+        return KeyValueProperty(object: self, keyPath: keyPath)
     }
 }
