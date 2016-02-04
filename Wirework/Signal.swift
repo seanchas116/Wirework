@@ -66,10 +66,10 @@ public class Event<T>: Signal<T> {
 }
 
 public class AdapterSignal<T>: Signal<T> {
-    private let _subscribe: ((T) -> Void) -> AnyObject
-    private var _subscription: AnyObject?
+    private let _subscribe: ((T) -> Void) -> ScopedType
+    private var _subscription: ScopedType?
     
-    public init(_ subscribe: ((T) -> Void) -> AnyObject) {
+    public init(_ subscribe: ((T) -> Void) -> ScopedType) {
         _subscribe = subscribe
     }
     
