@@ -87,6 +87,8 @@ class ObservableArraySpec: QuickSpec {
                 array.bindTo(bound).storeIn(bag)
                 array.replaceRange(1 ... 3, with: [10, 20, 30, 40, 50])
                 expect(bound.value).to(equal([1, 10, 20, 30, 40, 50, 5]))
+                array.value = [1, 2, 3]
+                expect(bound.value).to(equal([1, 2, 3]))
             }
         }
     }
