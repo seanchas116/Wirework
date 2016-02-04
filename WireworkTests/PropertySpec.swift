@@ -65,11 +65,11 @@ class PropertySpec: QuickSpec {
                     foo.map { $0.uppercaseString }.bindTo(upper).storeIn(bag)
                     foo.map { $0.lowercaseString }.bindTo(lower).storeIn(bag)
                     foo.value = "FooBar"
-                    expect(foo.changed.subscriptionCount).to(equal(2))
+                    expect(foo.changed.subscribersCount).to(equal(2))
                     expect(upper.value).to(equal("FOOBAR"))
                     expect(lower.value).to(equal("foobar"))
                 })()
-                expect(foo.changed.subscriptionCount).to(equal(0))
+                expect(foo.changed.subscribersCount).to(equal(0))
             }
         }
     }

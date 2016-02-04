@@ -1,12 +1,30 @@
 import Foundation
 
+public class Subscriber<T> {
+    let callback: (T) -> Void
+    
+    init(callback: (T -> Void)) {
+        self.callback = callback
+    }
+}
+
 public protocol SignalType {
     typealias Value
     
-    func subscribe(action: (Value) -> Void) -> Subscription
+    func addSubscriber(subscriber: Subscriber<Value>)
+    func removeSubscriber(subscriber: Subscriber<Value>)
 }
 
 extension SignalType {
+    
+    public func subscribe(callback: (Value) -> Void) -> Subscription {
+        let subscriber = Subscriber(callback: callback)
+        addSubscriber(subscriber)
+        return Subscription {
+            self.removeSubscriber(subscriber)
+        }
+    }
+    
     public func map<T>(transform: (Value) -> T) -> Signal<T> {
         return AdapterSignal { emit in
             self.subscribe { value in

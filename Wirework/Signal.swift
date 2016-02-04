@@ -8,76 +8,70 @@
 
 import Foundation
 
-private var _currentSubscriberID = UInt64(0)
-
 public class Signal<T>: SignalType {
     public typealias Value = T
-    public typealias Subscriber = (Value) -> Void
     
-    private var _subscribers = [UInt64: Subscriber]()
-    
-    public var subscriptionCount: Int {
-        return _subscribers.count
+    public var subscribersCount: Int {
+        fatalError("not implemented")
     }
     
-    public func subscribe(subscriber: Subscriber) -> Subscription {
-        let id = addSubscriber(subscriber)
-        return Subscription {
-           self.removeSubscriber(id)
-        }
+    public func addSubscriber(subscriber: Subscriber<Value>) {
+        fatalError("not implemented")
     }
     
-    private func _emit(value: T) {
-        for subscriber in _subscribers.values {
-            subscriber(value)
-        }
-    }
-    
-    private func addSubscriber(subscriber: Subscriber) -> UInt64 {
-        let id = _currentSubscriberID
-        _currentSubscriberID += 1
-        _subscribers[id] = subscriber
-        if _subscribers.count == 1 {
-            firstSubscriberAdded()
-        }
-        return id
-    }
-    
-    private func removeSubscriber(id: UInt64) {
-         _subscribers.removeValueForKey(id)
-        if _subscribers.count == 0 {
-            allSubscribersRemoved()
-        }
-    }
-    
-    func firstSubscriberAdded() {
-        
-    }
-    
-    func allSubscribersRemoved() {
-        
+    public func removeSubscriber(subscriber: Subscriber<Value>) {
+        fatalError("not implemented")
     }
 }
 
 public class Event<T>: Signal<T> {
+    public typealias Value = T
+    
+    private var _subscribers = [Subscriber<Value>]()
+    
+    public override var subscribersCount: Int {
+        return _subscribers.count
+    }
+    
     public func emit(value: T) {
-        _emit(value)
+        for subscriber in _subscribers {
+            subscriber.callback(value)
+        }
+    }
+    
+    public override func addSubscriber(subscriber: Subscriber<Value>) {
+        _subscribers.append(subscriber)
+    }
+    
+    public override func removeSubscriber(subscriber: Subscriber<Value>) {
+        _subscribers = _subscribers.filter { $0 !== subscriber }
     }
 }
 
 public class AdapterSignal<T>: Signal<T> {
     private let _subscribe: ((T) -> Void) -> ScopedType
     private var _subscription: ScopedType?
+    private let _event = Event<T>()
     
     public init(_ subscribe: ((T) -> Void) -> ScopedType) {
         _subscribe = subscribe
     }
     
-    override func firstSubscriberAdded() {
-        _subscription = _subscribe { [weak self] in self?._emit($0) }
+    public override var subscribersCount: Int {
+        return _event.subscribersCount
     }
     
-    override func allSubscribersRemoved() {
-        _subscription = nil
+    override public func addSubscriber(subscriber: Subscriber<Value>) {
+        _event.addSubscriber(subscriber)
+        if _event.subscribersCount == 1 {
+            _subscription = _subscribe { [weak self] in self?._event.emit($0) }
+        }
+    }
+    
+    override public func removeSubscriber(subscriber: Subscriber<Value>) {
+        _event.removeSubscriber(subscriber)
+        if _event.subscribersCount == 0 {
+            _subscription = nil
+        }
     }
 }
