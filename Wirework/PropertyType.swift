@@ -1,13 +1,21 @@
 import Foundation
 
-public protocol PropertyType {
+public protocol PassivePropertyType {
     typealias Value
-    var changed: Signal<Void> { get }
     var value: Value { get }
 }
 
-public protocol MutablePropertyType: class, PropertyType {
+public protocol PropertyType: PassivePropertyType {
+    typealias Value
+    var changed: Signal<Void> { get }
+}
+
+public protocol MutablePassivePropertyType: class {
+    typealias Value
     var value: Value { get set }
+}
+
+public protocol MutablePropertyType: PropertyType, MutablePassivePropertyType {
 }
 
 extension PropertyType {
@@ -15,7 +23,7 @@ extension PropertyType {
         return createProperty(changed) { transform(self.value) }
     }
     
-    public func bindTo<T: MutablePropertyType where T.Value == Value>(dest: T) -> Subscription {
+    public func bindTo<T: MutablePassivePropertyType where T.Value == Value>(dest: T) -> Subscription {
         dest.value = value
         return changed.subscribe {
             dest.value = self.value
