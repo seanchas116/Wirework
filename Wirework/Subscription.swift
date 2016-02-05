@@ -1,9 +1,6 @@
 import Foundation
 
-public protocol ScopedType: class {
-}
-
-public class Subscription: ScopedType {
+public class Subscription {
     private let disposer: () -> Void
     
     public init(disposer: () -> Void) {
@@ -21,7 +18,7 @@ extension Subscription {
     }
 }
 
-public class SubscriptionBag: ScopedType {
+public class SubscriptionBag {
     private var _subscriptions = [Subscription]()
     
     public init() {

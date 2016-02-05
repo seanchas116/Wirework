@@ -45,7 +45,7 @@ public class KeyValueProperty<T>: MutablePropertyType {
     public init(object: NSObject, keyPath: String) {
         _object = object
         _keyPath = keyPath
-        changed = AdapterSignal { emit in
+        changed = createSignal { emit in
             let observer = WWKeyValueObserver(object, keyPath) {
                 emit()
             }

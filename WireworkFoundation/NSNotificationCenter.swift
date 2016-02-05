@@ -11,7 +11,7 @@ import Wirework
 
 extension NSNotificationCenter {
     public func wwNotification(name: String, object: AnyObject?) -> Signal<NSNotification> {
-        return AdapterSignal { emit in
+        return createSignal { emit in
             let observer = self.addObserverForName(name, object: object, queue: nil, usingBlock: {
                 emit($0)
             })

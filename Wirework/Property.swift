@@ -32,20 +32,24 @@ public class Variable<T>: Property<T>, MutablePropertyType {
     }
 }
 
-public class AdapterProperty<T>: Property<T> {
+public func createProperty<T>(changedSignal: Signal<Void>, getValue: () -> T) -> Property<T> {
+    return AdapterProperty(changedSignal, getValue)
+}
+
+private class AdapterProperty<T>: Property<T> {
     private let _getValue: () -> T
     private let _changed: Signal<Void>
     
-    public init(_ changed: Signal<Void>, _ getValue: () -> T) {
+    init(_ changed: Signal<Void>, _ getValue: () -> T) {
         _getValue = getValue
         _changed = changed
     }
     
-    public override var changed: Signal<Void> {
+    override var changed: Signal<Void> {
         return _changed
     }
     
-    public override var value: T {
+    override var value: T {
         return _getValue()
     }
 }
