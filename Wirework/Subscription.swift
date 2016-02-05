@@ -1,14 +1,14 @@
 import Foundation
 
 public class Subscription {
-    private let disposer: () -> Void
+    private let block: () -> Void
     
-    public init(disposer: () -> Void) {
-        self.disposer = disposer
+    public init(block: () -> Void) {
+        self.block = block
     }
     
     deinit {
-        disposer()
+        block()
     }
 }
 
