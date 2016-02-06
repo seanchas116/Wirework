@@ -43,8 +43,8 @@ public class ObservableArray<T>: MutableObservableCollectionType {
         return _updated
     }
     
-    public var changed: Signal<Void> {
-        return updated.map { _ in }
+    public var changed: Signal<[Element]> {
+        return updated.map { _ in self.value }
     }
     
     public var value: [Element] {

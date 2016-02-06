@@ -3,7 +3,7 @@ import Foundation
 public class Property<T>: PropertyType {
     public typealias Value = T
     
-    public var changed: Signal<Void> {
+    public var changed: Signal<T> {
         fatalError("not implemented")
     }
     public var value: Value {
@@ -13,9 +13,9 @@ public class Property<T>: PropertyType {
 
 public class Variable<T>: Property<T>, MutablePropertyType {
     private var _value: Value
-    private let _changed = Event<Void>()
+    private let _changed = Event<T>()
     
-    public override var changed: Signal<Void> {
+    public override var changed: Signal<T> {
         return _changed
     }
     
@@ -23,7 +23,7 @@ public class Variable<T>: Property<T>, MutablePropertyType {
         get { return _value }
         set {
             _value = newValue
-            _changed.emit()
+            _changed.emit(newValue)
         }
     }
 
@@ -32,20 +32,20 @@ public class Variable<T>: Property<T>, MutablePropertyType {
     }
 }
 
-public func createProperty<T>(changedSignal: Signal<Void>, getValue: () -> T) -> Property<T> {
+public func createProperty<T>(changedSignal: Signal<T>, getValue: () -> T) -> Property<T> {
     return AdapterProperty(changedSignal, getValue)
 }
 
 private class AdapterProperty<T>: Property<T> {
     private let _getValue: () -> T
-    private let _changed: Signal<Void>
+    private let _changed: Signal<T>
     
-    init(_ changed: Signal<Void>, _ getValue: () -> T) {
+    init(_ changed: Signal<T>, _ getValue: () -> T) {
         _getValue = getValue
         _changed = changed
     }
     
-    override var changed: Signal<Void> {
+    override var changed: Signal<T> {
         return _changed
     }
     

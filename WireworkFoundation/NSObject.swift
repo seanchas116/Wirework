@@ -40,14 +40,14 @@ public class KeyValueProperty<T>: MutablePropertyType {
     public typealias Value = T
     private let _object: NSObject
     private let _keyPath: String
-    public let changed: Signal<Void>
+    public let changed: Signal<T>
     
     public init(object: NSObject, keyPath: String) {
         _object = object
         _keyPath = keyPath
         changed = createSignal { emit in
             let observer = WWKeyValueObserver(object, keyPath) {
-                emit()
+                emit(object.valueForKeyPath(keyPath) as! T)
             }
             return Subscription {
                 observer.remove()
