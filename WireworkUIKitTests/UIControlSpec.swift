@@ -8,7 +8,7 @@ class UIControlSpec: QuickSpec {
     override func spec() {
         describe("UIControl") {
             describe("wwControl") {
-                it("wraps UIControl control events") {
+                it("wraps UIControl control events", andCleansUpResources: true) {
                     let control = UIControl()
                     let bag = SubscriptionBag()
                     var tapped = false

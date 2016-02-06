@@ -7,7 +7,7 @@ class UILabelSpec: QuickSpec {
     override func spec() {
         describe("UILabel") {
             describe("wwText") {
-                it("reflect UILabel text") {
+                it("reflect UILabel text", andCleansUpResources: true) {
                     let label = UILabel()
                     let prop = label.wwText
                     prop.value = "hogehoge"

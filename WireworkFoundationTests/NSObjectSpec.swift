@@ -20,7 +20,7 @@ class NSObjectSpec: QuickSpec {
     override func spec() {
         describe("NSObject") {
             describe("ww_propertyForKeyPath") {
-                it("returns a mutable property that observes keypath") {
+                it("returns a mutable property that observes keypath", andCleansUpResources: true) {
                     let bag = SubscriptionBag()
                     let obj = WWKVOObject()
                     let value = Variable(0)
@@ -33,7 +33,7 @@ class NSObjectSpec: QuickSpec {
                 }
             }
             describe("ww_bag") {
-                it("holds subscriptions") {
+                it("holds subscriptions", andCleansUpResources: true) {
                     var released = false
                     ({
                         let obj = NSObject()

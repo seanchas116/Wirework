@@ -11,9 +11,14 @@ import Quick
 import Nimble
 import Wirework
 
-func expectCleanedUp(block: () -> Void) {
-    let resCount = ResourceMonitor.totalCount
-    block()
-    expect(ResourceMonitor.hasUsed).to(beTrue())
-    expect(ResourceMonitor.totalCount).to(equal(resCount))
+func it(description: String, andCleansUpResources: Bool, closure: () -> Void) {
+    if andCleansUpResources {
+        it(description) {
+            let origCount = ResourceMonitor.totalCount
+            closure()
+            expect(ResourceMonitor.totalCount).to(equal(origCount))
+        }
+    } else {
+        it(description, closure: closure)
+    }
 }

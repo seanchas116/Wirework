@@ -18,7 +18,7 @@ class NSNotificationSpeec: QuickSpec {
     override func spec() {
         describe("NSNotification") {
             describe("wwNotification") {
-                it("returns a signal that emits notifications") {
+                it("returns a signal that emits notifications", andCleansUpResources: true) {
                     let obj = NSObject()
                     let signal = NSNotificationCenter.defaultCenter().wwNotification("test", object: obj)
                     var receivedValue: String?

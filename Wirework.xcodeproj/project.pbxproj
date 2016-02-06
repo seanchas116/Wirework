@@ -67,6 +67,9 @@
 		BE97841A1C65F58400CA8DC3 /* ResourceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9784181C65F58400CA8DC3 /* ResourceMonitor.swift */; };
 		BE97841C1C65F94400CA8DC3 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE97841B1C65F94400CA8DC3 /* Util.swift */; };
 		BE97841D1C65F94400CA8DC3 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE97841B1C65F94400CA8DC3 /* Util.swift */; };
+		BE97841E1C65F97F00CA8DC3 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE97841B1C65F94400CA8DC3 /* Util.swift */; };
+		BE97841F1C65F98000CA8DC3 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE97841B1C65F94400CA8DC3 /* Util.swift */; };
+		BE9784201C65F98100CA8DC3 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE97841B1C65F94400CA8DC3 /* Util.swift */; };
 		BEC113771C63027A00A68B35 /* NSObjectSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC113761C63027A00A68B35 /* NSObjectSpec.swift */; };
 		BEC113781C63027A00A68B35 /* NSObjectSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC113761C63027A00A68B35 /* NSObjectSpec.swift */; };
 		BEC1137A1C631C9A00A68B35 /* NSNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC113791C631C9A00A68B35 /* NSNotificationCenter.swift */; };
@@ -137,6 +140,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = BE9784031C65F22500CA8DC3;
 			remoteInfo = "TestHost-iOS";
+		};
+		BE9784211C6601E400CA8DC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE613B1B1C5F35A8005D01FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE29D4FD1C625DE8002E61EE;
+			remoteInfo = "WireworkFoundation-iOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -527,6 +537,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				BE9784221C6601E400CA8DC3 /* PBXTargetDependency */,
 			);
 			name = WireworkUIKit;
 			productName = WireworkUIKit;
@@ -893,6 +904,7 @@
 				BE29D4CE1C625882002E61EE /* WireworkUIKitSpec.swift in Sources */,
 				BE9783D71C65D53700CA8DC3 /* UILabelSpec.swift in Sources */,
 				BE9783DB1C65D8A100CA8DC3 /* UIControlSpec.swift in Sources */,
+				BE97841E1C65F97F00CA8DC3 /* Util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -912,6 +924,7 @@
 				BEC1137D1C631DF300A68B35 /* NSNotificationSpec.swift in Sources */,
 				BEC113771C63027A00A68B35 /* NSObjectSpec.swift in Sources */,
 				BE29D5371C625F2C002E61EE /* WireworkFoundationSpec.swift in Sources */,
+				BE97841F1C65F98000CA8DC3 /* Util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -931,6 +944,7 @@
 				BEC1137E1C631DF300A68B35 /* NSNotificationSpec.swift in Sources */,
 				BEC113781C63027A00A68B35 /* NSObjectSpec.swift in Sources */,
 				BE29D5381C625F2C002E61EE /* WireworkFoundationSpec.swift in Sources */,
+				BE9784201C65F98100CA8DC3 /* Util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1034,6 +1048,11 @@
 			target = BE9784031C65F22500CA8DC3 /* TestHost-iOS */;
 			targetProxy = BE9784161C65F22D00CA8DC3 /* PBXContainerItemProxy */;
 		};
+		BE9784221C6601E400CA8DC3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE29D4FD1C625DE8002E61EE /* WireworkFoundation-iOS */;
+			targetProxy = BE9784211C6601E400CA8DC3 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -1104,6 +1123,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-D MONITOR_RESOURCES";
 				PRODUCT_BUNDLE_IDENTIFIER = com.seanchas116.WireworkUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1314,6 +1334,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-D MONITOR_RESOURCES";
 				PRODUCT_BUNDLE_IDENTIFIER = com.seanchas116.WireworkFoundation;
 				PRODUCT_NAME = WireworkFoundation;
 				SDKROOT = iphoneos;
@@ -1524,6 +1545,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-D MONITOR_RESOURCES";
 				PRODUCT_BUNDLE_IDENTIFIER = com.seanchas116.WireworkFoundation;
 				PRODUCT_NAME = WireworkFoundation;
 				SDKROOT = macosx;
@@ -1744,6 +1766,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-D MONITOR_RESOURCES";
 				PRODUCT_BUNDLE_IDENTIFIER = com.seanchas116.Wirework;
 				PRODUCT_NAME = Wirework;
 				SDKROOT = iphoneos;
@@ -1954,7 +1977,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_SWIFT_FLAGS = "-D MONITOR_RESOURCE";
+				OTHER_SWIFT_FLAGS = "-D MONITOR_RESOURCES";
 				PRODUCT_BUNDLE_IDENTIFIER = com.seanchas116.Wirework;
 				PRODUCT_NAME = Wirework;
 				SDKROOT = macosx;

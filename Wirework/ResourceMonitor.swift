@@ -8,24 +8,21 @@
 
 import Foundation
 
+private var _totalCount = 0
+
 public class ResourceMonitor {
-    public init() {
-        ResourceMonitor._totalCount += 1
-        ResourceMonitor._hasUsed = true
+    private let _type: String
+    
+    public init(_ type: String) {
+        _type = type
+        _totalCount += 1
     }
     
     deinit {
-        ResourceMonitor._totalCount -= 1
+        _totalCount -= 1
     }
     
     public static var totalCount: Int {
         return _totalCount
     }
-    
-    public static var hasUsed: Bool {
-        return _hasUsed
-    }
-    
-    private static var _totalCount = 0
-    private static var _hasUsed = false
 }

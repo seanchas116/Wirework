@@ -1,8 +1,8 @@
 import Foundation
 
 public class Property<T>: PropertyType {
-    #if MONITOR_RESOURCE
-    private let _resourceMonitor = ResourceMonitor()
+    #if MONITOR_RESOURCES
+    private let _resourceMonitor = ResourceMonitor("Property")
     #endif
     
     public typealias Value = T

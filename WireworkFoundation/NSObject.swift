@@ -16,6 +16,9 @@ class WWKeyValueObserver: NSObject {
     private let _keyPath: String
     private let _callback: () -> Void
     private var _context = 0
+    #if MONITOR_RESOURCES
+    private let _resourceMonitor = ResourceMonitor("WWKeyValueObserver")
+    #endif
     
     init(_ object: NSObject, _ keyPath: String, callback: () -> Void) {
         _object = object

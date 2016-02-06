@@ -38,84 +38,72 @@ class ObservableArraySpec: QuickSpec {
     override func spec() {
         describe("ObservableArray") {
             describe("replaceRange") {
-                it("replaces values and emits changes") {
-                    expectCleanedUp {
-                        let array = ObservableArray<Int>([1, 2, 3, 4, 5])
-                        let recorder = ChangesRecorder(array)
-                        
-                        array.replaceRange(1 ... 3, with: [10, 20, 30, 40, 50])
-                        expect(array.value).to(equal([1, 10, 20, 30, 40, 50, 5]))
-                        expect(recorder.removals).to(equal([1 ... 3]))
-                        expect(recorder.insertions).to(equal([1 ... 5]))
-                    }
+                it("replaces values and emits changes", andCleansUpResources: true) {
+                    let array = ObservableArray<Int>([1, 2, 3, 4, 5])
+                    let recorder = ChangesRecorder(array)
+                    
+                    array.replaceRange(1 ... 3, with: [10, 20, 30, 40, 50])
+                    expect(array.value).to(equal([1, 10, 20, 30, 40, 50, 5]))
+                    expect(recorder.removals).to(equal([1 ... 3]))
+                    expect(recorder.insertions).to(equal([1 ... 5]))
                 }
             }
             describe("moveRange") {
-                it("moves values and emits changes") {
-                    expectCleanedUp {
-                        let array = ObservableArray<Int>([1, 2, 3, 4, 5])
-                        let recorder = ChangesRecorder(array)
-                        
-                        array.moveRange(1 ... 3, to: 5)
-                        expect(array.value).to(equal([1, 5, 2, 3, 4]))
-                        expect(recorder.moves[0].0).to(equal(1 ... 3))
-                        expect(recorder.moves[0].1).to(equal(5))
-                    }
+                it("moves values and emits changes", andCleansUpResources: true) {
+                    let array = ObservableArray<Int>([1, 2, 3, 4, 5])
+                    let recorder = ChangesRecorder(array)
+                    
+                    array.moveRange(1 ... 3, to: 5)
+                    expect(array.value).to(equal([1, 5, 2, 3, 4]))
+                    expect(recorder.moves[0].0).to(equal(1 ... 3))
+                    expect(recorder.moves[0].1).to(equal(5))
                 }
             }
             describe("append") {
-                it("appends a value and emit changes") {
-                    expectCleanedUp {
-                        let array = ObservableArray<Int>([1, 2, 3, 4, 5])
-                        let recorder = ChangesRecorder(array)
-                        
-                        array.append(10)
-                        
-                        expect(array.value).to(equal([1, 2, 3, 4, 5, 10]))
-                        expect(recorder.removals).to(equal([]))
-                        expect(recorder.insertions).to(equal([5 ... 5]))
-                    }
+                it("appends a value and emit changes", andCleansUpResources: true) {
+                    let array = ObservableArray<Int>([1, 2, 3, 4, 5])
+                    let recorder = ChangesRecorder(array)
+                    
+                    array.append(10)
+                    
+                    expect(array.value).to(equal([1, 2, 3, 4, 5, 10]))
+                    expect(recorder.removals).to(equal([]))
+                    expect(recorder.insertions).to(equal([5 ... 5]))
                 }
             }
             describe("removeAll") {
-                it("removes all values and emit changes") {
-                    expectCleanedUp {
-                        let array = ObservableArray<Int>([1, 2, 3, 4, 5])
-                        let recorder = ChangesRecorder(array)
-                        
-                        array.removeAll()
-                        
-                        expect(array.value).to(equal([]))
-                        expect(recorder.removals).to(equal([0 ... 4]))
-                        expect(recorder.insertions).to(equal([]))
-                    }
+                it("removes all values and emit changes", andCleansUpResources: true) {
+                    let array = ObservableArray<Int>([1, 2, 3, 4, 5])
+                    let recorder = ChangesRecorder(array)
+                    
+                    array.removeAll()
+                    
+                    expect(array.value).to(equal([]))
+                    expect(recorder.removals).to(equal([0 ... 4]))
+                    expect(recorder.insertions).to(equal([]))
                 }
             }
             describe("subscript assignment") {
-                it("emits item change") {
-                    expectCleanedUp {
-                        let array = ObservableArray<Int>([1, 2, 3, 4, 5])
-                        let recorder = ChangesRecorder(array)
-                        
-                        array[2] = 10
-                        array[3] = 20
-                        
-                        expect(array.value).to(equal([1, 2, 10, 20, 5]))
-                        expect(recorder.itemChanges).to(equal([2, 3]))
-                    }
+                it("emits item change", andCleansUpResources: true) {
+                    let array = ObservableArray<Int>([1, 2, 3, 4, 5])
+                    let recorder = ChangesRecorder(array)
+                    
+                    array[2] = 10
+                    array[3] = 20
+                    
+                    expect(array.value).to(equal([1, 2, 10, 20, 5]))
+                    expect(recorder.itemChanges).to(equal([2, 3]))
                 }
             }
-            it("can bind to variable") {
-                expectCleanedUp {
-                    let bag = SubscriptionBag()
-                    let array = ObservableArray<Int>([1, 2, 3, 4, 5])
-                    let bound = Variable([Int]())
-                    array.bindTo(bound).storeIn(bag)
-                    array.replaceRange(1 ... 3, with: [10, 20, 30, 40, 50])
-                    expect(bound.value).to(equal([1, 10, 20, 30, 40, 50, 5]))
-                    array.value = [1, 2, 3]
-                    expect(bound.value).to(equal([1, 2, 3]))
-                }
+            it("can bind to variable", andCleansUpResources: true) {
+                let bag = SubscriptionBag()
+                let array = ObservableArray<Int>([1, 2, 3, 4, 5])
+                let bound = Variable([Int]())
+                array.bindTo(bound).storeIn(bag)
+                array.replaceRange(1 ... 3, with: [10, 20, 30, 40, 50])
+                expect(bound.value).to(equal([1, 10, 20, 30, 40, 50, 5]))
+                array.value = [1, 2, 3]
+                expect(bound.value).to(equal([1, 2, 3]))
             }
         }
     }
