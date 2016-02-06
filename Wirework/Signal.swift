@@ -9,6 +9,10 @@
 import Foundation
 
 public class Signal<T>: SignalType {
+    #if MONITOR_RESOURCE
+    private let _resourceMonitor = ResourceMonitor()
+    #endif
+    
     public typealias Value = T
     
     public var subscribersCount: Int {

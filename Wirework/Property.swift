@@ -1,6 +1,10 @@
 import Foundation
 
 public class Property<T>: PropertyType {
+    #if MONITOR_RESOURCE
+    private let _resourceMonitor = ResourceMonitor()
+    #endif
+    
     public typealias Value = T
     
     public var changed: Signal<T> {

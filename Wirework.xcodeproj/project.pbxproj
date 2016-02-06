@@ -63,6 +63,10 @@
 		BE97840C1C65F22500CA8DC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE97840A1C65F22500CA8DC3 /* Main.storyboard */; };
 		BE97840E1C65F22500CA8DC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE97840D1C65F22500CA8DC3 /* Assets.xcassets */; };
 		BE9784111C65F22500CA8DC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE97840F1C65F22500CA8DC3 /* LaunchScreen.storyboard */; };
+		BE9784191C65F58400CA8DC3 /* ResourceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9784181C65F58400CA8DC3 /* ResourceMonitor.swift */; };
+		BE97841A1C65F58400CA8DC3 /* ResourceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9784181C65F58400CA8DC3 /* ResourceMonitor.swift */; };
+		BE97841C1C65F94400CA8DC3 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE97841B1C65F94400CA8DC3 /* Util.swift */; };
+		BE97841D1C65F94400CA8DC3 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE97841B1C65F94400CA8DC3 /* Util.swift */; };
 		BEC113771C63027A00A68B35 /* NSObjectSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC113761C63027A00A68B35 /* NSObjectSpec.swift */; };
 		BEC113781C63027A00A68B35 /* NSObjectSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC113761C63027A00A68B35 /* NSObjectSpec.swift */; };
 		BEC1137A1C631C9A00A68B35 /* NSNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC113791C631C9A00A68B35 /* NSNotificationCenter.swift */; };
@@ -237,6 +241,8 @@
 		BE97840D1C65F22500CA8DC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE9784101C65F22500CA8DC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE9784121C65F22500CA8DC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE9784181C65F58400CA8DC3 /* ResourceMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceMonitor.swift; sourceTree = "<group>"; };
+		BE97841B1C65F94400CA8DC3 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		BEC113761C63027A00A68B35 /* NSObjectSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectSpec.swift; sourceTree = "<group>"; };
 		BEC113791C631C9A00A68B35 /* NSNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationCenter.swift; sourceTree = "<group>"; };
 		BEC1137C1C631DF300A68B35 /* NSNotificationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationSpec.swift; sourceTree = "<group>"; };
@@ -434,6 +440,7 @@
 				BECC8E9B1C5F843A00E5BFCE /* SignalType.swift */,
 				BE613B6B1C5F39BE005D01FB /* Subscription.swift */,
 				BE613B291C5F35B5005D01FB /* Wirework.h */,
+				BE9784181C65F58400CA8DC3 /* ResourceMonitor.swift */,
 			);
 			path = Wirework;
 			sourceTree = "<group>";
@@ -444,6 +451,7 @@
 				BE613B371C5F35B5005D01FB /* Info.plist */,
 				BE29D4B71C61E7FC002E61EE /* ObservableArraySpec.swift */,
 				BE0035CC1C60AC8B007EAFD7 /* PropertySpec.swift */,
+				BE97841B1C65F94400CA8DC3 /* Util.swift */,
 			);
 			path = WireworkTests;
 			sourceTree = "<group>";
@@ -932,6 +940,7 @@
 			files = (
 				BE29D4B51C610578002E61EE /* ObservableCollection.swift in Sources */,
 				BECC8EA51C5F932400E5BFCE /* Property.swift in Sources */,
+				BE9784191C65F58400CA8DC3 /* ResourceMonitor.swift in Sources */,
 				BECC8EA21C5F89BB00E5BFCE /* Signal.swift in Sources */,
 				BE613B6C1C5F39BE005D01FB /* Subscription.swift in Sources */,
 				BE613B7B1C5F6B7C005D01FB /* PropertyType.swift in Sources */,
@@ -944,6 +953,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE0035CD1C60AC8B007EAFD7 /* PropertySpec.swift in Sources */,
+				BE97841C1C65F94400CA8DC3 /* Util.swift in Sources */,
 				BE29D4B81C61E7FC002E61EE /* ObservableArraySpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -954,6 +964,7 @@
 			files = (
 				BE29D4B61C610578002E61EE /* ObservableCollection.swift in Sources */,
 				BECC8EA61C5F932400E5BFCE /* Property.swift in Sources */,
+				BE97841A1C65F58400CA8DC3 /* ResourceMonitor.swift in Sources */,
 				BECC8EA31C5F89BB00E5BFCE /* Signal.swift in Sources */,
 				BE613B6D1C5F39BE005D01FB /* Subscription.swift in Sources */,
 				BE613B7C1C5F6B7C005D01FB /* PropertyType.swift in Sources */,
@@ -966,6 +977,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE0035CE1C60AC8B007EAFD7 /* PropertySpec.swift in Sources */,
+				BE97841D1C65F94400CA8DC3 /* Util.swift in Sources */,
 				BE29D4B91C61E7FC002E61EE /* ObservableArraySpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1942,6 +1954,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-D MONITOR_RESOURCE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.seanchas116.Wirework;
 				PRODUCT_NAME = Wirework;
 				SDKROOT = macosx;
