@@ -31,7 +31,7 @@ class WWKeyValueObserver: NSObject {
         }
     }
     
-    func remove() {
+    deinit {
         _object.removeObserver(self, forKeyPath: _keyPath)
     }
 }
@@ -46,11 +46,8 @@ public class KeyValueProperty<T>: MutablePropertyType {
         _object = object
         _keyPath = keyPath
         changed = createSignal { emit in
-            let observer = WWKeyValueObserver(object, keyPath) {
+            return WWKeyValueObserver(object, keyPath) {
                 emit(object.valueForKeyPath(keyPath) as! T)
-            }
-            return Subscription {
-                observer.remove()
             }
         }
     }

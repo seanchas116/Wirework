@@ -5,6 +5,5 @@ import WireworkUIKit
 
 class WireworkUIKitSpec: QuickSpec {
     override func spec() {
-        
     }
 }

@@ -54,6 +54,10 @@
 		BE613B6D1C5F39BE005D01FB /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE613B6B1C5F39BE005D01FB /* Subscription.swift */; };
 		BE613B7B1C5F6B7C005D01FB /* PropertyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE613B7A1C5F6B7C005D01FB /* PropertyType.swift */; };
 		BE613B7C1C5F6B7C005D01FB /* PropertyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE613B7A1C5F6B7C005D01FB /* PropertyType.swift */; };
+		BE9783D51C65D17F00CA8DC3 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9783D41C65D17F00CA8DC3 /* UILabel.swift */; };
+		BE9783D71C65D53700CA8DC3 /* UILabelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9783D61C65D53700CA8DC3 /* UILabelSpec.swift */; };
+		BE9783D91C65D55200CA8DC3 /* UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9783D81C65D55200CA8DC3 /* UIControl.swift */; };
+		BE9783DB1C65D8A100CA8DC3 /* UIControlSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9783DA1C65D8A100CA8DC3 /* UIControlSpec.swift */; };
 		BEC113771C63027A00A68B35 /* NSObjectSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC113761C63027A00A68B35 /* NSObjectSpec.swift */; };
 		BEC113781C63027A00A68B35 /* NSObjectSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC113761C63027A00A68B35 /* NSObjectSpec.swift */; };
 		BEC1137A1C631C9A00A68B35 /* NSNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC113791C631C9A00A68B35 /* NSNotificationCenter.swift */; };
@@ -210,6 +214,10 @@
 		BE613B4C1C5F35C8005D01FB /* WireworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WireworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE613B6B1C5F39BE005D01FB /* Subscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
 		BE613B7A1C5F6B7C005D01FB /* PropertyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyType.swift; sourceTree = "<group>"; };
+		BE9783D41C65D17F00CA8DC3 /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		BE9783D61C65D53700CA8DC3 /* UILabelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelSpec.swift; sourceTree = "<group>"; };
+		BE9783D81C65D55200CA8DC3 /* UIControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControl.swift; sourceTree = "<group>"; };
+		BE9783DA1C65D8A100CA8DC3 /* UIControlSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlSpec.swift; sourceTree = "<group>"; };
 		BEC113761C63027A00A68B35 /* NSObjectSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectSpec.swift; sourceTree = "<group>"; };
 		BEC113791C631C9A00A68B35 /* NSNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationCenter.swift; sourceTree = "<group>"; };
 		BEC1137C1C631DF300A68B35 /* NSNotificationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationSpec.swift; sourceTree = "<group>"; };
@@ -314,6 +322,8 @@
 			children = (
 				BE29D4C31C625882002E61EE /* Info.plist */,
 				BE29D4C11C625882002E61EE /* WireworkUIKit.h */,
+				BE9783D41C65D17F00CA8DC3 /* UILabel.swift */,
+				BE9783D81C65D55200CA8DC3 /* UIControl.swift */,
 			);
 			path = WireworkUIKit;
 			sourceTree = "<group>";
@@ -323,6 +333,8 @@
 			children = (
 				BE29D4CF1C625882002E61EE /* Info.plist */,
 				BE29D4CD1C625882002E61EE /* WireworkUIKitSpec.swift */,
+				BE9783D61C65D53700CA8DC3 /* UILabelSpec.swift */,
+				BE9783DA1C65D8A100CA8DC3 /* UIControlSpec.swift */,
 			);
 			path = WireworkUIKitTests;
 			sourceTree = "<group>";
@@ -786,6 +798,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE9783D51C65D17F00CA8DC3 /* UILabel.swift in Sources */,
+				BE9783D91C65D55200CA8DC3 /* UIControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -794,6 +808,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE29D4CE1C625882002E61EE /* WireworkUIKitSpec.swift in Sources */,
+				BE9783D71C65D53700CA8DC3 /* UILabelSpec.swift in Sources */,
+				BE9783DB1C65D8A100CA8DC3 /* UIControlSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
