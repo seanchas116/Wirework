@@ -16,9 +16,13 @@ extension PropertyType {
     }
     
     public func bindTo<T: MutablePropertyType where T.Value == Value>(dest: T) -> Subscription {
-        dest.value = value
+        return bindTo { dest.value = $0 }
+    }
+    
+    public func bindTo(action: (Value) -> Void) -> Subscription {
+        action(value)
         return changed.subscribe { newValue in
-            dest.value = newValue
+            action(newValue)
         }
     }
 }

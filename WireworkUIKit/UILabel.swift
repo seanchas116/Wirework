@@ -11,8 +11,10 @@ import WireworkFoundation
 
 extension UILabel {
     
-    public var wwText: KeyValueProperty<String> {
-        return wwKeyValue("text")
+    public var wwText: (String) -> Void {
+        return { [weak self] in
+            self?.text = $0
+        }
     }
     
 }
