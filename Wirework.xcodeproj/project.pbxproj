@@ -96,6 +96,8 @@
 		BEE162C91C68C029002607A0 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162C81C68C029002607A0 /* UITextField.swift */; };
 		BEE162CB1C68C2E2002607A0 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162CA1C68C2E2002607A0 /* UITextView.swift */; };
 		BEE162CD1C68CB88002607A0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162CC1C68CB88002607A0 /* UIView.swift */; };
+		BEE162D11C68CCA5002607A0 /* SignalSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162D01C68CCA5002607A0 /* SignalSpec.swift */; };
+		BEE162D21C68CCA5002607A0 /* SignalSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162D01C68CCA5002607A0 /* SignalSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -287,6 +289,7 @@
 		BEE162C81C68C029002607A0 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		BEE162CA1C68C2E2002607A0 /* UITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		BEE162CC1C68CB88002607A0 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		BEE162D01C68CCA5002607A0 /* SignalSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -504,6 +507,7 @@
 				BE29D4B71C61E7FC002E61EE /* ObservableArraySpec.swift */,
 				BE0035CC1C60AC8B007EAFD7 /* PropertySpec.swift */,
 				BE97841B1C65F94400CA8DC3 /* Util.swift */,
+				BEE162D01C68CCA5002607A0 /* SignalSpec.swift */,
 			);
 			path = WireworkTests;
 			sourceTree = "<group>";
@@ -1022,6 +1026,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEE162D11C68CCA5002607A0 /* SignalSpec.swift in Sources */,
 				BE0035CD1C60AC8B007EAFD7 /* PropertySpec.swift in Sources */,
 				BE97841C1C65F94400CA8DC3 /* Util.swift in Sources */,
 				BE29D4B81C61E7FC002E61EE /* ObservableArraySpec.swift in Sources */,
@@ -1046,6 +1051,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEE162D21C68CCA5002607A0 /* SignalSpec.swift in Sources */,
 				BE0035CE1C60AC8B007EAFD7 /* PropertySpec.swift in Sources */,
 				BE97841D1C65F94400CA8DC3 /* Util.swift in Sources */,
 				BE29D4B91C61E7FC002E61EE /* ObservableArraySpec.swift in Sources */,

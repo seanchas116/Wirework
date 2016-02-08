@@ -17,6 +17,7 @@ public protocol SignalType {
 
 extension SignalType {
     
+    @warn_unused_result
     public func subscribe(callback: (Value) -> Void) -> Subscription {
         let subscriber = Subscriber(callback: callback)
         addSubscriber(subscriber)

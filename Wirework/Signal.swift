@@ -33,6 +33,9 @@ public class Event<T>: Signal<T> {
     
     private var _subscribers = [Subscriber<Value>]()
     
+    public override init() {
+    }
+    
     public override var subscribersCount: Int {
         return _subscribers.count
     }

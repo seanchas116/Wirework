@@ -19,7 +19,7 @@ extension PropertyType {
         return bindTo { dest.value = $0 }
     }
     
-    @warn_unused_result(message="Subscription should be stored somewhere to keep connected")
+    @warn_unused_result
     public func bindTo(action: (Value) -> Void) -> Subscription {
         action(value)
         return changed.subscribe { newValue in
