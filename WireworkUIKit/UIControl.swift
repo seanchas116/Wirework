@@ -30,4 +30,22 @@ extension UIControl {
             }
         }
     }
+    
+    public var wwEnabled: (Bool) -> Void {
+        return { [weak self] in
+            self?.enabled = $0
+        }
+    }
+    
+    public var wwSelected: (Bool) -> Void {
+        return { [weak self] in
+            self?.selected = $0
+        }
+    }
+    
+    public var wwHighlighted: (Bool) -> Void {
+        return { [weak self] in
+            self?.highlighted = $0
+        }
+    }
 }

@@ -9,9 +9,10 @@ class UILabelSpec: QuickSpec {
         describe("UILabel") {
             describe("wwText") {
                 it("reflect UILabel text", andCleansUpResources: true) {
+                    let bag = SubscriptionBag()
                     let label = UILabel()
                     let variable = Variable("foo")
-                    variable.bindTo(label.wwText)
+                    variable.bindTo(label.wwText).storeIn(bag)
                     expect(label.text).to(equal("foo"))
                     variable.value = "bar"
                     expect(label.text).to(equal("bar"))

@@ -32,6 +32,20 @@ extension SignalType {
             }
         }
     }
+    
+    public func filter(predicate: (Value) -> Bool) -> Signal<Value> {
+        return createSignal { emit in
+            self.subscribe { value in
+                if predicate(value) {
+                    emit(value)
+                }
+            }
+        }
+    }
+    
+    public var voidSignal: Signal<Void> {
+        return map { _ in }
+    }
 }
 
 public func merge<T: SignalType, U: SignalType where T.Value == U.Value>(s1: T, _ s2: U) -> Signal<T.Value> {

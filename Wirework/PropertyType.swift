@@ -19,6 +19,7 @@ extension PropertyType {
         return bindTo { dest.value = $0 }
     }
     
+    @warn_unused_result(message="Subscription should be stored somewhere to keep connected")
     public func bindTo(action: (Value) -> Void) -> Subscription {
         action(value)
         return changed.subscribe { newValue in
@@ -28,20 +29,13 @@ extension PropertyType {
 }
 
 public func combine<P1: PropertyType, P2: PropertyType, V>(p1: P1, _ p2: P2, transform: (P1.Value, P2.Value) -> V) -> Property<V> {
-    let getValue = { transform(p1.value, p2.value) }
-    let changed = merge(
-        p1.changed.map { _ in getValue() },
-        p2.changed.map { _ in getValue() }
-    )
-    return createProperty(changed, getValue: getValue)
+    return createProperty(merge(p1.changed.voidSignal, p2.changed.voidSignal)) {
+        transform(p1.value, p2.value)
+    }
 }
 
 public func combine<P1: PropertyType, P2: PropertyType, P3: PropertyType, V>(p1: P1, _ p2: P2, _ p3: P3, transform: (P1.Value, P2.Value, P3.Value) -> V) -> Property<V> {
-    let getValue = { transform(p1.value, p2.value, p3.value) }
-    let changed = merge(
-        p1.changed.map { _ in getValue() },
-        p2.changed.map { _ in getValue() },
-        p3.changed.map { _ in getValue() }
-    )
-    return createProperty(changed, getValue: getValue)
+    return createProperty(merge(p1.changed.voidSignal, p2.changed.voidSignal, p3.changed.voidSignal)) {
+        transform(p1.value, p2.value, p3.value)
+    }
 }
