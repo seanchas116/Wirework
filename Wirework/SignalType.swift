@@ -17,7 +17,7 @@ public protocol SignalType {
 
 extension SignalType {
     
-    @warn_unused_result
+    @warn_unused_result(message="Subscription must be stored in SubscriptionBag to keep it subscribed")
     public func subscribe(callback: (Value) -> Void) -> Subscription {
         let subscriber = Subscriber(callback: callback)
         addSubscriber(subscriber)
