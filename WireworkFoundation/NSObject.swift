@@ -39,32 +39,6 @@ class WWKeyValueObserver: NSObject, SubscriptionType {
     }
 }
 
-public class KeyValueProperty<T>: MutablePropertyType {
-    public typealias Value = T
-    private let _object: NSObject
-    private let _keyPath: String
-    public let changed: Signal<T>
-    
-    public init(object: NSObject, keyPath: String) {
-        _object = object
-        _keyPath = keyPath
-        changed = createSignal { emit in
-            return WWKeyValueObserver(object, keyPath) {
-                emit(object.valueForKeyPath(keyPath) as! T)
-            }
-        }
-    }
-    
-    public var value: T {
-        get {
-            return _object.valueForKeyPath(_keyPath) as! T
-        }
-        set {
-            _object.setValue(newValue as? AnyObject, forKeyPath: _keyPath)
-        }
-    }
-}
-
 extension NSObject {
     public var wwBag: SubscriptionBag {
         if let bag = objc_getAssociatedObject(self, &subscriptionBagKey) {
@@ -76,7 +50,13 @@ extension NSObject {
         }
     }
     
-    public func wwKeyValue<T>(keyPath: String) -> KeyValueProperty<T> {
-        return KeyValueProperty(object: self, keyPath: keyPath)
+    public func wwKeyValue<T>(keyPath: String) -> MutableProperty<T> {
+        let changed = createSignal { emit in
+            return WWKeyValueObserver(self, keyPath, callback: emit)
+        }
+        return createMutableProperty(changed,
+            getValue: { self.valueForKeyPath(keyPath) as! T },
+            setValue: { self.setValue($0 as? AnyObject, forKeyPath: keyPath)}
+        )
     }
 }
