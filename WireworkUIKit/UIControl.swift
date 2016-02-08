@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 import Wirework
 
-class WWControlTarget: NSObject {
+class WWControlTarget: NSObject, SubscriptionType {
     weak var _control: UIControl?
     private let _callback: () -> Void
     

@@ -55,16 +55,16 @@ public class Event<T>: Signal<T> {
     }
 }
 
-public func createSignal<T>(subscribe: ((T) -> Void) -> AnyObject) -> Signal<T> {
+public func createSignal<T>(subscribe: ((T) -> Void) -> SubscriptionType) -> Signal<T> {
     return AdapterSignal(subscribe)
 }
 
 private class AdapterSignal<T>: Signal<T> {
-    private let _subscribe: ((T) -> Void) -> AnyObject
-    private var _subscription: AnyObject?
+    private let _subscribe: ((T) -> Void) -> SubscriptionType
+    private var _subscription: SubscriptionType?
     private let _event = Event<T>()
     
-    init(_ subscribe: ((T) -> Void) -> AnyObject) {
+    init(_ subscribe: ((T) -> Void) -> SubscriptionType) {
         _subscribe = subscribe
     }
     

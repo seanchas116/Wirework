@@ -11,7 +11,7 @@ import Wirework
 
 private var subscriptionBagKey = 0
 
-class WWKeyValueObserver: NSObject {
+class WWKeyValueObserver: NSObject, SubscriptionType {
     private let _object: NSObject
     private let _keyPath: String
     private let _callback: () -> Void

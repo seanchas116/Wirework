@@ -1,30 +1,33 @@
 import Foundation
 
-public class Subscription {
-    private let block: () -> Void
+public protocol SubscriptionType: class {
+}
+
+public class Subscription: SubscriptionType {
+    private let unsubscribe: () -> Void
     
-    public init(block: () -> Void) {
-        self.block = block
+    public init(unsubscribe: () -> Void) {
+        self.unsubscribe = unsubscribe
     }
     
     deinit {
-        block()
+        unsubscribe()
     }
 }
 
-extension Subscription {
+extension SubscriptionType {
     public func storeIn(bag: SubscriptionBag) {
         bag.store(self)
     }
 }
 
-public class SubscriptionBag {
-    private var _subscriptions = [Subscription]()
+public class SubscriptionBag: SubscriptionType {
+    private var _subscriptions = [SubscriptionType]()
     
     public init() {
     }
     
-    public func store(subscription: Subscription) {
+    public func store(subscription: SubscriptionType) {
         _subscriptions.append(subscription)
     }
 }
