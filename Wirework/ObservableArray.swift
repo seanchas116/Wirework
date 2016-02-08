@@ -1,35 +1,20 @@
-//
-//  ObservableCollection.swift
-//  Wirework
-//
-//  Created by Ryohei Ikegami on 2016/02/03.
-//
-//
-
 import Foundation
 
-public enum CollectionUpdate {
+public enum ObservableArrayUpdate {
     case Inserted(Range<Int>)
     case Removed(Range<Int>)
     case Moved(Range<Int>, Int)
     case ItemChanged(Int)
 }
 
-public protocol ObservableCollectionType: CollectionType, PropertyType {
-    var updated: Signal<CollectionUpdate> { get }
-}
-
-public protocol MutableObservableCollectionType: ObservableCollectionType, MutableCollectionType, MutablePropertyType {
-}
-
-public class ObservableArray<T>: MutableObservableCollectionType {
+public class ObservableArray<T>: MutablePropertyType, MutableCollectionType {
     public typealias Value = Array<Element>
     public typealias Element = T
     public typealias Generator = Array<Element>.Generator
     public typealias Index = Array<Element>.Index
     
     private var _data: [Element]
-    private let _updated = Event<CollectionUpdate>()
+    private let _updated = Event<ObservableArrayUpdate>()
     
     public init<C: CollectionType where C.Generator.Element == Element>(_ xs: C) {
         _data = Array(xs)
@@ -39,7 +24,7 @@ public class ObservableArray<T>: MutableObservableCollectionType {
         self.init([])
     }
     
-    public var updated: Signal<CollectionUpdate> {
+    public var updated: Signal<ObservableArrayUpdate> {
         return _updated
     }
     

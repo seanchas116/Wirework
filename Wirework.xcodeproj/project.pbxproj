@@ -17,8 +17,8 @@
 		BE0035D91C60AD10007EAFD7 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE0035D71C60AD10007EAFD7 /* Quick.framework */; };
 		BE0035DB1C60AD1A007EAFD7 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE0035D61C60AD10007EAFD7 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE0035DC1C60AD1A007EAFD7 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE0035D71C60AD10007EAFD7 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BE29D4B51C610578002E61EE /* ObservableCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29D4B41C610578002E61EE /* ObservableCollection.swift */; };
-		BE29D4B61C610578002E61EE /* ObservableCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29D4B41C610578002E61EE /* ObservableCollection.swift */; };
+		BE29D4B51C610578002E61EE /* ObservableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29D4B41C610578002E61EE /* ObservableArray.swift */; };
+		BE29D4B61C610578002E61EE /* ObservableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29D4B41C610578002E61EE /* ObservableArray.swift */; };
 		BE29D4B81C61E7FC002E61EE /* ObservableArraySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29D4B71C61E7FC002E61EE /* ObservableArraySpec.swift */; };
 		BE29D4B91C61E7FC002E61EE /* ObservableArraySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29D4B71C61E7FC002E61EE /* ObservableArraySpec.swift */; };
 		BE29D4C21C625882002E61EE /* WireworkUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BE29D4C11C625882002E61EE /* WireworkUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -230,7 +230,7 @@
 		BE0035D01C60ACE2007EAFD7 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		BE0035D61C60AD10007EAFD7 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
 		BE0035D71C60AD10007EAFD7 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
-		BE29D4B41C610578002E61EE /* ObservableCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableCollection.swift; sourceTree = "<group>"; };
+		BE29D4B41C610578002E61EE /* ObservableArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableArray.swift; sourceTree = "<group>"; };
 		BE29D4B71C61E7FC002E61EE /* ObservableArraySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableArraySpec.swift; sourceTree = "<group>"; };
 		BE29D4BF1C625882002E61EE /* WireworkUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WireworkUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE29D4C11C625882002E61EE /* WireworkUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WireworkUIKit.h; sourceTree = "<group>"; };
@@ -488,7 +488,7 @@
 			isa = PBXGroup;
 			children = (
 				BE613B2B1C5F35B5005D01FB /* Info.plist */,
-				BE29D4B41C610578002E61EE /* ObservableCollection.swift */,
+				BE29D4B41C610578002E61EE /* ObservableArray.swift */,
 				BECC8EA41C5F932400E5BFCE /* Property.swift */,
 				BE613B7A1C5F6B7C005D01FB /* PropertyType.swift */,
 				BE9784181C65F58400CA8DC3 /* ResourceMonitor.swift */,
@@ -1012,7 +1012,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE29D4B51C610578002E61EE /* ObservableCollection.swift in Sources */,
+				BE29D4B51C610578002E61EE /* ObservableArray.swift in Sources */,
 				BECC8EA51C5F932400E5BFCE /* Property.swift in Sources */,
 				BE9784191C65F58400CA8DC3 /* ResourceMonitor.swift in Sources */,
 				BECC8EA21C5F89BB00E5BFCE /* Signal.swift in Sources */,
@@ -1037,7 +1037,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE29D4B61C610578002E61EE /* ObservableCollection.swift in Sources */,
+				BE29D4B61C610578002E61EE /* ObservableArray.swift in Sources */,
 				BECC8EA61C5F932400E5BFCE /* Property.swift in Sources */,
 				BE97841A1C65F58400CA8DC3 /* ResourceMonitor.swift in Sources */,
 				BECC8EA31C5F89BB00E5BFCE /* Signal.swift in Sources */,
