@@ -43,10 +43,6 @@ public class Variable<T>: MutableProperty<T> {
     }
 }
 
-//public func createProperty<T>(changedSignal: Signal<T>, getValue: () -> T) -> Property<T> {
-//    return AdapterProperty(changedSignal, getValue)
-//}
-
 public func createProperty<T>(changedSignal: Signal<Void>, getValue: () -> T) -> Property<T> {
     return AdapterProperty(changedSignal.map(getValue), getValue)
 }
@@ -68,11 +64,6 @@ private class AdapterProperty<T>: Property<T> {
         return _getValue()
     }
 }
-
-
-//public func createMutableProperty<T>(changedSignal: Signal<T>, getValue: () -> T, setValue: (T) -> Void) -> MutableProperty<T> {
-//    return AdapterMutableProperty(changedSignal, getValue, setValue)
-//}
 
 public func createMutableProperty<T>(changedSignal: Signal<Void>, getValue: () -> T, setValue: (T) -> Void) -> MutableProperty<T> {
     return AdapterMutableProperty(changedSignal.map(getValue), getValue, setValue)
