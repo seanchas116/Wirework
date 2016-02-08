@@ -5,6 +5,9 @@ import Wirework
 class WWControlTarget: NSObject, SubscriptionType {
     weak var _control: UIControl?
     private let _callback: () -> Void
+    #if MONITOR_RESOURCES
+    private let _resourceMonitor = ResourceMonitor("WWControlTarget")
+    #endif
     
     init(control: UIControl, events: UIControlEvents, callback: () -> Void) {
         _control = control
