@@ -17,6 +17,18 @@
 		BE0035D91C60AD10007EAFD7 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE0035D71C60AD10007EAFD7 /* Quick.framework */; };
 		BE0035DB1C60AD1A007EAFD7 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE0035D61C60AD10007EAFD7 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE0035DC1C60AD1A007EAFD7 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE0035D71C60AD10007EAFD7 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BE0E95F81C68FFEE00C9E787 /* UIActivityIndicatorViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0E95F71C68FFEE00C9E787 /* UIActivityIndicatorViewSpec.swift */; };
+		BE0E95FA1C68FFF900C9E787 /* UIBarItemSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0E95F91C68FFF900C9E787 /* UIBarItemSpec.swift */; };
+		BE0E95FC1C69000000C9E787 /* UIButtonSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0E95FB1C69000000C9E787 /* UIButtonSpec.swift */; };
+		BE0E95FE1C69001400C9E787 /* UIDatePickerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0E95FD1C69001400C9E787 /* UIDatePickerSpec.swift */; };
+		BE0E96001C69001B00C9E787 /* UIImageViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0E95FF1C69001B00C9E787 /* UIImageViewSpec.swift */; };
+		BE0E96021C69002700C9E787 /* UINavigationItemSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0E96011C69002700C9E787 /* UINavigationItemSpec.swift */; };
+		BE0E96041C69003100C9E787 /* UIProgressViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0E96031C69003100C9E787 /* UIProgressViewSpec.swift */; };
+		BE0E96061C69003E00C9E787 /* UIRefreshControlSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0E96051C69003E00C9E787 /* UIRefreshControlSpec.swift */; };
+		BE0E960C1C69006300C9E787 /* UISwitchSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0E960B1C69006300C9E787 /* UISwitchSpec.swift */; };
+		BE0E960E1C69006C00C9E787 /* UITextFieldSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0E960D1C69006C00C9E787 /* UITextFieldSpec.swift */; };
+		BE0E96101C69007400C9E787 /* UITextViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0E960F1C69007400C9E787 /* UITextViewSpec.swift */; };
+		BE0E96121C69007B00C9E787 /* UIViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0E96111C69007B00C9E787 /* UIViewSpec.swift */; };
 		BE29D4B51C610578002E61EE /* ObservableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29D4B41C610578002E61EE /* ObservableArray.swift */; };
 		BE29D4B61C610578002E61EE /* ObservableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29D4B41C610578002E61EE /* ObservableArray.swift */; };
 		BE29D4B81C61E7FC002E61EE /* ObservableArraySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29D4B71C61E7FC002E61EE /* ObservableArraySpec.swift */; };
@@ -54,6 +66,9 @@
 		BE613B6D1C5F39BE005D01FB /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE613B6B1C5F39BE005D01FB /* Subscription.swift */; };
 		BE613B7B1C5F6B7C005D01FB /* PropertyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE613B7A1C5F6B7C005D01FB /* PropertyType.swift */; };
 		BE613B7C1C5F6B7C005D01FB /* PropertyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE613B7A1C5F6B7C005D01FB /* PropertyType.swift */; };
+		BE7C41B21C69C880004FAF79 /* CreateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C41B01C69C717004FAF79 /* CreateImage.swift */; };
+		BE7C41B31C69D023004FAF79 /* UISegmentedControlSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0E96071C69004800C9E787 /* UISegmentedControlSpec.swift */; };
+		BE7C41B41C69D027004FAF79 /* UISliderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0E96091C69004F00C9E787 /* UISliderSpec.swift */; };
 		BE9783D51C65D17F00CA8DC3 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9783D41C65D17F00CA8DC3 /* UILabel.swift */; };
 		BE9783D71C65D53700CA8DC3 /* UILabelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9783D61C65D53700CA8DC3 /* UILabelSpec.swift */; };
 		BE9783D91C65D55200CA8DC3 /* UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9783D81C65D55200CA8DC3 /* UIControl.swift */; };
@@ -98,6 +113,8 @@
 		BEE162CD1C68CB88002607A0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162CC1C68CB88002607A0 /* UIView.swift */; };
 		BEE162D11C68CCA5002607A0 /* SignalSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162D01C68CCA5002607A0 /* SignalSpec.swift */; };
 		BEE162D21C68CCA5002607A0 /* SignalSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162D01C68CCA5002607A0 /* SignalSpec.swift */; };
+		BEF663291C69A204007A0B06 /* OptionalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF663281C69A204007A0B06 /* OptionalType.swift */; };
+		BEF6632A1C69A204007A0B06 /* OptionalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF663281C69A204007A0B06 /* OptionalType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -230,6 +247,20 @@
 		BE0035D01C60ACE2007EAFD7 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		BE0035D61C60AD10007EAFD7 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
 		BE0035D71C60AD10007EAFD7 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
+		BE0E95F71C68FFEE00C9E787 /* UIActivityIndicatorViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityIndicatorViewSpec.swift; sourceTree = "<group>"; };
+		BE0E95F91C68FFF900C9E787 /* UIBarItemSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarItemSpec.swift; sourceTree = "<group>"; };
+		BE0E95FB1C69000000C9E787 /* UIButtonSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonSpec.swift; sourceTree = "<group>"; };
+		BE0E95FD1C69001400C9E787 /* UIDatePickerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDatePickerSpec.swift; sourceTree = "<group>"; };
+		BE0E95FF1C69001B00C9E787 /* UIImageViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewSpec.swift; sourceTree = "<group>"; };
+		BE0E96011C69002700C9E787 /* UINavigationItemSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationItemSpec.swift; sourceTree = "<group>"; };
+		BE0E96031C69003100C9E787 /* UIProgressViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIProgressViewSpec.swift; sourceTree = "<group>"; };
+		BE0E96051C69003E00C9E787 /* UIRefreshControlSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIRefreshControlSpec.swift; sourceTree = "<group>"; };
+		BE0E96071C69004800C9E787 /* UISegmentedControlSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISegmentedControlSpec.swift; sourceTree = "<group>"; };
+		BE0E96091C69004F00C9E787 /* UISliderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISliderSpec.swift; sourceTree = "<group>"; };
+		BE0E960B1C69006300C9E787 /* UISwitchSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISwitchSpec.swift; sourceTree = "<group>"; };
+		BE0E960D1C69006C00C9E787 /* UITextFieldSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldSpec.swift; sourceTree = "<group>"; };
+		BE0E960F1C69007400C9E787 /* UITextViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewSpec.swift; sourceTree = "<group>"; };
+		BE0E96111C69007B00C9E787 /* UIViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewSpec.swift; sourceTree = "<group>"; };
 		BE29D4B41C610578002E61EE /* ObservableArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableArray.swift; sourceTree = "<group>"; };
 		BE29D4B71C61E7FC002E61EE /* ObservableArraySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableArraySpec.swift; sourceTree = "<group>"; };
 		BE29D4BF1C625882002E61EE /* WireworkUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WireworkUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -256,6 +287,7 @@
 		BE613B4C1C5F35C8005D01FB /* WireworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WireworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE613B6B1C5F39BE005D01FB /* Subscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
 		BE613B7A1C5F6B7C005D01FB /* PropertyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyType.swift; sourceTree = "<group>"; };
+		BE7C41B01C69C717004FAF79 /* CreateImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateImage.swift; path = ../WireworkUIKit/CreateImage.swift; sourceTree = "<group>"; };
 		BE9783D41C65D17F00CA8DC3 /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		BE9783D61C65D53700CA8DC3 /* UILabelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelSpec.swift; sourceTree = "<group>"; };
 		BE9783D81C65D55200CA8DC3 /* UIControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControl.swift; sourceTree = "<group>"; };
@@ -290,6 +322,7 @@
 		BEE162CA1C68C2E2002607A0 /* UITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		BEE162CC1C68CB88002607A0 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		BEE162D01C68CCA5002607A0 /* SignalSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalSpec.swift; sourceTree = "<group>"; };
+		BEF663281C69A204007A0B06 /* OptionalType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -418,9 +451,24 @@
 		BE29D4CC1C625882002E61EE /* WireworkUIKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				BE7C41B01C69C717004FAF79 /* CreateImage.swift */,
 				BE29D4CF1C625882002E61EE /* Info.plist */,
+				BE0E95F71C68FFEE00C9E787 /* UIActivityIndicatorViewSpec.swift */,
+				BE0E95F91C68FFF900C9E787 /* UIBarItemSpec.swift */,
+				BE0E95FB1C69000000C9E787 /* UIButtonSpec.swift */,
 				BE9783DA1C65D8A100CA8DC3 /* UIControlSpec.swift */,
+				BE0E95FD1C69001400C9E787 /* UIDatePickerSpec.swift */,
+				BE0E95FF1C69001B00C9E787 /* UIImageViewSpec.swift */,
 				BE9783D61C65D53700CA8DC3 /* UILabelSpec.swift */,
+				BE0E96011C69002700C9E787 /* UINavigationItemSpec.swift */,
+				BE0E96031C69003100C9E787 /* UIProgressViewSpec.swift */,
+				BE0E96051C69003E00C9E787 /* UIRefreshControlSpec.swift */,
+				BE0E96071C69004800C9E787 /* UISegmentedControlSpec.swift */,
+				BE0E96091C69004F00C9E787 /* UISliderSpec.swift */,
+				BE0E960B1C69006300C9E787 /* UISwitchSpec.swift */,
+				BE0E960D1C69006C00C9E787 /* UITextFieldSpec.swift */,
+				BE0E960F1C69007400C9E787 /* UITextViewSpec.swift */,
+				BE0E96111C69007B00C9E787 /* UIViewSpec.swift */,
 				BE29D4CD1C625882002E61EE /* WireworkUIKitSpec.swift */,
 			);
 			path = WireworkUIKitTests;
@@ -496,6 +544,7 @@
 				BECC8E9B1C5F843A00E5BFCE /* SignalType.swift */,
 				BE613B6B1C5F39BE005D01FB /* Subscription.swift */,
 				BE613B291C5F35B5005D01FB /* Wirework.h */,
+				BEF663281C69A204007A0B06 /* OptionalType.swift */,
 			);
 			path = Wirework;
 			sourceTree = "<group>";
@@ -506,8 +555,8 @@
 				BE613B371C5F35B5005D01FB /* Info.plist */,
 				BE29D4B71C61E7FC002E61EE /* ObservableArraySpec.swift */,
 				BE0035CC1C60AC8B007EAFD7 /* PropertySpec.swift */,
-				BE97841B1C65F94400CA8DC3 /* Util.swift */,
 				BEE162D01C68CCA5002607A0 /* SignalSpec.swift */,
+				BE97841B1C65F94400CA8DC3 /* Util.swift */,
 			);
 			path = WireworkTests;
 			sourceTree = "<group>";
@@ -961,10 +1010,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE0E960E1C69006C00C9E787 /* UITextFieldSpec.swift in Sources */,
+				BE0E95FC1C69000000C9E787 /* UIButtonSpec.swift in Sources */,
+				BE0E96021C69002700C9E787 /* UINavigationItemSpec.swift in Sources */,
+				BE0E96061C69003E00C9E787 /* UIRefreshControlSpec.swift in Sources */,
+				BE7C41B21C69C880004FAF79 /* CreateImage.swift in Sources */,
 				BE29D4CE1C625882002E61EE /* WireworkUIKitSpec.swift in Sources */,
+				BE0E95F81C68FFEE00C9E787 /* UIActivityIndicatorViewSpec.swift in Sources */,
 				BE9783D71C65D53700CA8DC3 /* UILabelSpec.swift in Sources */,
+				BE0E96041C69003100C9E787 /* UIProgressViewSpec.swift in Sources */,
+				BE0E96001C69001B00C9E787 /* UIImageViewSpec.swift in Sources */,
 				BE9783DB1C65D8A100CA8DC3 /* UIControlSpec.swift in Sources */,
+				BE0E96101C69007400C9E787 /* UITextViewSpec.swift in Sources */,
 				BE97841E1C65F97F00CA8DC3 /* Util.swift in Sources */,
+				BE7C41B31C69D023004FAF79 /* UISegmentedControlSpec.swift in Sources */,
+				BE0E95FE1C69001400C9E787 /* UIDatePickerSpec.swift in Sources */,
+				BE7C41B41C69D027004FAF79 /* UISliderSpec.swift in Sources */,
+				BE0E960C1C69006300C9E787 /* UISwitchSpec.swift in Sources */,
+				BE0E95FA1C68FFF900C9E787 /* UIBarItemSpec.swift in Sources */,
+				BE0E96121C69007B00C9E787 /* UIViewSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1017,6 +1081,7 @@
 				BE9784191C65F58400CA8DC3 /* ResourceMonitor.swift in Sources */,
 				BECC8EA21C5F89BB00E5BFCE /* Signal.swift in Sources */,
 				BE613B6C1C5F39BE005D01FB /* Subscription.swift in Sources */,
+				BEF663291C69A204007A0B06 /* OptionalType.swift in Sources */,
 				BE613B7B1C5F6B7C005D01FB /* PropertyType.swift in Sources */,
 				BECC8E9C1C5F843A00E5BFCE /* SignalType.swift in Sources */,
 			);
@@ -1042,6 +1107,7 @@
 				BE97841A1C65F58400CA8DC3 /* ResourceMonitor.swift in Sources */,
 				BECC8EA31C5F89BB00E5BFCE /* Signal.swift in Sources */,
 				BE613B6D1C5F39BE005D01FB /* Subscription.swift in Sources */,
+				BEF6632A1C69A204007A0B06 /* OptionalType.swift in Sources */,
 				BE613B7C1C5F6B7C005D01FB /* PropertyType.swift in Sources */,
 				BECC8E9D1C5F843A00E5BFCE /* SignalType.swift in Sources */,
 			);

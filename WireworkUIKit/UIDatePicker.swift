@@ -10,10 +10,12 @@ import UIKit
 import Wirework
 
 extension UIDatePicker {
-    public var wwDate: Property<NSDate> {
-        return createMutableProperty(wwControlEvent(.ValueChanged).voidSignal,
-            getValue: { [weak self] in self?.date ?? NSDate() },
-            setValue: { [weak self] in self?.date = $0 }
-        )
+    public func wwDate(animated animated: Bool) -> (NSDate) -> Void {
+        return { [weak self] in
+            self?.setDate($0, animated: animated)
+        }
+    }
+    public var wwDateChanged: Signal<NSDate> {
+        return wwControlEvent(.ValueChanged).map { [weak self] _ in self?.date ?? NSDate() }
     }
 }

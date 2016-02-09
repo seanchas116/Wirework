@@ -10,10 +10,13 @@ import UIKit
 import Wirework
 
 extension UISlider {
-    public var wwValue: MutableProperty<Float> {
-        return createMutableProperty(wwControlEvent(.ValueChanged).voidSignal,
-            getValue: { [weak self] in self?.value ?? 0 },
-            setValue: { [weak self] in self?.value = $0 }
-        )
+    public var wwValue: (Float) -> Void {
+        return { [weak self] in
+            self?.value = $0
+        }
+    }
+    
+    public var wwValueChanged: Signal<Float> {
+        return wwControlEvent(.ValueChanged).map { [weak self] _ in self?.value ?? 0.0 }
     }
 }

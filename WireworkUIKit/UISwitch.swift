@@ -10,10 +10,13 @@ import Foundation
 import Wirework
 
 extension UISwitch {
-    public var wwOn: MutableProperty<Bool> {
-        return createMutableProperty(wwControlEvent(.ValueChanged).voidSignal,
-            getValue: { [weak self] in self?.on ?? false },
-            setValue: { [weak self] in self?.on = $0 }
-        )
+    public func wwOn(animated animated: Bool) -> (Bool) -> Void {
+        return { [weak self] in
+            self?.setOn($0, animated: animated)
+        }
+    }
+    
+    public var wwOnChanged: Signal<Bool> {
+        return wwControlEvent(.ValueChanged).map { [weak self] _ in self?.on ?? false }
     }
 }

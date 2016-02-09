@@ -10,17 +10,17 @@ import Foundation
 import Wirework
 
 extension UIRefreshControl {
-    public var wwRefreshing: MutableProperty<Bool> {
-        return createMutableProperty(wwControlEvent(.ValueChanged).map { _ in },
-            getValue: { [weak self] in self?.refreshing ?? false },
-            setValue: { [weak self] value in
-                if value {
-                    self?.beginRefreshing()
-                } else {
-                    self?.endRefreshing()
-                }
-                return
+    public var wwRefreshing: (Bool) -> Void {
+        return { [weak self] in
+            if $0 {
+                self?.beginRefreshing()
+            } else {
+                self?.endRefreshing()
             }
-        )
+        }
+    }
+    
+    public var wwRefreshingChanged: Signal<Bool> {
+        return wwControlEvent(.ValueChanged).map { [weak self] _ in self?.refreshing ?? false }
     }
 }

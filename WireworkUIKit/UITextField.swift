@@ -10,18 +10,24 @@ import UIKit
 import Wirework
 
 extension UITextField {
-    public var wwText: MutableProperty<String?> {
-        return createMutableProperty(wwControlEvent(.ValueChanged).voidSignal,
-            getValue: { [weak self] in self?.text },
-            setValue: { [weak self] in self?.text = $0 }
-        )
+    public var wwText: (String?) -> Void {
+        return { [weak self] in
+            self?.text = $0
+        }
     }
     
-    public var wwAttributedText: MutableProperty<NSAttributedString?> {
-        return createMutableProperty(wwControlEvent(.ValueChanged).voidSignal,
-            getValue: { [weak self] in self?.attributedText },
-            setValue: { [weak self] in self?.attributedText = $0 }
-        )
+    public var wwAttributedText: (NSAttributedString?) -> Void {
+        return { [weak self] in
+            self?.attributedText = $0
+        }
+    }
+    
+    public var wwTextChanged: Signal<String?> {
+        return wwControlEvent(.ValueChanged).map { [weak self] _ in self?.text }
+    }
+    
+    public var wwAttributedTextChanged: Signal<NSAttributedString?> {
+        return wwControlEvent(.ValueChanged).map { [weak self] _ in self?.attributedText }
     }
     
     public var wwTextColor: (UIColor?) -> Void {

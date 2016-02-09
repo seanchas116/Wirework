@@ -21,6 +21,11 @@ extension PropertyType {
     }
     
     @warn_unused_result(message="Subscription must be stored in SubscriptionBag to keep it alive")
+    public func bindTo<T: MutablePropertyType where T.Value == Value?>(dest: T) -> Subscription {
+        return bindTo { dest.value = $0 }
+    }
+    
+    @warn_unused_result(message="Subscription must be stored in SubscriptionBag to keep it alive")
     public func bindTo(setter: (Value) -> Void) -> Subscription {
         setter(value)
         return changed.subscribe { newValue in
