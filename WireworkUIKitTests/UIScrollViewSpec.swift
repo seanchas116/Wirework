@@ -12,6 +12,19 @@ private func createScrollView() -> UIScrollView {
     return scrollView
 }
 
+private class ScrollViewTestDelegate: NSObject, UIScrollViewDelegate {
+    var scrolled = false
+    var zoomed = false
+    
+    @objc func scrollViewDidScroll(scrollView: UIScrollView) {
+        scrolled = true
+    }
+    
+    @objc func scrollViewDidZoom(scrollView: UIScrollView) {
+        zoomed = true
+    }
+}
+
 class UIScrollViewSpec: QuickSpec {
     override func spec() {
         describe("UIScrollView") {
@@ -30,7 +43,7 @@ class UIScrollViewSpec: QuickSpec {
                 }
             }
             describe("wwDidScroll") {
-                it("emits on scrolViewDidScroll", andCleansUpResources: true) {
+                it("intercepts scrolViewDidScroll", andCleansUpResources: true) {
                     let scroll = createScrollView()
                     
                     let bag = SubscriptionBag()
@@ -41,6 +54,25 @@ class UIScrollViewSpec: QuickSpec {
                     scroll.delegate?.scrollViewDidScroll?(scroll)
                     
                     expect(offset).to(equal(CGPointMake(20, 10)))
+                }
+            }
+            describe("wwDelegate") {
+                it("can be set to normal delegate", andCleansUpResources: true) {
+                    let scroll = createScrollView()
+                    let delegate = ScrollViewTestDelegate()
+                    scroll.wwDelegate = delegate
+                    
+                    let bag = SubscriptionBag()
+                    
+                    var scrolled = false
+                    
+                    scroll.wwDidScroll.subscribe { _ in scrolled = true }.storeIn(bag)
+                    scroll.delegate?.scrollViewDidScroll?(scroll)
+                    scroll.delegate?.scrollViewDidZoom?(scroll)
+                    
+                    expect(scrolled).to(beTrue())
+                    expect(delegate.scrolled).to(beTrue())
+                    expect(delegate.zoomed).to(beTrue())
                 }
             }
         }
