@@ -69,6 +69,11 @@
 		BE7C41B21C69C880004FAF79 /* CreateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C41B01C69C717004FAF79 /* CreateImage.swift */; };
 		BE7C41B31C69D023004FAF79 /* UISegmentedControlSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0E96071C69004800C9E787 /* UISegmentedControlSpec.swift */; };
 		BE7C41B41C69D027004FAF79 /* UISliderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0E96091C69004F00C9E787 /* UISliderSpec.swift */; };
+		BE7C41B61C69DC27004FAF79 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C41B51C69DC27004FAF79 /* UIScrollView.swift */; };
+		BE7C41B91C69E192004FAF79 /* WWMethodInterceptor.h in Headers */ = {isa = PBXBuildFile; fileRef = BE7C41B71C69E192004FAF79 /* WWMethodInterceptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE7C41BA1C69E192004FAF79 /* WWMethodInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7C41B81C69E192004FAF79 /* WWMethodInterceptor.m */; };
+		BE7C41BC1C6B3CF9004FAF79 /* WWInterceptableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C41BB1C6B3CF9004FAF79 /* WWInterceptableDelegate.swift */; };
+		BE7C41BE1C6B506B004FAF79 /* UIScrollViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C41BD1C6B506B004FAF79 /* UIScrollViewSpec.swift */; };
 		BE9783D51C65D17F00CA8DC3 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9783D41C65D17F00CA8DC3 /* UILabel.swift */; };
 		BE9783D71C65D53700CA8DC3 /* UILabelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9783D61C65D53700CA8DC3 /* UILabelSpec.swift */; };
 		BE9783D91C65D55200CA8DC3 /* UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9783D81C65D55200CA8DC3 /* UIControl.swift */; };
@@ -287,7 +292,12 @@
 		BE613B4C1C5F35C8005D01FB /* WireworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WireworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE613B6B1C5F39BE005D01FB /* Subscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
 		BE613B7A1C5F6B7C005D01FB /* PropertyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyType.swift; sourceTree = "<group>"; };
-		BE7C41B01C69C717004FAF79 /* CreateImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateImage.swift; path = ../WireworkUIKit/CreateImage.swift; sourceTree = "<group>"; };
+		BE7C41B01C69C717004FAF79 /* CreateImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateImage.swift; sourceTree = "<group>"; };
+		BE7C41B51C69DC27004FAF79 /* UIScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
+		BE7C41B71C69E192004FAF79 /* WWMethodInterceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWMethodInterceptor.h; sourceTree = "<group>"; };
+		BE7C41B81C69E192004FAF79 /* WWMethodInterceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWMethodInterceptor.m; sourceTree = "<group>"; };
+		BE7C41BB1C6B3CF9004FAF79 /* WWInterceptableDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWInterceptableDelegate.swift; sourceTree = "<group>"; };
+		BE7C41BD1C6B506B004FAF79 /* UIScrollViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewSpec.swift; sourceTree = "<group>"; };
 		BE9783D41C65D17F00CA8DC3 /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		BE9783D61C65D53700CA8DC3 /* UILabelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelSpec.swift; sourceTree = "<group>"; };
 		BE9783D81C65D55200CA8DC3 /* UIControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControl.swift; sourceTree = "<group>"; };
@@ -437,12 +447,16 @@
 				BEE162BB1C68AB94002607A0 /* UINavigationItem.swift */,
 				BEE162BD1C68ABD8002607A0 /* UIProgressView.swift */,
 				BEE162BF1C68ACA0002607A0 /* UIRefreshControl.swift */,
+				BE7C41B51C69DC27004FAF79 /* UIScrollView.swift */,
 				BEE162C21C68BB55002607A0 /* UISegmentedControl.swift */,
 				BEE162C41C68BEE0002607A0 /* UISlider.swift */,
 				BEE162C61C68BF33002607A0 /* UISwitch.swift */,
 				BEE162C81C68C029002607A0 /* UITextField.swift */,
 				BEE162CA1C68C2E2002607A0 /* UITextView.swift */,
 				BEE162CC1C68CB88002607A0 /* UIView.swift */,
+				BE7C41BB1C6B3CF9004FAF79 /* WWInterceptableDelegate.swift */,
+				BE7C41B71C69E192004FAF79 /* WWMethodInterceptor.h */,
+				BE7C41B81C69E192004FAF79 /* WWMethodInterceptor.m */,
 				BE29D4C11C625882002E61EE /* WireworkUIKit.h */,
 			);
 			path = WireworkUIKit;
@@ -463,6 +477,7 @@
 				BE0E96011C69002700C9E787 /* UINavigationItemSpec.swift */,
 				BE0E96031C69003100C9E787 /* UIProgressViewSpec.swift */,
 				BE0E96051C69003E00C9E787 /* UIRefreshControlSpec.swift */,
+				BE7C41BD1C6B506B004FAF79 /* UIScrollViewSpec.swift */,
 				BE0E96071C69004800C9E787 /* UISegmentedControlSpec.swift */,
 				BE0E96091C69004F00C9E787 /* UISliderSpec.swift */,
 				BE0E960B1C69006300C9E787 /* UISwitchSpec.swift */,
@@ -537,6 +552,7 @@
 			children = (
 				BE613B2B1C5F35B5005D01FB /* Info.plist */,
 				BE29D4B41C610578002E61EE /* ObservableArray.swift */,
+				BEF663281C69A204007A0B06 /* OptionalType.swift */,
 				BECC8EA41C5F932400E5BFCE /* Property.swift */,
 				BE613B7A1C5F6B7C005D01FB /* PropertyType.swift */,
 				BE9784181C65F58400CA8DC3 /* ResourceMonitor.swift */,
@@ -544,7 +560,6 @@
 				BECC8E9B1C5F843A00E5BFCE /* SignalType.swift */,
 				BE613B6B1C5F39BE005D01FB /* Subscription.swift */,
 				BE613B291C5F35B5005D01FB /* Wirework.h */,
-				BEF663281C69A204007A0B06 /* OptionalType.swift */,
 			);
 			path = Wirework;
 			sourceTree = "<group>";
@@ -581,6 +596,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE7C41B91C69E192004FAF79 /* WWMethodInterceptor.h in Headers */,
 				BE29D4C21C625882002E61EE /* WireworkUIKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -992,16 +1008,19 @@
 				BEE162C71C68BF33002607A0 /* UISwitch.swift in Sources */,
 				BEE162B61C68A4B0002607A0 /* UIButton.swift in Sources */,
 				BEE162B41C68A2EA002607A0 /* UIBarItem.swift in Sources */,
+				BE7C41BA1C69E192004FAF79 /* WWMethodInterceptor.m in Sources */,
 				BEE162BA1C68AA23002607A0 /* UIImageView.swift in Sources */,
 				BEE162C31C68BB55002607A0 /* UISegmentedControl.swift in Sources */,
 				BE9783D51C65D17F00CA8DC3 /* UILabel.swift in Sources */,
 				BEE162CB1C68C2E2002607A0 /* UITextView.swift in Sources */,
+				BE7C41BC1C6B3CF9004FAF79 /* WWInterceptableDelegate.swift in Sources */,
 				BEE162C51C68BEE0002607A0 /* UISlider.swift in Sources */,
 				BEE162B81C68A8EE002607A0 /* UIDatePicker.swift in Sources */,
 				BEE162C91C68C029002607A0 /* UITextField.swift in Sources */,
 				BEE162B21C68A164002607A0 /* UIActivityIndicatorView.swift in Sources */,
 				BEE162BC1C68AB94002607A0 /* UINavigationItem.swift in Sources */,
 				BE9783D91C65D55200CA8DC3 /* UIControl.swift in Sources */,
+				BE7C41B61C69DC27004FAF79 /* UIScrollView.swift in Sources */,
 				BEE162C01C68ACA0002607A0 /* UIRefreshControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1015,6 +1034,7 @@
 				BE0E96021C69002700C9E787 /* UINavigationItemSpec.swift in Sources */,
 				BE0E96061C69003E00C9E787 /* UIRefreshControlSpec.swift in Sources */,
 				BE7C41B21C69C880004FAF79 /* CreateImage.swift in Sources */,
+				BE7C41BE1C6B506B004FAF79 /* UIScrollViewSpec.swift in Sources */,
 				BE29D4CE1C625882002E61EE /* WireworkUIKitSpec.swift in Sources */,
 				BE0E95F81C68FFEE00C9E787 /* UIActivityIndicatorViewSpec.swift in Sources */,
 				BE9783D71C65D53700CA8DC3 /* UILabelSpec.swift in Sources */,
