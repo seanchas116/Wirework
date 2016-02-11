@@ -2,6 +2,10 @@ import Foundation
 import Wirework
 
 class WWInterceptableDelegate: WWMethodInterceptor {
+    #if MONITOR_RESOURCES
+    private let _resourceMonitor = ResourceMonitor("WWInterceptableDelegate")
+    #endif
+    
     private let _intercepted = Event<String>()
     private var _interceptedSelctors = Set<String>()
     
