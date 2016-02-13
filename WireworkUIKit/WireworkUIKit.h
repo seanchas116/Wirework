@@ -15,5 +15,3 @@ FOUNDATION_EXPORT double WireworkUIKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char WireworkUIKitVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <WireworkUIKit/PublicHeader.h>
-
-#import <WireworkUIKit/WWDelegateCascader.h>
