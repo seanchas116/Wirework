@@ -56,8 +56,8 @@
 		BE29D5421C625FF7002E61EE /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE0035CF1C60ACE2007EAFD7 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE29D5431C625FF7002E61EE /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE0035D01C60ACE2007EAFD7 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE29D5441C626001002E61EE /* Wirework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE613B431C5F35C8005D01FB /* Wirework.framework */; };
-		BE29D5461C6260C5002E61EE /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29D5451C6260C5002E61EE /* NSObject.swift */; };
-		BE29D5471C6260C5002E61EE /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29D5451C6260C5002E61EE /* NSObject.swift */; };
+		BE29D5461C6260C5002E61EE /* NSObject+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29D5451C6260C5002E61EE /* NSObject+Wirework.swift */; };
+		BE29D5471C6260C5002E61EE /* NSObject+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29D5451C6260C5002E61EE /* NSObject+Wirework.swift */; };
 		BE613B2A1C5F35B5005D01FB /* Wirework.h in Headers */ = {isa = PBXBuildFile; fileRef = BE613B291C5F35B5005D01FB /* Wirework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE613B311C5F35B5005D01FB /* Wirework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE613B261C5F35B5005D01FB /* Wirework.framework */; };
 		BE613B4D1C5F35C8005D01FB /* Wirework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE613B431C5F35C8005D01FB /* Wirework.framework */; };
@@ -69,11 +69,11 @@
 		BE7C41B21C69C880004FAF79 /* CreateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C41B01C69C717004FAF79 /* CreateImage.swift */; };
 		BE7C41B31C69D023004FAF79 /* UISegmentedControlSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0E96071C69004800C9E787 /* UISegmentedControlSpec.swift */; };
 		BE7C41B41C69D027004FAF79 /* UISliderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0E96091C69004F00C9E787 /* UISliderSpec.swift */; };
-		BE7C41B61C69DC27004FAF79 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C41B51C69DC27004FAF79 /* UIScrollView.swift */; };
+		BE7C41B61C69DC27004FAF79 /* UIScrollView+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C41B51C69DC27004FAF79 /* UIScrollView+Wirework.swift */; };
 		BE7C41BE1C6B506B004FAF79 /* UIScrollViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C41BD1C6B506B004FAF79 /* UIScrollViewSpec.swift */; };
-		BE9783D51C65D17F00CA8DC3 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9783D41C65D17F00CA8DC3 /* UILabel.swift */; };
+		BE9783D51C65D17F00CA8DC3 /* UILabel+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9783D41C65D17F00CA8DC3 /* UILabel+Wirework.swift */; };
 		BE9783D71C65D53700CA8DC3 /* UILabelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9783D61C65D53700CA8DC3 /* UILabelSpec.swift */; };
-		BE9783D91C65D55200CA8DC3 /* UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9783D81C65D55200CA8DC3 /* UIControl.swift */; };
+		BE9783D91C65D55200CA8DC3 /* UIControl+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9783D81C65D55200CA8DC3 /* UIControl+Wirework.swift */; };
 		BE9783DB1C65D8A100CA8DC3 /* UIControlSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9783DA1C65D8A100CA8DC3 /* UIControlSpec.swift */; };
 		BE9784071C65F22500CA8DC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9784061C65F22500CA8DC3 /* AppDelegate.swift */; };
 		BE9784091C65F22500CA8DC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9784081C65F22500CA8DC3 /* ViewController.swift */; };
@@ -89,8 +89,8 @@
 		BE9784201C65F98100CA8DC3 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE97841B1C65F94400CA8DC3 /* Util.swift */; };
 		BEC113771C63027A00A68B35 /* NSObjectSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC113761C63027A00A68B35 /* NSObjectSpec.swift */; };
 		BEC113781C63027A00A68B35 /* NSObjectSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC113761C63027A00A68B35 /* NSObjectSpec.swift */; };
-		BEC1137A1C631C9A00A68B35 /* NSNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC113791C631C9A00A68B35 /* NSNotificationCenter.swift */; };
-		BEC1137B1C631C9A00A68B35 /* NSNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC113791C631C9A00A68B35 /* NSNotificationCenter.swift */; };
+		BEC1137A1C631C9A00A68B35 /* NSNotificationCenter+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC113791C631C9A00A68B35 /* NSNotificationCenter+Wirework.swift */; };
+		BEC1137B1C631C9A00A68B35 /* NSNotificationCenter+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC113791C631C9A00A68B35 /* NSNotificationCenter+Wirework.swift */; };
 		BEC1137D1C631DF300A68B35 /* NSNotificationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC1137C1C631DF300A68B35 /* NSNotificationSpec.swift */; };
 		BEC1137E1C631DF300A68B35 /* NSNotificationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC1137C1C631DF300A68B35 /* NSNotificationSpec.swift */; };
 		BECC8E9C1C5F843A00E5BFCE /* SignalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC8E9B1C5F843A00E5BFCE /* SignalType.swift */; };
@@ -99,20 +99,20 @@
 		BECC8EA31C5F89BB00E5BFCE /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC8EA11C5F89BB00E5BFCE /* Signal.swift */; };
 		BECC8EA51C5F932400E5BFCE /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC8EA41C5F932400E5BFCE /* Property.swift */; };
 		BECC8EA61C5F932400E5BFCE /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC8EA41C5F932400E5BFCE /* Property.swift */; };
-		BEE162B21C68A164002607A0 /* UIActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162B11C68A164002607A0 /* UIActivityIndicatorView.swift */; };
-		BEE162B41C68A2EA002607A0 /* UIBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162B31C68A2EA002607A0 /* UIBarItem.swift */; };
-		BEE162B61C68A4B0002607A0 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162B51C68A4B0002607A0 /* UIButton.swift */; };
-		BEE162B81C68A8EE002607A0 /* UIDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162B71C68A8EE002607A0 /* UIDatePicker.swift */; };
-		BEE162BA1C68AA23002607A0 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162B91C68AA23002607A0 /* UIImageView.swift */; };
-		BEE162BC1C68AB94002607A0 /* UINavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162BB1C68AB94002607A0 /* UINavigationItem.swift */; };
-		BEE162BE1C68ABD8002607A0 /* UIProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162BD1C68ABD8002607A0 /* UIProgressView.swift */; };
-		BEE162C01C68ACA0002607A0 /* UIRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162BF1C68ACA0002607A0 /* UIRefreshControl.swift */; };
-		BEE162C31C68BB55002607A0 /* UISegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162C21C68BB55002607A0 /* UISegmentedControl.swift */; };
-		BEE162C51C68BEE0002607A0 /* UISlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162C41C68BEE0002607A0 /* UISlider.swift */; };
-		BEE162C71C68BF33002607A0 /* UISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162C61C68BF33002607A0 /* UISwitch.swift */; };
-		BEE162C91C68C029002607A0 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162C81C68C029002607A0 /* UITextField.swift */; };
-		BEE162CB1C68C2E2002607A0 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162CA1C68C2E2002607A0 /* UITextView.swift */; };
-		BEE162CD1C68CB88002607A0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162CC1C68CB88002607A0 /* UIView.swift */; };
+		BEE162B21C68A164002607A0 /* UIActivityIndicatorView+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162B11C68A164002607A0 /* UIActivityIndicatorView+Wirework.swift */; };
+		BEE162B41C68A2EA002607A0 /* UIBarItem+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162B31C68A2EA002607A0 /* UIBarItem+Wirework.swift */; };
+		BEE162B61C68A4B0002607A0 /* UIButton+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162B51C68A4B0002607A0 /* UIButton+Wirework.swift */; };
+		BEE162B81C68A8EE002607A0 /* UIDatePicker+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162B71C68A8EE002607A0 /* UIDatePicker+Wirework.swift */; };
+		BEE162BA1C68AA23002607A0 /* UIImageView+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162B91C68AA23002607A0 /* UIImageView+Wirework.swift */; };
+		BEE162BC1C68AB94002607A0 /* UINavigationItem+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162BB1C68AB94002607A0 /* UINavigationItem+Wirework.swift */; };
+		BEE162BE1C68ABD8002607A0 /* UIProgressView+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162BD1C68ABD8002607A0 /* UIProgressView+Wirework.swift */; };
+		BEE162C01C68ACA0002607A0 /* UIRefreshControl+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162BF1C68ACA0002607A0 /* UIRefreshControl+Wirework.swift */; };
+		BEE162C31C68BB55002607A0 /* UISegmentedControl+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162C21C68BB55002607A0 /* UISegmentedControl+Wirework.swift */; };
+		BEE162C51C68BEE0002607A0 /* UISlider+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162C41C68BEE0002607A0 /* UISlider+Wirework.swift */; };
+		BEE162C71C68BF33002607A0 /* UISwitch+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162C61C68BF33002607A0 /* UISwitch+Wirework.swift */; };
+		BEE162C91C68C029002607A0 /* UITextField+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162C81C68C029002607A0 /* UITextField+Wirework.swift */; };
+		BEE162CB1C68C2E2002607A0 /* UITextView+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162CA1C68C2E2002607A0 /* UITextView+Wirework.swift */; };
+		BEE162CD1C68CB88002607A0 /* UIView+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162CC1C68CB88002607A0 /* UIView+Wirework.swift */; };
 		BEE162D11C68CCA5002607A0 /* SignalSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162D01C68CCA5002607A0 /* SignalSpec.swift */; };
 		BEE162D21C68CCA5002607A0 /* SignalSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162D01C68CCA5002607A0 /* SignalSpec.swift */; };
 		BEF663291C69A204007A0B06 /* OptionalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF663281C69A204007A0B06 /* OptionalType.swift */; };
@@ -279,7 +279,7 @@
 		BE29D5231C625E05002E61EE /* WireworkFoundationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WireworkFoundationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE29D5311C625EBC002E61EE /* WireworkFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WireworkFoundation.h; sourceTree = "<group>"; };
 		BE29D5331C625EC5002E61EE /* WireworkFoundationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WireworkFoundationSpec.swift; sourceTree = "<group>"; };
-		BE29D5451C6260C5002E61EE /* NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
+		BE29D5451C6260C5002E61EE /* NSObject+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Wirework.swift"; sourceTree = "<group>"; };
 		BE613B261C5F35B5005D01FB /* Wirework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Wirework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE613B291C5F35B5005D01FB /* Wirework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wirework.h; sourceTree = "<group>"; };
 		BE613B2B1C5F35B5005D01FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -290,11 +290,11 @@
 		BE613B6B1C5F39BE005D01FB /* Subscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
 		BE613B7A1C5F6B7C005D01FB /* PropertyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyType.swift; sourceTree = "<group>"; };
 		BE7C41B01C69C717004FAF79 /* CreateImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateImage.swift; sourceTree = "<group>"; };
-		BE7C41B51C69DC27004FAF79 /* UIScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
+		BE7C41B51C69DC27004FAF79 /* UIScrollView+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Wirework.swift"; sourceTree = "<group>"; };
 		BE7C41BD1C6B506B004FAF79 /* UIScrollViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewSpec.swift; sourceTree = "<group>"; };
-		BE9783D41C65D17F00CA8DC3 /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		BE9783D41C65D17F00CA8DC3 /* UILabel+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Wirework.swift"; sourceTree = "<group>"; };
 		BE9783D61C65D53700CA8DC3 /* UILabelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelSpec.swift; sourceTree = "<group>"; };
-		BE9783D81C65D55200CA8DC3 /* UIControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControl.swift; sourceTree = "<group>"; };
+		BE9783D81C65D55200CA8DC3 /* UIControl+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+Wirework.swift"; sourceTree = "<group>"; };
 		BE9783DA1C65D8A100CA8DC3 /* UIControlSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlSpec.swift; sourceTree = "<group>"; };
 		BE9784041C65F22500CA8DC3 /* TestHost-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TestHost-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9784061C65F22500CA8DC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -306,25 +306,25 @@
 		BE9784181C65F58400CA8DC3 /* ResourceMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceMonitor.swift; sourceTree = "<group>"; };
 		BE97841B1C65F94400CA8DC3 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		BEC113761C63027A00A68B35 /* NSObjectSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectSpec.swift; sourceTree = "<group>"; };
-		BEC113791C631C9A00A68B35 /* NSNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationCenter.swift; sourceTree = "<group>"; };
+		BEC113791C631C9A00A68B35 /* NSNotificationCenter+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNotificationCenter+Wirework.swift"; sourceTree = "<group>"; };
 		BEC1137C1C631DF300A68B35 /* NSNotificationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationSpec.swift; sourceTree = "<group>"; };
 		BECC8E9B1C5F843A00E5BFCE /* SignalType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalType.swift; sourceTree = "<group>"; };
 		BECC8EA11C5F89BB00E5BFCE /* Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
 		BECC8EA41C5F932400E5BFCE /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
-		BEE162B11C68A164002607A0 /* UIActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityIndicatorView.swift; sourceTree = "<group>"; };
-		BEE162B31C68A2EA002607A0 /* UIBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarItem.swift; sourceTree = "<group>"; };
-		BEE162B51C68A4B0002607A0 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
-		BEE162B71C68A8EE002607A0 /* UIDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDatePicker.swift; sourceTree = "<group>"; };
-		BEE162B91C68AA23002607A0 /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
-		BEE162BB1C68AB94002607A0 /* UINavigationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationItem.swift; sourceTree = "<group>"; };
-		BEE162BD1C68ABD8002607A0 /* UIProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIProgressView.swift; sourceTree = "<group>"; };
-		BEE162BF1C68ACA0002607A0 /* UIRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIRefreshControl.swift; sourceTree = "<group>"; };
-		BEE162C21C68BB55002607A0 /* UISegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISegmentedControl.swift; sourceTree = "<group>"; };
-		BEE162C41C68BEE0002607A0 /* UISlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISlider.swift; sourceTree = "<group>"; };
-		BEE162C61C68BF33002607A0 /* UISwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISwitch.swift; sourceTree = "<group>"; };
-		BEE162C81C68C029002607A0 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
-		BEE162CA1C68C2E2002607A0 /* UITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
-		BEE162CC1C68CB88002607A0 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		BEE162B11C68A164002607A0 /* UIActivityIndicatorView+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+Wirework.swift"; sourceTree = "<group>"; };
+		BEE162B31C68A2EA002607A0 /* UIBarItem+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarItem+Wirework.swift"; sourceTree = "<group>"; };
+		BEE162B51C68A4B0002607A0 /* UIButton+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Wirework.swift"; sourceTree = "<group>"; };
+		BEE162B71C68A8EE002607A0 /* UIDatePicker+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDatePicker+Wirework.swift"; sourceTree = "<group>"; };
+		BEE162B91C68AA23002607A0 /* UIImageView+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Wirework.swift"; sourceTree = "<group>"; };
+		BEE162BB1C68AB94002607A0 /* UINavigationItem+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+Wirework.swift"; sourceTree = "<group>"; };
+		BEE162BD1C68ABD8002607A0 /* UIProgressView+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIProgressView+Wirework.swift"; sourceTree = "<group>"; };
+		BEE162BF1C68ACA0002607A0 /* UIRefreshControl+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+Wirework.swift"; sourceTree = "<group>"; };
+		BEE162C21C68BB55002607A0 /* UISegmentedControl+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Wirework.swift"; sourceTree = "<group>"; };
+		BEE162C41C68BEE0002607A0 /* UISlider+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISlider+Wirework.swift"; sourceTree = "<group>"; };
+		BEE162C61C68BF33002607A0 /* UISwitch+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISwitch+Wirework.swift"; sourceTree = "<group>"; };
+		BEE162C81C68C029002607A0 /* UITextField+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Wirework.swift"; sourceTree = "<group>"; };
+		BEE162CA1C68C2E2002607A0 /* UITextView+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Wirework.swift"; sourceTree = "<group>"; };
+		BEE162CC1C68CB88002607A0 /* UIView+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Wirework.swift"; sourceTree = "<group>"; };
 		BEE162D01C68CCA5002607A0 /* SignalSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalSpec.swift; sourceTree = "<group>"; };
 		BEF663281C69A204007A0B06 /* OptionalType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -431,23 +431,23 @@
 			isa = PBXGroup;
 			children = (
 				BE29D4C31C625882002E61EE /* Info.plist */,
-				BEE162B11C68A164002607A0 /* UIActivityIndicatorView.swift */,
-				BEE162B31C68A2EA002607A0 /* UIBarItem.swift */,
-				BEE162B51C68A4B0002607A0 /* UIButton.swift */,
-				BE9783D81C65D55200CA8DC3 /* UIControl.swift */,
-				BEE162B71C68A8EE002607A0 /* UIDatePicker.swift */,
-				BEE162B91C68AA23002607A0 /* UIImageView.swift */,
-				BE9783D41C65D17F00CA8DC3 /* UILabel.swift */,
-				BEE162BB1C68AB94002607A0 /* UINavigationItem.swift */,
-				BEE162BD1C68ABD8002607A0 /* UIProgressView.swift */,
-				BEE162BF1C68ACA0002607A0 /* UIRefreshControl.swift */,
-				BE7C41B51C69DC27004FAF79 /* UIScrollView.swift */,
-				BEE162C21C68BB55002607A0 /* UISegmentedControl.swift */,
-				BEE162C41C68BEE0002607A0 /* UISlider.swift */,
-				BEE162C61C68BF33002607A0 /* UISwitch.swift */,
-				BEE162C81C68C029002607A0 /* UITextField.swift */,
-				BEE162CA1C68C2E2002607A0 /* UITextView.swift */,
-				BEE162CC1C68CB88002607A0 /* UIView.swift */,
+				BEE162B11C68A164002607A0 /* UIActivityIndicatorView+Wirework.swift */,
+				BEE162B31C68A2EA002607A0 /* UIBarItem+Wirework.swift */,
+				BEE162B51C68A4B0002607A0 /* UIButton+Wirework.swift */,
+				BE9783D81C65D55200CA8DC3 /* UIControl+Wirework.swift */,
+				BEE162B71C68A8EE002607A0 /* UIDatePicker+Wirework.swift */,
+				BEE162B91C68AA23002607A0 /* UIImageView+Wirework.swift */,
+				BE9783D41C65D17F00CA8DC3 /* UILabel+Wirework.swift */,
+				BEE162BB1C68AB94002607A0 /* UINavigationItem+Wirework.swift */,
+				BEE162BD1C68ABD8002607A0 /* UIProgressView+Wirework.swift */,
+				BEE162BF1C68ACA0002607A0 /* UIRefreshControl+Wirework.swift */,
+				BE7C41B51C69DC27004FAF79 /* UIScrollView+Wirework.swift */,
+				BEE162C21C68BB55002607A0 /* UISegmentedControl+Wirework.swift */,
+				BEE162C41C68BEE0002607A0 /* UISlider+Wirework.swift */,
+				BEE162C61C68BF33002607A0 /* UISwitch+Wirework.swift */,
+				BEE162C81C68C029002607A0 /* UITextField+Wirework.swift */,
+				BEE162CA1C68C2E2002607A0 /* UITextView+Wirework.swift */,
+				BEE162CC1C68CB88002607A0 /* UIView+Wirework.swift */,
 				BE29D4C11C625882002E61EE /* WireworkUIKit.h */,
 			);
 			path = WireworkUIKit;
@@ -484,8 +484,8 @@
 			isa = PBXGroup;
 			children = (
 				BE29D5021C625DE8002E61EE /* Info.plist */,
-				BEC113791C631C9A00A68B35 /* NSNotificationCenter.swift */,
-				BE29D5451C6260C5002E61EE /* NSObject.swift */,
+				BEC113791C631C9A00A68B35 /* NSNotificationCenter+Wirework.swift */,
+				BE29D5451C6260C5002E61EE /* NSObject+Wirework.swift */,
 				BE29D5311C625EBC002E61EE /* WireworkFoundation.h */,
 			);
 			path = WireworkFoundation;
@@ -993,23 +993,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEE162CD1C68CB88002607A0 /* UIView.swift in Sources */,
-				BEE162BE1C68ABD8002607A0 /* UIProgressView.swift in Sources */,
-				BEE162C71C68BF33002607A0 /* UISwitch.swift in Sources */,
-				BEE162B61C68A4B0002607A0 /* UIButton.swift in Sources */,
-				BEE162B41C68A2EA002607A0 /* UIBarItem.swift in Sources */,
-				BEE162BA1C68AA23002607A0 /* UIImageView.swift in Sources */,
-				BEE162C31C68BB55002607A0 /* UISegmentedControl.swift in Sources */,
-				BE9783D51C65D17F00CA8DC3 /* UILabel.swift in Sources */,
-				BEE162CB1C68C2E2002607A0 /* UITextView.swift in Sources */,
-				BEE162C51C68BEE0002607A0 /* UISlider.swift in Sources */,
-				BEE162B81C68A8EE002607A0 /* UIDatePicker.swift in Sources */,
-				BEE162C91C68C029002607A0 /* UITextField.swift in Sources */,
-				BEE162B21C68A164002607A0 /* UIActivityIndicatorView.swift in Sources */,
-				BEE162BC1C68AB94002607A0 /* UINavigationItem.swift in Sources */,
-				BE9783D91C65D55200CA8DC3 /* UIControl.swift in Sources */,
-				BE7C41B61C69DC27004FAF79 /* UIScrollView.swift in Sources */,
-				BEE162C01C68ACA0002607A0 /* UIRefreshControl.swift in Sources */,
+				BEE162CD1C68CB88002607A0 /* UIView+Wirework.swift in Sources */,
+				BEE162BE1C68ABD8002607A0 /* UIProgressView+Wirework.swift in Sources */,
+				BEE162C71C68BF33002607A0 /* UISwitch+Wirework.swift in Sources */,
+				BEE162B61C68A4B0002607A0 /* UIButton+Wirework.swift in Sources */,
+				BEE162B41C68A2EA002607A0 /* UIBarItem+Wirework.swift in Sources */,
+				BEE162BA1C68AA23002607A0 /* UIImageView+Wirework.swift in Sources */,
+				BEE162C31C68BB55002607A0 /* UISegmentedControl+Wirework.swift in Sources */,
+				BE9783D51C65D17F00CA8DC3 /* UILabel+Wirework.swift in Sources */,
+				BEE162CB1C68C2E2002607A0 /* UITextView+Wirework.swift in Sources */,
+				BEE162C51C68BEE0002607A0 /* UISlider+Wirework.swift in Sources */,
+				BEE162B81C68A8EE002607A0 /* UIDatePicker+Wirework.swift in Sources */,
+				BEE162C91C68C029002607A0 /* UITextField+Wirework.swift in Sources */,
+				BEE162B21C68A164002607A0 /* UIActivityIndicatorView+Wirework.swift in Sources */,
+				BEE162BC1C68AB94002607A0 /* UINavigationItem+Wirework.swift in Sources */,
+				BE9783D91C65D55200CA8DC3 /* UIControl+Wirework.swift in Sources */,
+				BE7C41B61C69DC27004FAF79 /* UIScrollView+Wirework.swift in Sources */,
+				BEE162C01C68ACA0002607A0 /* UIRefreshControl+Wirework.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1044,8 +1044,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEC1137A1C631C9A00A68B35 /* NSNotificationCenter.swift in Sources */,
-				BE29D5461C6260C5002E61EE /* NSObject.swift in Sources */,
+				BEC1137A1C631C9A00A68B35 /* NSNotificationCenter+Wirework.swift in Sources */,
+				BE29D5461C6260C5002E61EE /* NSObject+Wirework.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1064,8 +1064,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEC1137B1C631C9A00A68B35 /* NSNotificationCenter.swift in Sources */,
-				BE29D5471C6260C5002E61EE /* NSObject.swift in Sources */,
+				BEC1137B1C631C9A00A68B35 /* NSNotificationCenter+Wirework.swift in Sources */,
+				BE29D5471C6260C5002E61EE /* NSObject+Wirework.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
