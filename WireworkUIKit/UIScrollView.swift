@@ -11,37 +11,45 @@ import Wirework
 
 private var delegateKey = 0
 
-extension WWInterceptableDelegate: UIScrollViewDelegate {
+class WWScrollViewDelegate: NSObject, UIScrollViewDelegate {
+    let didScroll = Event<CGPoint>()
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        didScroll.emit(scrollView.contentOffset)
+    }
 }
 
+extension WWDelegateCascader: UIScrollViewDelegate {}
+
 extension UIScrollView {
-    private func installDelegate() {
-        if self.delegate is WWInterceptableDelegate {
-            return
+    var delegateCascader: WWDelegateCascader {
+        if let delegate = self.delegate as? WWDelegateCascader {
+            return delegate
         }
         if self.delegate != nil {
             fatalError("Exisitng delegate must be nil to install Wirework delegate")
         }
-        let delegate = objc_getAssociatedObject(self, &delegateKey) as? WWInterceptableDelegate ?? WWInterceptableDelegate()
+        let delegate = objc_getAssociatedObject(self, &delegateKey) as? WWDelegateCascader ?? WWDelegateCascader()
         objc_setAssociatedObject(self, &delegateKey, delegate, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         self.delegate = delegate
+        return delegate
     }
     
-    private var interceptableDelegate: WWInterceptableDelegate {
-        installDelegate()
-        return self.delegate as! WWInterceptableDelegate
-    }
-    
-    public func wwDelegate(selector: String) -> Signal<Void> {
-        return interceptableDelegate.intercept(selector)
+    private var interceptDelegate: WWScrollViewDelegate {
+        if let delegate = delegateCascader.delegate as? WWScrollViewDelegate {
+            return delegate
+        }
+        let delegate = WWScrollViewDelegate()
+        delegateCascader.delegate = delegate
+        return delegate
     }
     
     public var wwDelegate: UIScrollViewDelegate? {
         get {
-            return interceptableDelegate.target as? UIScrollViewDelegate
+            return delegateCascader.proxy as? UIScrollViewDelegate
         }
         set {
-            interceptableDelegate.target = newValue
+            delegateCascader.proxy = newValue
         }
     }
     
@@ -58,8 +66,6 @@ extension UIScrollView {
     }
     
     public var wwDidScroll: Signal<CGPoint> {
-        return wwDelegate("scrollViewDidScroll:").map { [weak self] in
-            self!.contentOffset
-        }
+        return interceptDelegate.didScroll
     }
 }

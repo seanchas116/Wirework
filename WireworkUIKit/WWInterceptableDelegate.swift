@@ -1,6 +1,7 @@
 import Foundation
 import Wirework
 
+/*
 class WWInterceptableDelegate: WWMethodInterceptor {
     #if MONITOR_RESOURCES
     private let _resourceMonitor = ResourceMonitor("WWInterceptableDelegate")
@@ -37,4 +38,4 @@ class WWInterceptableDelegate: WWMethodInterceptor {
     override func didInterceptSelector(selector: Selector) {
         _intercepted.emit(String(selector))
     }
-}
+}*/
