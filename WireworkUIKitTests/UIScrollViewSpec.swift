@@ -48,7 +48,7 @@ class UIScrollViewSpec: QuickSpec {
                 it("emits when scrolViewDidScroll", andCleansUpResources: true) {
                     let scroll = createScrollView()
                     let delegate = WWScrollViewDelegate()
-                    scroll.delegate = delegate
+                    scroll.wwSetAndRetainDelegate(delegate)
                     
                     let bag = SubscriptionBag()
                     

@@ -40,5 +40,11 @@ public class WWTableViewDataSource<Element>: NSObject, UITableViewDataSource {
     }
 }
 
+private var dataSourceKey = 0
+
 extension UITableView {
+    public func wwSetAndRetainDataSource(dataSource: UITableViewDataSource) {
+        self.dataSource = dataSource
+        objc_setAssociatedObject(self, &dataSourceKey, dataSource, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+    }
 }

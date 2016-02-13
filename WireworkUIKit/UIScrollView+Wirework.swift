@@ -9,8 +9,6 @@
 import UIKit
 import Wirework
 
-private var delegateKey = 0
-
 public class WWScrollViewDelegate: NSObject, UIScrollViewDelegate {
     public override init() {
     }
@@ -26,6 +24,8 @@ public class WWScrollViewDelegate: NSObject, UIScrollViewDelegate {
     }
 }
 
+private var delegateKey = 0
+
 extension UIScrollView {
     public var wwScrollEnabled: (Bool) -> Void {
         return { [weak self] in
@@ -37,5 +37,10 @@ extension UIScrollView {
         return { [weak self] in
             self?.setContentOffset($0, animated: animated)
         }
+    }
+    
+    public func wwSetAndRetainDelegate(delegate: UIScrollViewDelegate) {
+        self.delegate = delegate
+        objc_setAssociatedObject(self, &delegateKey, delegate, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
 }

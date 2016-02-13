@@ -18,7 +18,7 @@ class UITableViewSpec: QuickSpec {
                 let dataSource = WWTableViewDataSource(elements: items, cellIdentifier: "cell") { row, elem, cell in
                     cell.textLabel?.text = "\(row): \(elem)"
                 }
-                tableView.dataSource = dataSource
+                tableView.wwSetAndRetainDataSource(dataSource)
                 
                 items.changed.subscribe { _ in tableView.reloadData() }.storeIn(bag)
                 tableView.reloadData()
