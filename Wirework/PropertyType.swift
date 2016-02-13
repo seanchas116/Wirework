@@ -34,6 +34,21 @@ extension PropertyType {
     }
 }
 
+extension PropertyType where Value: Equatable {
+    public var distinct: Property<Value> {
+        let changed: Signal<Value> = createSignal { emit in
+            var lastValue = self.value
+            return self.changed.subscribe { newValue in
+                if lastValue != newValue {
+                    lastValue = newValue
+                    emit(newValue)
+                }
+            }
+        }
+        return createProperty(changed) { self.value }
+    }
+}
+
 public func combine<P1: PropertyType, P2: PropertyType, V>(p1: P1, _ p2: P2, transform: (P1.Value, P2.Value) -> V) -> Property<V> {
     return createProperty(merge(p1.changed.voidSignal, p2.changed.voidSignal)) {
         transform(p1.value, p2.value)

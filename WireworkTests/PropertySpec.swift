@@ -26,6 +26,21 @@ class PropertySpec: QuickSpec {
                     expect(length.value).to(equal(8))
                 }
             }
+            describe("distinct") {
+                it("returns property which changed signal doesn't emit same values successively") {
+                    let bag = SubscriptionBag()
+                    let foo = Variable("foo")
+                    let distincted = foo.distinct
+                    var sent = [String]()
+                    distincted.changed.subscribe { sent.append($0) }.storeIn(bag)
+                    foo.value = "bar"
+                    foo.value = "bar"
+                    foo.value = "baz"
+                    foo.value = "baz"
+                    expect(distincted.value).to(equal("baz"))
+                    expect(sent).to(equal(["bar", "baz"]))
+                }
+            }
             describe("combine") {
                 it("combines 2 values", andCleansUpResources: true) {
                     let bag = SubscriptionBag()
