@@ -72,7 +72,6 @@
 		BE7C41B61C69DC27004FAF79 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C41B51C69DC27004FAF79 /* UIScrollView.swift */; };
 		BE7C41B91C69E192004FAF79 /* WWDelegateCascader.h in Headers */ = {isa = PBXBuildFile; fileRef = BE7C41B71C69E192004FAF79 /* WWDelegateCascader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE7C41BA1C69E192004FAF79 /* WWDelegateCascader.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7C41B81C69E192004FAF79 /* WWDelegateCascader.m */; };
-		BE7C41BC1C6B3CF9004FAF79 /* WWInterceptableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C41BB1C6B3CF9004FAF79 /* WWInterceptableDelegate.swift */; };
 		BE7C41BE1C6B506B004FAF79 /* UIScrollViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C41BD1C6B506B004FAF79 /* UIScrollViewSpec.swift */; };
 		BE9783D51C65D17F00CA8DC3 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9783D41C65D17F00CA8DC3 /* UILabel.swift */; };
 		BE9783D71C65D53700CA8DC3 /* UILabelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9783D61C65D53700CA8DC3 /* UILabelSpec.swift */; };
@@ -296,7 +295,6 @@
 		BE7C41B51C69DC27004FAF79 /* UIScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
 		BE7C41B71C69E192004FAF79 /* WWDelegateCascader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWDelegateCascader.h; sourceTree = "<group>"; };
 		BE7C41B81C69E192004FAF79 /* WWDelegateCascader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWDelegateCascader.m; sourceTree = "<group>"; };
-		BE7C41BB1C6B3CF9004FAF79 /* WWInterceptableDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWInterceptableDelegate.swift; sourceTree = "<group>"; };
 		BE7C41BD1C6B506B004FAF79 /* UIScrollViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewSpec.swift; sourceTree = "<group>"; };
 		BE9783D41C65D17F00CA8DC3 /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		BE9783D61C65D53700CA8DC3 /* UILabelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelSpec.swift; sourceTree = "<group>"; };
@@ -454,7 +452,6 @@
 				BEE162C81C68C029002607A0 /* UITextField.swift */,
 				BEE162CA1C68C2E2002607A0 /* UITextView.swift */,
 				BEE162CC1C68CB88002607A0 /* UIView.swift */,
-				BE7C41BB1C6B3CF9004FAF79 /* WWInterceptableDelegate.swift */,
 				BE7C41B71C69E192004FAF79 /* WWDelegateCascader.h */,
 				BE7C41B81C69E192004FAF79 /* WWDelegateCascader.m */,
 				BE29D4C11C625882002E61EE /* WireworkUIKit.h */,
@@ -1013,7 +1010,6 @@
 				BEE162C31C68BB55002607A0 /* UISegmentedControl.swift in Sources */,
 				BE9783D51C65D17F00CA8DC3 /* UILabel.swift in Sources */,
 				BEE162CB1C68C2E2002607A0 /* UITextView.swift in Sources */,
-				BE7C41BC1C6B3CF9004FAF79 /* WWInterceptableDelegate.swift in Sources */,
 				BEE162C51C68BEE0002607A0 /* UISlider.swift in Sources */,
 				BEE162B81C68A8EE002607A0 /* UIDatePicker.swift in Sources */,
 				BEE162C91C68C029002607A0 /* UITextField.swift in Sources */,
