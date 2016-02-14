@@ -26,7 +26,7 @@ class NSNotificationSpeec: QuickSpec {
                         let bag = SubscriptionBag()
                         signal.subscribe {
                             receivedValue = $0.userInfo?["value"] as? String
-                            }.storeIn(bag)
+                            }.addTo(bag)
                         NSNotificationCenter.defaultCenter().postNotificationName("test", object: obj, userInfo: ["value": "foobar"])
                         expect(receivedValue).to(equal("foobar"))
                     })()

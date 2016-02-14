@@ -15,7 +15,7 @@ class UISwitchSpec: QuickSpec {
                     let variable = Variable(true)
                     
                     sw.on = false
-                    variable.bindTo(sw.wwOn(animated: false)).storeIn(bag)
+                    variable.bindTo(sw.wwOn(animated: false)).addTo(bag)
                     expect(sw.on).to(beTrue())
                     
                     variable.value = false
@@ -29,7 +29,7 @@ class UISwitchSpec: QuickSpec {
                     
                     let bag = SubscriptionBag()
                     var value = false
-                    sw.wwOnChanged.subscribe { value = $0 }.storeIn(bag)
+                    sw.wwOnChanged.subscribe { value = $0 }.addTo(bag)
                     
                     sw.on = true
                     sw.sendActionsForControlEvents(.ValueChanged)

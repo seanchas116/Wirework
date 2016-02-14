@@ -35,7 +35,7 @@ class UIScrollViewSpec: QuickSpec {
                     let bag = SubscriptionBag()
                     let variable = Variable(CGPointMake(20, 10))
                     
-                    variable.bindTo(scroll.wwContentOffset(animated: false)).storeIn(bag)
+                    variable.bindTo(scroll.wwContentOffset(animated: false)).addTo(bag)
                     expect(scroll.contentOffset).to(equal(CGPointMake(20, 10)))
                     
                     variable.value = CGPointMake(10, 20)
@@ -53,7 +53,7 @@ class UIScrollViewSpec: QuickSpec {
                     let bag = SubscriptionBag()
                     
                     var offset = CGPointMake(0, 0)
-                    delegate.didScroll.subscribe { offset = $0 }.storeIn(bag)
+                    delegate.didScroll.subscribe { offset = $0 }.addTo(bag)
                     scroll.contentOffset = CGPointMake(20, 10)
                     scroll.delegate?.scrollViewDidScroll?(scroll)
                     

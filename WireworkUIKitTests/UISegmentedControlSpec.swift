@@ -14,7 +14,7 @@ class UISegmentedControlSpec: QuickSpec {
                     let bag = SubscriptionBag()
                     let variable = Variable(1)
                     
-                    variable.bindTo(control.wwSelectedSegmentIndex).storeIn(bag)
+                    variable.bindTo(control.wwSelectedSegmentIndex).addTo(bag)
                     expect(control.selectedSegmentIndex).to(equal(1))
                     
                     variable.value = 2
@@ -28,7 +28,7 @@ class UISegmentedControlSpec: QuickSpec {
                     
                     let bag = SubscriptionBag()
                     var value = 0
-                    control.wwSelectedSegmentIndexChanged.subscribe { value = $0 }.storeIn(bag)
+                    control.wwSelectedSegmentIndexChanged.subscribe { value = $0 }.addTo(bag)
                     
                     control.selectedSegmentIndex = 2
                     control.sendActionsForControlEvents(.ValueChanged)

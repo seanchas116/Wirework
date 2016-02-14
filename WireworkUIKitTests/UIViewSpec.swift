@@ -14,7 +14,7 @@ class UIViewSpec: QuickSpec {
                     let view = UIView()
                     let variable = Variable(CGFloat(0.2))
                     
-                    variable.bindTo(view.wwAlpha).storeIn(bag)
+                    variable.bindTo(view.wwAlpha).addTo(bag)
                     expect(view.alpha).to(beCloseTo(0.2))
                     
                     variable.value = 0.8
@@ -30,7 +30,7 @@ class UIViewSpec: QuickSpec {
                     
                     view.hidden = false
                     
-                    variable.bindTo(view.wwHidden).storeIn(bag)
+                    variable.bindTo(view.wwHidden).addTo(bag)
                     expect(view.hidden).to(beTrue())
                     
                     variable.value = false
@@ -46,7 +46,7 @@ class UIViewSpec: QuickSpec {
                     
                     view.userInteractionEnabled = false
                     
-                    variable.bindTo(view.wwUserInteractionEnabled).storeIn(bag)
+                    variable.bindTo(view.wwUserInteractionEnabled).addTo(bag)
                     expect(view.userInteractionEnabled).to(beTrue())
                     
                     variable.value = false
@@ -60,7 +60,7 @@ class UIViewSpec: QuickSpec {
                     let view = UIView()
                     let variable = Variable(UIColor.whiteColor())
                     
-                    variable.bindTo(view.wwTintColor).storeIn(bag)
+                    variable.bindTo(view.wwTintColor).addTo(bag)
                     expect(view.tintColor).to(equal(UIColor.whiteColor()))
                     
                     variable.value = UIColor.blueColor()
@@ -74,7 +74,7 @@ class UIViewSpec: QuickSpec {
                     let view = UIView()
                     let variable = Variable(UIColor.whiteColor())
                     
-                    variable.bindTo(view.wwBackgroundColor).storeIn(bag)
+                    variable.bindTo(view.wwBackgroundColor).addTo(bag)
                     expect(view.backgroundColor).to(equal(UIColor.whiteColor()))
                     
                     variable.value = UIColor.blueColor()

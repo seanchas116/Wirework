@@ -21,7 +21,7 @@ class SignalSpec: QuickSpec {
                     var received = [Int]()
                     ev.map { $0.characters.count }.subscribe {
                         received.append($0)
-                    }.storeIn(bag)
+                    }.addTo(bag)
                     ev.emit("foobar")
                     expect(received).to(equal([6]))
                 }
@@ -33,7 +33,7 @@ class SignalSpec: QuickSpec {
                     var received = [String]()
                     ev.filter { $0.characters.count > 5 }.subscribe {
                         received.append($0)
-                    }.storeIn(bag)
+                    }.addTo(bag)
                     ev.emit("piyo")
                     ev.emit("foobar")
                     ev.emit("hoge")

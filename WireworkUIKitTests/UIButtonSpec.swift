@@ -15,7 +15,7 @@ class UIButtonSpec: QuickSpec {
                         let button = UIButton()
                         let variable = Variable("foobar")
                         
-                        variable.bindTo(button.wwState(.Selected).title).storeIn(bag)
+                        variable.bindTo(button.wwState(.Selected).title).addTo(bag)
                         expect(button.titleForState(.Selected)).to(equal("foobar"))
                         
                         variable.value = "poeee"
@@ -33,7 +33,7 @@ class UIButtonSpec: QuickSpec {
                         let button = UIButton()
                         let variable = Variable(title1)
                         
-                        variable.bindTo(button.wwState(.Selected).attributedTitle).storeIn(bag)
+                        variable.bindTo(button.wwState(.Selected).attributedTitle).addTo(bag)
                         expect(button.attributedTitleForState(.Selected)).to(equal(title1))
                         
                         variable.value = title2
@@ -48,7 +48,7 @@ class UIButtonSpec: QuickSpec {
                         let button = UIButton()
                         let variable = Variable(UIColor.whiteColor())
                         
-                        variable.bindTo(button.wwState(.Highlighted).titleColor).storeIn(bag)
+                        variable.bindTo(button.wwState(.Highlighted).titleColor).addTo(bag)
                         expect(button.titleColorForState(.Highlighted)).to(equal(UIColor.whiteColor()))
                         
                         variable.value = UIColor.blueColor()
@@ -63,7 +63,7 @@ class UIButtonSpec: QuickSpec {
                         let button = UIButton()
                         let variable = Variable(UIColor.whiteColor())
                         
-                        variable.bindTo(button.wwState(.Highlighted).titleShadowColor).storeIn(bag)
+                        variable.bindTo(button.wwState(.Highlighted).titleShadowColor).addTo(bag)
                         expect(button.titleShadowColorForState(.Highlighted)).to(equal(UIColor.whiteColor()))
                         
                         variable.value = UIColor.blueColor()
@@ -81,7 +81,7 @@ class UIButtonSpec: QuickSpec {
                         let button = UIButton()
                         let variable = Variable(image1)
                         
-                        variable.bindTo(button.wwState(.Selected).image).storeIn(bag)
+                        variable.bindTo(button.wwState(.Selected).image).addTo(bag)
                         expect(button.imageForState(.Selected)).to(equal(image1))
                         
                         variable.value = image2
@@ -99,7 +99,7 @@ class UIButtonSpec: QuickSpec {
                         let button = UIButton()
                         let variable = Variable(image1)
                         
-                        variable.bindTo(button.wwState(.Selected).backgroundImage).storeIn(bag)
+                        variable.bindTo(button.wwState(.Selected).backgroundImage).addTo(bag)
                         expect(button.backgroundImageForState(.Selected)).to(equal(image1))
                         
                         variable.value = image2
@@ -115,7 +115,7 @@ class UIButtonSpec: QuickSpec {
                     var tapped = false
                     button.wwTapped.subscribe {
                         tapped = true
-                    }.storeIn(bag)
+                    }.addTo(bag)
                     button.sendActionsForControlEvents(.TouchUpInside)
                     expect(tapped).to(beTrue())
                 }

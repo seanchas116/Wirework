@@ -14,7 +14,7 @@ class UIProgressViewSpec: QuickSpec {
                     let view = UIProgressView()
                     let variable = Variable(Float(0.2))
                     
-                    variable.bindTo(view.wwProgress(animated: false)).storeIn(bag)
+                    variable.bindTo(view.wwProgress(animated: false)).addTo(bag)
                     expect(view.progress).to(equal(0.2))
                     
                     variable.value = 0.8

@@ -14,7 +14,7 @@ class UITextViewSpec: QuickSpec {
                     let bag = SubscriptionBag()
                     let variable = Variable("foobar")
                     
-                    variable.bindTo(textView.wwText).storeIn(bag)
+                    variable.bindTo(textView.wwText).addTo(bag)
                     expect(textView.text).to(equal("foobar"))
                     
                     variable.value = "poepoe"

@@ -14,7 +14,7 @@ class UIControlSpec: QuickSpec {
                     var tapped = false
                     control.wwControlEvent(.TouchUpInside).subscribe { _ in
                         tapped = true
-                    }.storeIn(bag)
+                    }.addTo(bag)
                     control.sendActionsForControlEvents(.TouchUpInside)
                     expect(tapped).to(beTrue())
                 }
@@ -29,7 +29,7 @@ class UIControlSpec: QuickSpec {
                     
                     control.enabled = false
                     
-                    variable.bindTo(control.wwEnabled).storeIn(bag)
+                    variable.bindTo(control.wwEnabled).addTo(bag)
                     expect(control.enabled).to(beTrue())
                     
                     variable.value = false
@@ -46,7 +46,7 @@ class UIControlSpec: QuickSpec {
                     
                     control.selected = false
                     
-                    variable.bindTo(control.wwSelected).storeIn(bag)
+                    variable.bindTo(control.wwSelected).addTo(bag)
                     expect(control.selected).to(beTrue())
                     
                     variable.value = false
@@ -63,7 +63,7 @@ class UIControlSpec: QuickSpec {
                     
                     control.highlighted = false
                     
-                    variable.bindTo(control.wwHighlighted).storeIn(bag)
+                    variable.bindTo(control.wwHighlighted).addTo(bag)
                     expect(control.highlighted).to(beTrue())
                     
                     variable.value = false

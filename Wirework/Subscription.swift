@@ -16,8 +16,8 @@ public class Subscription: SubscriptionType {
 }
 
 extension SubscriptionType {
-    public func storeIn(bag: SubscriptionBag) {
-        bag.store(self)
+    public func addTo(bag: SubscriptionBag) {
+        bag.add(self)
     }
 }
 
@@ -27,7 +27,7 @@ public class SubscriptionBag: SubscriptionType {
     public init() {
     }
     
-    public func store(subscription: SubscriptionType) {
+    public func add(subscription: SubscriptionType) {
         _subscriptions.append(subscription)
     }
 }

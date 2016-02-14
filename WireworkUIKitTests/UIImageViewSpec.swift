@@ -15,7 +15,7 @@ class UIImageViewSpec: QuickSpec {
                     let view = UIImageView()
                     let variable = Variable<UIImage?>(nil)
                     
-                    variable.bindTo(view.wwImage).storeIn(bag)
+                    variable.bindTo(view.wwImage).addTo(bag)
                     variable.value = image
                     
                     expect(view.image).to(equal(image))
@@ -30,7 +30,7 @@ class UIImageViewSpec: QuickSpec {
                     let view = UIImageView()
                     let variable = Variable<UIImage?>(nil)
                     
-                    variable.bindTo(view.wwHighlightedImage).storeIn(bag)
+                    variable.bindTo(view.wwHighlightedImage).addTo(bag)
                     variable.value = image
                     
                     expect(view.highlightedImage).to(equal(image))

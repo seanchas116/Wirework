@@ -14,7 +14,7 @@ class UILabelSpec: QuickSpec {
                     let label = UILabel()
                     let variable = Variable("foo")
                     
-                    variable.bindTo(label.wwText).storeIn(bag)
+                    variable.bindTo(label.wwText).addTo(bag)
                     expect(label.text).to(equal("foo"))
                     
                     variable.value = "bar"
@@ -31,7 +31,7 @@ class UILabelSpec: QuickSpec {
                     let label = UILabel()
                     let variable = Variable(text1)
                     
-                    variable.bindTo(label.wwAttributedText).storeIn(bag)
+                    variable.bindTo(label.wwAttributedText).addTo(bag)
                     expect(label.attributedText).to(equal(text1))
                     
                     variable.value = text2
@@ -46,7 +46,7 @@ class UILabelSpec: QuickSpec {
                     let label = UILabel()
                     let variable = Variable(UIColor.redColor())
                     
-                    variable.bindTo(label.wwTextColor).storeIn(bag)
+                    variable.bindTo(label.wwTextColor).addTo(bag)
                     expect(label.textColor).to(equal(UIColor.redColor()))
                     
                     variable.value = UIColor.blueColor()
@@ -61,7 +61,7 @@ class UILabelSpec: QuickSpec {
                     let label = UILabel()
                     let variable = Variable(false)
                     
-                    variable.bindTo(label.wwEnabled).storeIn(bag)
+                    variable.bindTo(label.wwEnabled).addTo(bag)
                     expect(label.enabled).to(beFalse())
                     
                     variable.value = true

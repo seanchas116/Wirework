@@ -14,7 +14,7 @@ class UITextFieldSpec: QuickSpec {
                     let bag = SubscriptionBag()
                     let variable = Variable("foobar")
                     
-                    variable.bindTo(textField.wwText).storeIn(bag)
+                    variable.bindTo(textField.wwText).addTo(bag)
                     expect(textField.text).to(equal("foobar"))
                     
                     variable.value = "poepoe"
@@ -28,7 +28,7 @@ class UITextFieldSpec: QuickSpec {
                     
                     let bag = SubscriptionBag()
                     var value = "foobar"
-                    textField.wwTextChanged.subscribe { value = $0! }.storeIn(bag)
+                    textField.wwTextChanged.subscribe { value = $0! }.addTo(bag)
                     
                     textField.text = "foobar"
                     textField.sendActionsForControlEvents(.ValueChanged)

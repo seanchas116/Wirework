@@ -16,7 +16,7 @@ class UISliderSpec: QuickSpec {
                     let bag = SubscriptionBag()
                     let variable = Variable(Float(10))
                     
-                    variable.bindTo(slider.wwValue).storeIn(bag)
+                    variable.bindTo(slider.wwValue).addTo(bag)
                     expect(slider.value).to(equal(10))
                     
                     variable.value = 20
@@ -32,7 +32,7 @@ class UISliderSpec: QuickSpec {
                     
                     let bag = SubscriptionBag()
                     var value = Float(0)
-                    slider.wwValueChanged.subscribe { value = $0 }.storeIn(bag)
+                    slider.wwValueChanged.subscribe { value = $0 }.addTo(bag)
                     
                     slider.value = 20
                     slider.sendActionsForControlEvents(.ValueChanged)

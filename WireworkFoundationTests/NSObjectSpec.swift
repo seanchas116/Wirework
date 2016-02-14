@@ -24,7 +24,7 @@ class NSObjectSpec: QuickSpec {
                     let bag = SubscriptionBag()
                     let obj = WWKVOObject()
                     let value = Variable(0)
-                    obj.wwKeyValue("value").bindTo(value).storeIn(bag)
+                    obj.wwKeyValue("value").bindTo(value).addTo(bag)
                     expect(value.value).to(equal(1))
                     obj.value = 10
                     expect(value.value).to(equal(10))
@@ -37,7 +37,7 @@ class NSObjectSpec: QuickSpec {
                     var released = false
                     ({
                         let obj = NSObject()
-                        Subscription { released = true }.storeIn(obj.wwBag)
+                        Subscription { released = true }.addTo(obj.wwBag)
                         expect(released).to(equal(false))
                     })()
                     expect(released).to(equal(true))

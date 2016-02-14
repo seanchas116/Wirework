@@ -14,7 +14,7 @@ class UINavigationItemSpec: QuickSpec {
                     let item = UINavigationItem()
                     let variable = Variable("foobar")
                     
-                    variable.bindTo(item.wwTitle).storeIn(bag)
+                    variable.bindTo(item.wwTitle).addTo(bag)
                     expect(item.title).to(equal("foobar"))
                     
                     variable.value = "poeee"

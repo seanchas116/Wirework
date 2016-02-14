@@ -14,7 +14,7 @@ class UIBarItemSpec: QuickSpec {
                     let item = UIBarButtonItem()
                     let variable = Variable("foobar")
                     
-                    variable.bindTo(item.wwTitle).storeIn(bag)
+                    variable.bindTo(item.wwTitle).addTo(bag)
                     expect(item.title).to(equal("foobar"))
                     
                     variable.value = "poeee"
@@ -32,7 +32,7 @@ class UIBarItemSpec: QuickSpec {
                     let item = UIBarButtonItem()
                     let variable = Variable(image1)
                     
-                    variable.bindTo(item.wwImage).storeIn(bag)
+                    variable.bindTo(item.wwImage).addTo(bag)
                     expect(item.image).to(equal(image1))
                     
                     variable.value = image2
@@ -49,7 +49,7 @@ class UIBarItemSpec: QuickSpec {
                     
                     item.enabled = false
                     
-                    variable.bindTo(item.wwEnabled).storeIn(bag)
+                    variable.bindTo(item.wwEnabled).addTo(bag)
                     expect(item.enabled).to(beTrue())
                     
                     variable.value = false

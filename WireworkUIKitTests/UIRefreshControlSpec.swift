@@ -15,7 +15,7 @@ class UIRefreshControlSpec: QuickSpec {
                     let variable = Variable(false)
                     
                     control.beginRefreshing()
-                    variable.bindTo(control.wwRefreshing).storeIn(bag)
+                    variable.bindTo(control.wwRefreshing).addTo(bag)
                     expect(control.refreshing).to(beFalse())
                     
                     variable.value = true
@@ -29,7 +29,7 @@ class UIRefreshControlSpec: QuickSpec {
                     let control = UIRefreshControl()
                     var refreshing = false
                     
-                    control.wwRefreshingChanged.subscribe { refreshing = $0 }.storeIn(bag)
+                    control.wwRefreshingChanged.subscribe { refreshing = $0 }.addTo(bag)
                     
                     control.beginRefreshing()
                     control.sendActionsForControlEvents(.ValueChanged)

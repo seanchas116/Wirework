@@ -43,6 +43,7 @@ public class Variable<T>: MutableProperty<T> {
     }
 }
 
+
 public func createProperty<T>(changedSignal: Signal<T>, getValue: () -> T) -> Property<T> {
     return AdapterProperty(changedSignal, getValue)
 }

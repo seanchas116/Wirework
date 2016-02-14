@@ -20,7 +20,7 @@ class UITableViewSpec: QuickSpec {
                 }
                 tableView.wwSetAndRetainDataSource(dataSource)
                 
-                items.changed.subscribe { _ in tableView.reloadData() }.storeIn(bag)
+                items.changed.subscribe { _ in tableView.reloadData() }.addTo(bag)
                 tableView.reloadData()
                 
                 let textAt: (Int) -> String? = {

@@ -20,7 +20,7 @@ class PropertySpec: QuickSpec {
                     let bag = SubscriptionBag()
                     let foo = Variable("foo")
                     let length = Variable(0)
-                    foo.map { $0.characters.count }.bindTo(length).storeIn(bag)
+                    foo.map { $0.characters.count }.bindTo(length).addTo(bag)
                     expect(length.value).to(equal(3))
                     foo.value = "hogehoge"
                     expect(length.value).to(equal(8))
@@ -32,7 +32,7 @@ class PropertySpec: QuickSpec {
                     let foo = Variable("foo")
                     let distincted = foo.distinct
                     var sent = [String]()
-                    distincted.changed.subscribe { sent.append($0) }.storeIn(bag)
+                    distincted.changed.subscribe { sent.append($0) }.addTo(bag)
                     foo.value = "bar"
                     foo.value = "bar"
                     foo.value = "baz"
@@ -48,7 +48,7 @@ class PropertySpec: QuickSpec {
                     let lastName = Variable("Bar")
                     let fullName = combine(firstName, lastName) { "\($0) \($1)" }
                     let fullNameStore = Variable("")
-                    fullName.bindTo(fullNameStore).storeIn(bag)
+                    fullName.bindTo(fullNameStore).addTo(bag)
                     expect(fullNameStore.value).to(equal("Foo Bar"))
                     firstName.value = "Piyo"
                     expect(fullNameStore.value).to(equal("Piyo Bar"))
@@ -62,7 +62,7 @@ class PropertySpec: QuickSpec {
                     let lastName = Variable("Bar")
                     let fullName = combine(firstName, middleName, lastName) { "\($0) \($1) \($2)" }
                     let fullNameStore = Variable("")
-                    fullName.bindTo(fullNameStore).storeIn(bag)
+                    fullName.bindTo(fullNameStore).addTo(bag)
                     expect(fullNameStore.value).to(equal("Foo aaa Bar"))
                     firstName.value = "Piyo"
                     expect(fullNameStore.value).to(equal("Piyo aaa Bar"))
@@ -78,8 +78,8 @@ class PropertySpec: QuickSpec {
                     let bag = SubscriptionBag()
                     let upper = Variable("")
                     let lower = Variable("")
-                    foo.map { $0.uppercaseString }.bindTo(upper).storeIn(bag)
-                    foo.map { $0.lowercaseString }.bindTo(lower).storeIn(bag)
+                    foo.map { $0.uppercaseString }.bindTo(upper).addTo(bag)
+                    foo.map { $0.lowercaseString }.bindTo(lower).addTo(bag)
                     foo.value = "FooBar"
                     expect(foo.changed.subscribersCount).to(equal(2))
                     expect(upper.value).to(equal("FOOBAR"))

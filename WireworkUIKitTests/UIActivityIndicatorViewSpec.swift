@@ -15,7 +15,7 @@ class UIActivityIndicatorViewSpec: QuickSpec {
                     let variable = Variable(false)
                     
                     indicator.startAnimating()
-                    variable.bindTo(indicator.wwAnimating).storeIn(bag)
+                    variable.bindTo(indicator.wwAnimating).addTo(bag)
                     expect(indicator.isAnimating()).to(beFalse())
                     
                     variable.value = true
