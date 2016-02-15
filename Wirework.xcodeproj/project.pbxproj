@@ -64,6 +64,7 @@
 		BE613B6D1C5F39BE005D01FB /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE613B6B1C5F39BE005D01FB /* Subscription.swift */; };
 		BE613B7B1C5F6B7C005D01FB /* PropertyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE613B7A1C5F6B7C005D01FB /* PropertyType.swift */; };
 		BE613B7C1C5F6B7C005D01FB /* PropertyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE613B7A1C5F6B7C005D01FB /* PropertyType.swift */; };
+		BE747D3D1C708C1C00B9B3E3 /* UIGestureRecognizer+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE747D3C1C708C1C00B9B3E3 /* UIGestureRecognizer+Wirework.swift */; };
 		BE7C41B21C69C880004FAF79 /* CreateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C41B01C69C717004FAF79 /* CreateImage.swift */; };
 		BE7C41B31C69D023004FAF79 /* UISegmentedControlSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0E96071C69004800C9E787 /* UISegmentedControlSpec.swift */; };
 		BE7C41B41C69D027004FAF79 /* UISliderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0E96091C69004F00C9E787 /* UISliderSpec.swift */; };
@@ -287,6 +288,7 @@
 		BE613B4C1C5F35C8005D01FB /* WireworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WireworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE613B6B1C5F39BE005D01FB /* Subscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
 		BE613B7A1C5F6B7C005D01FB /* PropertyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyType.swift; sourceTree = "<group>"; };
+		BE747D3C1C708C1C00B9B3E3 /* UIGestureRecognizer+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIGestureRecognizer+Wirework.swift"; sourceTree = "<group>"; };
 		BE7C41B01C69C717004FAF79 /* CreateImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateImage.swift; sourceTree = "<group>"; };
 		BE7C41B51C69DC27004FAF79 /* UIScrollView+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Wirework.swift"; sourceTree = "<group>"; };
 		BE7C41BD1C6B506B004FAF79 /* UIScrollViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewSpec.swift; sourceTree = "<group>"; };
@@ -448,6 +450,7 @@
 				BEE162CA1C68C2E2002607A0 /* UITextView+Wirework.swift */,
 				BEE162CC1C68CB88002607A0 /* UIView+Wirework.swift */,
 				BE29D4C11C625882002E61EE /* WireworkUIKit.h */,
+				BE747D3C1C708C1C00B9B3E3 /* UIGestureRecognizer+Wirework.swift */,
 			);
 			path = WireworkUIKit;
 			sourceTree = "<group>";
@@ -998,6 +1001,7 @@
 				BEE162B41C68A2EA002607A0 /* UIBarItem+Wirework.swift in Sources */,
 				BEE162BA1C68AA23002607A0 /* UIImageView+Wirework.swift in Sources */,
 				BEE162C31C68BB55002607A0 /* UISegmentedControl+Wirework.swift in Sources */,
+				BE747D3D1C708C1C00B9B3E3 /* UIGestureRecognizer+Wirework.swift in Sources */,
 				BE9783D51C65D17F00CA8DC3 /* UILabel+Wirework.swift in Sources */,
 				BEE162CB1C68C2E2002607A0 /* UITextView+Wirework.swift in Sources */,
 				BEE162C51C68BEE0002607A0 /* UISlider+Wirework.swift in Sources */,
