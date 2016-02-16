@@ -434,14 +434,13 @@
 		BE29D4C01C625882002E61EE /* WireworkUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				BEEAA2611C7308830058FCF4 /* WWDelegateCascader.h */,
-				BEEAA2621C7308830058FCF4 /* WWDelegateCascader.m */,
 				BE29D4C31C625882002E61EE /* Info.plist */,
 				BEE162B11C68A164002607A0 /* UIActivityIndicatorView+Wirework.swift */,
 				BEE162B31C68A2EA002607A0 /* UIBarItem+Wirework.swift */,
 				BEE162B51C68A4B0002607A0 /* UIButton+Wirework.swift */,
 				BE9783D81C65D55200CA8DC3 /* UIControl+Wirework.swift */,
 				BEE162B71C68A8EE002607A0 /* UIDatePicker+Wirework.swift */,
+				BE747D3C1C708C1C00B9B3E3 /* UIGestureRecognizer+Wirework.swift */,
 				BEE162B91C68AA23002607A0 /* UIImageView+Wirework.swift */,
 				BE9783D41C65D17F00CA8DC3 /* UILabel+Wirework.swift */,
 				BEE162BB1C68AB94002607A0 /* UINavigationItem+Wirework.swift */,
@@ -455,8 +454,9 @@
 				BEE162C81C68C029002607A0 /* UITextField+Wirework.swift */,
 				BEE162CA1C68C2E2002607A0 /* UITextView+Wirework.swift */,
 				BEE162CC1C68CB88002607A0 /* UIView+Wirework.swift */,
+				BEEAA2611C7308830058FCF4 /* WWDelegateCascader.h */,
+				BEEAA2621C7308830058FCF4 /* WWDelegateCascader.m */,
 				BE29D4C11C625882002E61EE /* WireworkUIKit.h */,
-				BE747D3C1C708C1C00B9B3E3 /* UIGestureRecognizer+Wirework.swift */,
 			);
 			path = WireworkUIKit;
 			sourceTree = "<group>";
