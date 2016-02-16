@@ -1,15 +1,15 @@
 import UIKit
 import Wirework
 
-public class WWTableViewDelegate: WWScrollViewDelegate, UITableViewDelegate {
+class WWTableViewDelegate: WWScrollViewDelegate, UITableViewDelegate {
     private let _itemSelected = Event<NSIndexPath>()
     
-    public var itemSelected: Signal<NSIndexPath> { return _itemSelected }
+    var itemSelected: Signal<NSIndexPath> { return _itemSelected }
     
-    public override init() {
+    override init() {
     }
     
-    public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         _itemSelected.emit(indexPath)
     }
 }

@@ -42,22 +42,37 @@ class UIScrollViewSpec: QuickSpec {
                     expect(scroll.contentOffset).to(equal(CGPointMake(10, 20)))
                 }
             }
-        }
-        describe("WWScrollViewDelegate") {
-            describe("didScroll") {
-                it("emits when scrolViewDidScroll", andCleansUpResources: true) {
+            describe("wwDidScroll") {
+                it("intercepts scrolViewDidScroll", andCleansUpResources: true) {
                     let scroll = createScrollView()
-                    let delegate = WWScrollViewDelegate()
-                    scroll.wwSetAndRetainDelegate(delegate)
                     
                     let bag = SubscriptionBag()
                     
                     var offset = CGPointMake(0, 0)
-                    delegate.didScroll.subscribe { offset = $0 }.addTo(bag)
+                    scroll.wwDidScroll.subscribe { offset = $0 }.addTo(bag)
                     scroll.contentOffset = CGPointMake(20, 10)
                     scroll.delegate?.scrollViewDidScroll?(scroll)
                     
                     expect(offset).to(equal(CGPointMake(20, 10)))
+                }
+            }
+            describe("wwDelegate") {
+                it("can be set to normal delegate", andCleansUpResources: true) {
+                    let scroll = createScrollView()
+                    let delegate = ScrollViewTestDelegate()
+                    scroll.wwDelegate = delegate
+                    
+                    let bag = SubscriptionBag()
+                    
+                    var scrolled = false
+                    
+                    scroll.wwDidScroll.subscribe { _ in scrolled = true }.addTo(bag)
+                    scroll.delegate?.scrollViewDidScroll?(scroll)
+                    scroll.delegate?.scrollViewDidZoom?(scroll)
+                    
+                    expect(scrolled).to(beTrue())
+                    expect(delegate.scrolled).to(beTrue())
+                    expect(delegate.zoomed).to(beTrue())
                 }
             }
         }

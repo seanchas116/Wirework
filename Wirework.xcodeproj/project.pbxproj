@@ -114,6 +114,8 @@
 		BEE162CD1C68CB88002607A0 /* UIView+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162CC1C68CB88002607A0 /* UIView+Wirework.swift */; };
 		BEE162D11C68CCA5002607A0 /* SignalSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162D01C68CCA5002607A0 /* SignalSpec.swift */; };
 		BEE162D21C68CCA5002607A0 /* SignalSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE162D01C68CCA5002607A0 /* SignalSpec.swift */; };
+		BEEAA2631C7308830058FCF4 /* WWDelegateCascader.h in Headers */ = {isa = PBXBuildFile; fileRef = BEEAA2611C7308830058FCF4 /* WWDelegateCascader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BEEAA2641C7308830058FCF4 /* WWDelegateCascader.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEAA2621C7308830058FCF4 /* WWDelegateCascader.m */; };
 		BEF663291C69A204007A0B06 /* OptionalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF663281C69A204007A0B06 /* OptionalType.swift */; };
 		BEF6632A1C69A204007A0B06 /* OptionalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF663281C69A204007A0B06 /* OptionalType.swift */; };
 /* End PBXBuildFile section */
@@ -326,6 +328,8 @@
 		BEE162CA1C68C2E2002607A0 /* UITextView+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Wirework.swift"; sourceTree = "<group>"; };
 		BEE162CC1C68CB88002607A0 /* UIView+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Wirework.swift"; sourceTree = "<group>"; };
 		BEE162D01C68CCA5002607A0 /* SignalSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalSpec.swift; sourceTree = "<group>"; };
+		BEEAA2611C7308830058FCF4 /* WWDelegateCascader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWDelegateCascader.h; sourceTree = "<group>"; };
+		BEEAA2621C7308830058FCF4 /* WWDelegateCascader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWDelegateCascader.m; sourceTree = "<group>"; };
 		BEF663281C69A204007A0B06 /* OptionalType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -430,6 +434,8 @@
 		BE29D4C01C625882002E61EE /* WireworkUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				BEEAA2611C7308830058FCF4 /* WWDelegateCascader.h */,
+				BEEAA2621C7308830058FCF4 /* WWDelegateCascader.m */,
 				BE29D4C31C625882002E61EE /* Info.plist */,
 				BEE162B11C68A164002607A0 /* UIActivityIndicatorView+Wirework.swift */,
 				BEE162B31C68A2EA002607A0 /* UIBarItem+Wirework.swift */,
@@ -589,6 +595,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE29D4C21C625882002E61EE /* WireworkUIKit.h in Headers */,
+				BEEAA2631C7308830058FCF4 /* WWDelegateCascader.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1008,6 +1015,7 @@
 				BEE162B81C68A8EE002607A0 /* UIDatePicker+Wirework.swift in Sources */,
 				BE0C59ED1C6F3EDF00230B29 /* UITableView+Wirework.swift in Sources */,
 				BEE162C91C68C029002607A0 /* UITextField+Wirework.swift in Sources */,
+				BEEAA2641C7308830058FCF4 /* WWDelegateCascader.m in Sources */,
 				BEE162B21C68A164002607A0 /* UIActivityIndicatorView+Wirework.swift in Sources */,
 				BEE162BC1C68AB94002607A0 /* UINavigationItem+Wirework.swift in Sources */,
 				BE9783D91C65D55200CA8DC3 /* UIControl+Wirework.swift in Sources */,
