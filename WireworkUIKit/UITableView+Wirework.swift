@@ -47,16 +47,9 @@ class WWTableViewDataSource<Element>: NSObject, UITableViewDataSource {
     }
 }
 
-private var dataSourceKey = 0
-
 extension UITableView {
     override var wwDelegate: WWTableViewDelegate {
         return installDelegate { WWTableViewDelegate() }
-    }
-    
-    public func wwSetAndRetainDataSource(dataSource: UITableViewDataSource) {
-        self.dataSource = dataSource
-        objc_setAssociatedObject(self, &dataSourceKey, dataSource, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
     
     public var wwItemSelected: Signal<NSIndexPath> {
