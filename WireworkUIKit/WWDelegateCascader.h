@@ -2,7 +2,7 @@
 
 @interface WWDelegateCascader: NSObject
 
-@property (nonatomic, strong, nullable) id delegate;
-@property (nonatomic, weak, nullable) id proxy;
+@property (nonatomic, weak, nullable) id first;
+@property (nonatomic, weak, nullable) id second;
 
 @end

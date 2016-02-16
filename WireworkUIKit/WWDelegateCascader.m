@@ -13,20 +13,20 @@
 - (void)forwardInvocation:(NSInvocation *)anInvocation
 {
     SEL selector = anInvocation.selector;
-    if (_delegate && [_delegate respondsToSelector:selector]) {
-        [anInvocation invokeWithTarget:_delegate];
+    if (_first && [_first respondsToSelector:selector]) {
+        [anInvocation invokeWithTarget:_first];
     }
-    if (_proxy && [_proxy respondsToSelector:selector]) {
-        [anInvocation invokeWithTarget:_proxy];
+    if (_second && [_second respondsToSelector:selector]) {
+        [anInvocation invokeWithTarget:_second];
     }
 }
 
 - (BOOL)respondsToSelector:(SEL)aSelector
 {
-    if (_delegate && [_delegate respondsToSelector:aSelector]) {
+    if (_first && [_first respondsToSelector:aSelector]) {
         return YES;
     }
-    if (_proxy && [_proxy respondsToSelector:aSelector]) {
+    if (_second && [_second respondsToSelector:aSelector]) {
         return YES;
     }
     return [super respondsToSelector:aSelector];
@@ -36,10 +36,10 @@
 {
     NSMethodSignature* signature = [super methodSignatureForSelector:selector];
     if (!signature) {
-        signature = [_delegate methodSignatureForSelector:selector];
+        signature = [_first methodSignatureForSelector:selector];
     }
     if (!signature) {
-        signature = [_proxy methodSignatureForSelector:selector];
+        signature = [_second methodSignatureForSelector:selector];
     }
     return signature;
 }

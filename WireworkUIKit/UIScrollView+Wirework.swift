@@ -9,11 +9,20 @@
 import UIKit
 import Wirework
 
+extension WWDelegateCascader: UIScrollViewDelegate {}
+
 class WWScrollViewDelegate: NSObject, UIScrollViewDelegate {
+    let cascaded = WWDelegateCascader()
+    let didScroll = Event<CGPoint>()
+    
     override init() {
+        super.init()
+        cascaded.first = self
     }
     
-    let didScroll = Event<CGPoint>()
+    func forwardToDelegate(delegate: UIScrollViewDelegate?) {
+        cascaded.second = delegate
+    }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         didScroll.emit(scrollView.contentOffset)
@@ -22,38 +31,32 @@ class WWScrollViewDelegate: NSObject, UIScrollViewDelegate {
 
 private var delegateKey = 0
 
-extension WWDelegateCascader: UIScrollViewDelegate {}
-
 extension UIScrollView {
-    var delegateCascader: WWDelegateCascader {
-        if let delegate = self.delegate as? WWDelegateCascader {
-            return delegate
+    func createDelegate<T: WWScrollViewDelegate>(create: () -> T) -> T {
+        var delegate = objc_getAssociatedObject(self, &delegateKey) as? T
+        if delegate == nil {
+            delegate = create()
+            objc_setAssociatedObject(self, &delegateKey, delegate, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
-        if self.delegate != nil {
-            fatalError("Exisitng delegate must be nil to install Wirework delegate")
+        return delegate!
+    }
+    
+    func installDelegate<T: WWScrollViewDelegate>(create: () -> T) -> T {
+        let old = self.delegate
+        let delegate = createDelegate(create)
+        self.delegate = delegate.cascaded
+        if !(old is WWDelegateCascader) {
+            delegate.forwardToDelegate(old)
         }
-        let delegate = objc_getAssociatedObject(self, &delegateKey) as? WWDelegateCascader ?? WWDelegateCascader()
-        objc_setAssociatedObject(self, &delegateKey, delegate, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        self.delegate = delegate
         return delegate
     }
     
-    private var interceptDelegate: WWScrollViewDelegate {
-        if let delegate = delegateCascader.delegate as? WWScrollViewDelegate {
-            return delegate
-        }
-        let delegate = WWScrollViewDelegate()
-        delegateCascader.delegate = delegate
-        return delegate
+    var wwDelegate: WWScrollViewDelegate {
+        return installDelegate { WWScrollViewDelegate() }
     }
     
-    public var wwDelegate: UIScrollViewDelegate? {
-        get {
-            return delegateCascader.proxy as? UIScrollViewDelegate
-        }
-        set {
-            delegateCascader.proxy = newValue
-        }
+    public func wwForwardToDelegate(delegate: UIScrollViewDelegate) {
+        wwDelegate.forwardToDelegate(delegate)
     }
     
     public var wwScrollEnabled: (Bool) -> Void {
@@ -69,6 +72,6 @@ extension UIScrollView {
     }
     
     public var wwDidScroll: Signal<CGPoint> {
-        return interceptDelegate.didScroll
+        return wwDelegate.didScroll
     }
 }

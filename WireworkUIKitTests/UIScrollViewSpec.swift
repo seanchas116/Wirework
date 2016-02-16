@@ -56,11 +56,11 @@ class UIScrollViewSpec: QuickSpec {
                     expect(offset).to(equal(CGPointMake(20, 10)))
                 }
             }
-            describe("wwDelegate") {
-                it("can be set to normal delegate", andCleansUpResources: true) {
+            describe("wwForwardToDelegate") {
+                it("can forward method calls to normal delegate", andCleansUpResources: true) {
                     let scroll = createScrollView()
                     let delegate = ScrollViewTestDelegate()
-                    scroll.wwDelegate = delegate
+                    scroll.wwForwardToDelegate(delegate)
                     
                     let bag = SubscriptionBag()
                     
