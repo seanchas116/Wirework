@@ -14,29 +14,28 @@ class WWTableViewDelegate: WWScrollViewDelegate, UITableViewDelegate {
     }
 }
 
-public class WWTableViewDataSource<Element>: NSObject, UITableViewDataSource {
-    public let elements: Variable<[Element]>
-    public let cellIdentifier: String
+class WWTableViewDataSource<Element>: NSObject, UITableViewDataSource {
+    var elements = [Element]()
+    let cellIdentifier: String
     private let _bind: (Int, Element, UITableViewCell) -> Void
     
-    public init(elements: Variable<[Element]>, cellIdentifier: String, bind: (Int, Element, UITableViewCell) -> Void) {
-        self.elements = elements
+    init(cellIdentifier: String, bind: (Int, Element, UITableViewCell) -> Void) {
         self.cellIdentifier = cellIdentifier
         _bind = bind
     }
     
-    public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
-    public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)!
-        _bind(indexPath.row, elements.value[indexPath.row], cell)
+        _bind(indexPath.row, elements[indexPath.row], cell)
         return cell
     }
     
-    public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return elements.value.count
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return elements.count
     }
 }
 
@@ -54,5 +53,14 @@ extension UITableView {
     
     public var wwItemSelected: Signal<NSIndexPath> {
         return wwDelegate.itemSelected
+    }
+    
+    public func wwRows<C: CollectionType>(cellIdentifier: String, bind: (Int, C.Generator.Element, UITableViewCell) -> Void) -> (C) -> Void {
+        let dataSource = WWTableViewDataSource<C.Generator.Element>(cellIdentifier: cellIdentifier, bind: bind)
+        self.dataSource = dataSource
+        return { [weak self] collection in
+            dataSource.elements = Array(collection)
+            self?.reloadData()
+        }
     }
 }
