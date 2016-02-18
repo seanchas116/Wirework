@@ -86,6 +86,8 @@
 		BE97841E1C65F97F00CA8DC3 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE97841B1C65F94400CA8DC3 /* Util.swift */; };
 		BE97841F1C65F98000CA8DC3 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE97841B1C65F94400CA8DC3 /* Util.swift */; };
 		BE9784201C65F98100CA8DC3 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE97841B1C65F94400CA8DC3 /* Util.swift */; };
+		BEBE3A6B1C7606B500E7FF0D /* UIViewController+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE3A6A1C7606B500E7FF0D /* UIViewController+Wirework.swift */; };
+		BEBE3A6D1C7606E800E7FF0D /* UIViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE3A6C1C7606E800E7FF0D /* UIViewControllerSpec.swift */; };
 		BEC113771C63027A00A68B35 /* NSObjectSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC113761C63027A00A68B35 /* NSObjectSpec.swift */; };
 		BEC113781C63027A00A68B35 /* NSObjectSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC113761C63027A00A68B35 /* NSObjectSpec.swift */; };
 		BEC1137A1C631C9A00A68B35 /* NSNotificationCenter+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC113791C631C9A00A68B35 /* NSNotificationCenter+Wirework.swift */; };
@@ -307,6 +309,8 @@
 		BE9784121C65F22500CA8DC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE9784181C65F58400CA8DC3 /* ResourceMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceMonitor.swift; sourceTree = "<group>"; };
 		BE97841B1C65F94400CA8DC3 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		BEBE3A6A1C7606B500E7FF0D /* UIViewController+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Wirework.swift"; sourceTree = "<group>"; };
+		BEBE3A6C1C7606E800E7FF0D /* UIViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerSpec.swift; sourceTree = "<group>"; };
 		BEC113761C63027A00A68B35 /* NSObjectSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectSpec.swift; sourceTree = "<group>"; };
 		BEC113791C631C9A00A68B35 /* NSNotificationCenter+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNotificationCenter+Wirework.swift"; sourceTree = "<group>"; };
 		BEC1137C1C631DF300A68B35 /* NSNotificationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationSpec.swift; sourceTree = "<group>"; };
@@ -454,6 +458,7 @@
 				BEE162C81C68C029002607A0 /* UITextField+Wirework.swift */,
 				BEE162CA1C68C2E2002607A0 /* UITextView+Wirework.swift */,
 				BEE162CC1C68CB88002607A0 /* UIView+Wirework.swift */,
+				BEBE3A6A1C7606B500E7FF0D /* UIViewController+Wirework.swift */,
 				BEEAA2611C7308830058FCF4 /* WWDelegateCascader.h */,
 				BEEAA2621C7308830058FCF4 /* WWDelegateCascader.m */,
 				BE29D4C11C625882002E61EE /* WireworkUIKit.h */,
@@ -483,6 +488,7 @@
 				BE0C59EE1C6F490300230B29 /* UITableViewSpec.swift */,
 				BE0E960D1C69006C00C9E787 /* UITextFieldSpec.swift */,
 				BE0E960F1C69007400C9E787 /* UITextViewSpec.swift */,
+				BEBE3A6C1C7606E800E7FF0D /* UIViewControllerSpec.swift */,
 				BE0E96111C69007B00C9E787 /* UIViewSpec.swift */,
 				BE29D4CD1C625882002E61EE /* WireworkUIKitSpec.swift */,
 			);
@@ -1006,6 +1012,7 @@
 				BEE162C71C68BF33002607A0 /* UISwitch+Wirework.swift in Sources */,
 				BEE162B61C68A4B0002607A0 /* UIButton+Wirework.swift in Sources */,
 				BEE162B41C68A2EA002607A0 /* UIBarItem+Wirework.swift in Sources */,
+				BEBE3A6B1C7606B500E7FF0D /* UIViewController+Wirework.swift in Sources */,
 				BEE162BA1C68AA23002607A0 /* UIImageView+Wirework.swift in Sources */,
 				BEE162C31C68BB55002607A0 /* UISegmentedControl+Wirework.swift in Sources */,
 				BE747D3D1C708C1C00B9B3E3 /* UIGestureRecognizer+Wirework.swift in Sources */,
@@ -1047,6 +1054,7 @@
 				BE7C41B41C69D027004FAF79 /* UISliderSpec.swift in Sources */,
 				BE0C59EF1C6F490300230B29 /* UITableViewSpec.swift in Sources */,
 				BE0E960C1C69006300C9E787 /* UISwitchSpec.swift in Sources */,
+				BEBE3A6D1C7606E800E7FF0D /* UIViewControllerSpec.swift in Sources */,
 				BE0E95FA1C68FFF900C9E787 /* UIBarItemSpec.swift in Sources */,
 				BE0E96121C69007B00C9E787 /* UIViewSpec.swift in Sources */,
 			);
