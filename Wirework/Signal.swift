@@ -55,16 +55,16 @@ public class Event<T>: Signal<T> {
     }
 }
 
-public func createSignal<T>(subscribe: ((T) -> Void) -> SubscriptionType) -> Signal<T> {
+public func createSignal<T>(subscribe: (SubscriptionBag, (T) -> Void) -> Void) -> Signal<T> {
     return AdapterSignal(subscribe)
 }
 
 private class AdapterSignal<T>: Signal<T> {
-    private let _subscribe: ((T) -> Void) -> SubscriptionType
-    private var _subscription: SubscriptionType?
+    private let _subscribe: (SubscriptionBag, (T) -> Void) -> Void
+    private var _bag = SubscriptionBag()
     private let _event = Event<T>()
     
-    init(_ subscribe: ((T) -> Void) -> SubscriptionType) {
+    init(_ subscribe: (SubscriptionBag, (T) -> Void) -> Void) {
         _subscribe = subscribe
     }
     
@@ -75,14 +75,14 @@ private class AdapterSignal<T>: Signal<T> {
     override func addSubscriber(subscriber: Subscriber<Value>) {
         _event.addSubscriber(subscriber)
         if _event.subscribersCount == 1 {
-            _subscription = _subscribe { [weak self] in self?._event.emit($0) }
+            _subscribe(_bag) { [weak self] in self?._event.emit($0) }
         }
     }
     
     override func removeSubscriber(subscriber: Subscriber<Value>) {
         _event.removeSubscriber(subscriber)
         if _event.subscribersCount == 0 {
-            _subscription = nil
+            _bag = SubscriptionBag()
         }
     }
 }

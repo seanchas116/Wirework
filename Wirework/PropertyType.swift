@@ -36,14 +36,14 @@ extension PropertyType {
 
 extension PropertyType where Value: Equatable {
     public var distinct: Property<Value> {
-        let changed: Signal<Value> = createSignal { emit in
+        let changed: Signal<Value> = createSignal { bag, emit in
             var lastValue = self.value
-            return self.changed.subscribe { newValue in
+            self.changed.subscribe { newValue in
                 if lastValue != newValue {
                     lastValue = newValue
                     emit(newValue)
                 }
-            }
+            }.addTo(bag)
         }
         return createProperty(changed) { self.value }
     }

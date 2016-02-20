@@ -1,33 +1,50 @@
 import Foundation
 
-public protocol SubscriptionType: class {
-}
-
-public class Subscription: SubscriptionType {
-    private let unsubscribe: () -> Void
+public class Subscription {
+    private let _unsubscribe: () -> Void
     
     public init(unsubscribe: () -> Void) {
-        self.unsubscribe = unsubscribe
+        _unsubscribe = unsubscribe
     }
     
-    deinit {
-        unsubscribe()
+    public func unsubscribe() {
+        _unsubscribe()
     }
 }
 
-extension SubscriptionType {
+extension Subscription {
     public func addTo(bag: SubscriptionBag) {
         bag.add(self)
     }
 }
 
-public class SubscriptionBag: SubscriptionType {
-    private var _subscriptions = [SubscriptionType]()
+extension Subscription: Equatable, Hashable {
+    public var hashValue: Int {
+        return ObjectIdentifier(self).hashValue
+    }
+}
+
+public func ==(left: Subscription, right: Subscription) -> Bool {
+    return ObjectIdentifier(left) == ObjectIdentifier(right)
+}
+
+public class SubscriptionBag {
+    private var _subscriptions = Set<Subscription>()
     
     public init() {
     }
     
-    public func add(subscription: SubscriptionType) {
-        _subscriptions.append(subscription)
+    public func add(subscription: Subscription) {
+        _subscriptions.insert(subscription)
+    }
+    
+    public func remove(subscription: Subscription) {
+        _subscriptions.remove(subscription)
+    }
+    
+    deinit {
+        for s in _subscriptions {
+            s.unsubscribe()
+        }
     }
 }
