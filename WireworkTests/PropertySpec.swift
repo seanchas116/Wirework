@@ -26,6 +26,20 @@ class PropertySpec: QuickSpec {
                     expect(length.value).to(equal(8))
                 }
             }
+            describe("mapAsync") {
+                it("transforms value asynchronously", andCleansUpResources: true) {
+                    let bag = SubscriptionBag()
+                    let foo = Variable("foo")
+                    let length = Variable(0)
+                    foo
+                        .mapAsync(0) { value, callback in callback(value.characters.count) }
+                        .bindTo(length)
+                        .addTo(bag)
+                    expect(length.value).to(equal(3))
+                    foo.value = "hogehoge"
+                    expect(length.value).to(equal(8))
+                }
+            }
             describe("distinct") {
                 it("returns property which changed signal doesn't emit same values successively") {
                     let bag = SubscriptionBag()

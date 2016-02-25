@@ -15,6 +15,22 @@ extension PropertyType {
         return createProperty(changed.map { transform($0) }) { transform(self.value) }
     }
     
+    public func mapAsync<T>(initValue: T, transform: (Value, (T) -> Void) -> Void) -> Property<T> {
+        var value = initValue
+        let changed = EventWithBag<Void>()
+        transform(self.value) { [weak changed] in
+            value = $0
+            changed?.emit()
+        }
+        self.changed.subscribe { [weak changed] origValue in
+            transform(origValue) {
+                value = $0
+                changed?.emit()
+            }
+        }.addTo(changed.bag)
+        return createProperty(changed) { value }
+    }
+    
     @warn_unused_result(message="Subscription must be stored in SubscriptionBag to keep it alive")
     public func bindTo<T: MutablePropertyType where T.Value == Value>(dest: T) -> Subscription {
         return bindTo { dest.value = $0 }
