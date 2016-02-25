@@ -11,7 +11,7 @@ import Wirework
 
 private var subscriptionBagKey = 0
 
-class WWKeyValueObserver: NSObject, SubscriptionType {
+class WWKeyValueObserver: NSObject {
     private let _object: NSObject
     private let _keyPath: String
     private let _callback: () -> Void
@@ -51,8 +51,9 @@ extension NSObject {
     }
     
     public func wwKeyValue<T>(keyPath: String) -> MutableProperty<T> {
-        let changed = createSignal { emit in
-            return WWKeyValueObserver(self, keyPath, callback: emit)
+        let changed: Signal<Void> = createSignal { bag, emit in
+            let observer = WWKeyValueObserver(self, keyPath, callback: emit)
+            Subscription(object: observer).addTo(bag)
         }
         return createMutableProperty(changed,
             getValue: { self.valueForKeyPath(keyPath) as! T },

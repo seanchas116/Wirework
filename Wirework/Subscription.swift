@@ -12,7 +12,17 @@ public class Subscription {
     }
 }
 
+private func unused<T>(x: T) {}
+
 extension Subscription {
+    public convenience init(object: AnyObject) {
+        var ref: AnyObject? = object
+        unused(ref)
+        self.init {
+            ref = nil
+        }
+    }
+    
     public func addTo(bag: SubscriptionBag) {
         bag.add(self)
     }

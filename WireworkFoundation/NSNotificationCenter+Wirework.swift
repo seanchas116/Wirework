@@ -11,13 +11,13 @@ import Wirework
 
 extension NSNotificationCenter {
     public func wwNotification(name: String, object: AnyObject? = nil) -> Signal<NSNotification> {
-        return createSignal { emit in
+        return createSignal { bag, emit in
             let observer = self.addObserverForName(name, object: object, queue: nil, usingBlock: {
                 emit($0)
             })
-            return Subscription {
+            Subscription {
                 self.removeObserver(observer)
-            }
+            }.addTo(bag)
         }
     }
 }

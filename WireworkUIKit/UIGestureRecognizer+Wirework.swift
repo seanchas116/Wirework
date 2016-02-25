@@ -9,7 +9,7 @@
 import UIKit
 import Wirework
 
-class WWGestureRecognizerTarget: NSObject, SubscriptionType {
+class WWGestureRecognizerTarget: NSObject {
     weak var _recognizer: UIGestureRecognizer?
     private let _callback: () -> Void
     #if MONITOR_RESOURCES
@@ -34,10 +34,9 @@ class WWGestureRecognizerTarget: NSObject, SubscriptionType {
 
 extension UIGestureRecognizer {
     public var wwEvent: Signal<Void> {
-        return createSignal { emit in
-            return WWGestureRecognizerTarget(recognizer: self) {
-                emit()
-            }
+        return createSignal { bag, emit in
+            let target = WWGestureRecognizerTarget(recognizer: self, callback: emit)
+            Subscription(object: target).addTo(bag)
         }
     }
 }

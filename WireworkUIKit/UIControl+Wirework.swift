@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 import Wirework
 
-class WWControlTarget: NSObject, SubscriptionType {
+class WWControlTarget: NSObject {
     weak var _control: UIControl?
     private let _callback: () -> Void
     #if MONITOR_RESOURCES
@@ -27,10 +27,11 @@ class WWControlTarget: NSObject, SubscriptionType {
 
 extension UIControl {
     public func wwControlEvent(events: UIControlEvents) -> Signal<UIControlEvents> {
-        return createSignal { emit in
-            return WWControlTarget(control: self, events: events) {
+        return createSignal { bag, emit in
+            let target = WWControlTarget(control: self, events: events) {
                 emit(events)
             }
+            Subscription(object: target).addTo(bag)
         }
     }
     
