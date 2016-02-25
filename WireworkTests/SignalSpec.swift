@@ -26,6 +26,18 @@ class SignalSpec: QuickSpec {
                     expect(received).to(equal([6]))
                 }
             }
+            describe("mapAsnyc") {
+                it("maps value asynchronously", andCleansUpResources: true) {
+                    let bag = SubscriptionBag()
+                    let ev = Event<String>()
+                    var received = [Int]()
+                    ev.mapAsync { value, callback in callback(value.characters.count) }.subscribe {
+                        received.append($0)
+                    }.addTo(bag)
+                    ev.emit("foobar")
+                    expect(received).to(equal([6]))
+                }
+            }
             describe("filter") {
                 it("filters value", andCleansUpResources: true) {
                     let bag = SubscriptionBag()

@@ -55,6 +55,10 @@ public class Event<T>: Signal<T> {
     }
 }
 
+public class EventWithBag<T>: Event<T> {
+    public let bag = SubscriptionBag()
+}
+
 public func createSignal<T>(subscribe: (SubscriptionBag, (T) -> Void) -> Void) -> Signal<T> {
     return AdapterSignal(subscribe)
 }

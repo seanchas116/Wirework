@@ -34,6 +34,14 @@ extension SignalType {
         }
     }
     
+    public func mapAsync<T>(transform: (Value, (T) -> Void) -> Void) -> Signal<T> {
+        let event = EventWithBag<T>()
+        subscribe { [weak event] value in
+            transform(value) { event?.emit($0) }
+        }.addTo(event.bag)
+        return event
+    }
+    
     public func filter(predicate: (Value) -> Bool) -> Signal<Value> {
         return createSignal { bag, emit in
             self.subscribe { value in
