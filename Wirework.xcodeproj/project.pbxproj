@@ -86,6 +86,8 @@
 		BE97841E1C65F97F00CA8DC3 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE97841B1C65F94400CA8DC3 /* Util.swift */; };
 		BE97841F1C65F98000CA8DC3 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE97841B1C65F94400CA8DC3 /* Util.swift */; };
 		BE9784201C65F98100CA8DC3 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE97841B1C65F94400CA8DC3 /* Util.swift */; };
+		BE9E8BC51C880C89008A4668 /* UIBarButtonItem+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9E8BC41C880C89008A4668 /* UIBarButtonItem+Wirework.swift */; };
+		BE9E8BC91C880E60008A4668 /* UIBarButtonItemSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9E8BC81C880E60008A4668 /* UIBarButtonItemSpec.swift */; };
 		BEBE3A6B1C7606B500E7FF0D /* UIViewController+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE3A6A1C7606B500E7FF0D /* UIViewController+Wirework.swift */; };
 		BEBE3A6D1C7606E800E7FF0D /* UIViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE3A6C1C7606E800E7FF0D /* UIViewControllerSpec.swift */; };
 		BEC113771C63027A00A68B35 /* NSObjectSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC113761C63027A00A68B35 /* NSObjectSpec.swift */; };
@@ -309,6 +311,8 @@
 		BE9784121C65F22500CA8DC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE9784181C65F58400CA8DC3 /* ResourceMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceMonitor.swift; sourceTree = "<group>"; };
 		BE97841B1C65F94400CA8DC3 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		BE9E8BC41C880C89008A4668 /* UIBarButtonItem+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Wirework.swift"; sourceTree = "<group>"; };
+		BE9E8BC81C880E60008A4668 /* UIBarButtonItemSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemSpec.swift; sourceTree = "<group>"; };
 		BEBE3A6A1C7606B500E7FF0D /* UIViewController+Wirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Wirework.swift"; sourceTree = "<group>"; };
 		BEBE3A6C1C7606E800E7FF0D /* UIViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerSpec.swift; sourceTree = "<group>"; };
 		BEC113761C63027A00A68B35 /* NSObjectSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectSpec.swift; sourceTree = "<group>"; };
@@ -440,6 +444,7 @@
 			children = (
 				BE29D4C31C625882002E61EE /* Info.plist */,
 				BEE162B11C68A164002607A0 /* UIActivityIndicatorView+Wirework.swift */,
+				BE9E8BC41C880C89008A4668 /* UIBarButtonItem+Wirework.swift */,
 				BEE162B31C68A2EA002607A0 /* UIBarItem+Wirework.swift */,
 				BEE162B51C68A4B0002607A0 /* UIButton+Wirework.swift */,
 				BE9783D81C65D55200CA8DC3 /* UIControl+Wirework.swift */,
@@ -472,6 +477,7 @@
 				BE7C41B01C69C717004FAF79 /* CreateImage.swift */,
 				BE29D4CF1C625882002E61EE /* Info.plist */,
 				BE0E95F71C68FFEE00C9E787 /* UIActivityIndicatorViewSpec.swift */,
+				BE9E8BC81C880E60008A4668 /* UIBarButtonItemSpec.swift */,
 				BE0E95F91C68FFF900C9E787 /* UIBarItemSpec.swift */,
 				BE0E95FB1C69000000C9E787 /* UIButtonSpec.swift */,
 				BE9783DA1C65D8A100CA8DC3 /* UIControlSpec.swift */,
@@ -1007,6 +1013,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE9E8BC51C880C89008A4668 /* UIBarButtonItem+Wirework.swift in Sources */,
 				BEE162CD1C68CB88002607A0 /* UIView+Wirework.swift in Sources */,
 				BEE162BE1C68ABD8002607A0 /* UIProgressView+Wirework.swift in Sources */,
 				BEE162C71C68BF33002607A0 /* UISwitch+Wirework.swift in Sources */,
@@ -1035,6 +1042,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE9E8BC91C880E60008A4668 /* UIBarButtonItemSpec.swift in Sources */,
 				BE0E960E1C69006C00C9E787 /* UITextFieldSpec.swift in Sources */,
 				BE0E95FC1C69000000C9E787 /* UIButtonSpec.swift in Sources */,
 				BE0E96021C69002700C9E787 /* UINavigationItemSpec.swift in Sources */,
