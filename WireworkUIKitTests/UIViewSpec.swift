@@ -28,13 +28,13 @@ class UIViewSpec: QuickSpec {
                     let view = UIView()
                     let variable = Variable(true)
                     
-                    view.hidden = false
+                    view.isHidden = false
                     
                     variable.bindTo(view.wwHidden).addTo(bag)
-                    expect(view.hidden).to(beTrue())
+                    expect(view.isHidden).to(beTrue())
                     
                     variable.value = false
-                    expect(view.hidden).to(beFalse())
+                    expect(view.isHidden).to(beFalse())
                 }
             }
             describe("wwUserInteractionEnabled") {
@@ -44,13 +44,13 @@ class UIViewSpec: QuickSpec {
                     let view = UIView()
                     let variable = Variable(true)
                     
-                    view.userInteractionEnabled = false
+                    view.isUserInteractionEnabled = false
                     
                     variable.bindTo(view.wwUserInteractionEnabled).addTo(bag)
-                    expect(view.userInteractionEnabled).to(beTrue())
+                    expect(view.isUserInteractionEnabled).to(beTrue())
                     
                     variable.value = false
-                    expect(view.userInteractionEnabled).to(beFalse())
+                    expect(view.isUserInteractionEnabled).to(beFalse())
                 }
             }
             describe("wwTintColor") {
@@ -58,13 +58,13 @@ class UIViewSpec: QuickSpec {
                     let bag = SubscriptionBag()
                     
                     let view = UIView()
-                    let variable = Variable(UIColor.whiteColor())
+                    let variable = Variable(UIColor.white)
                     
                     variable.bindTo(view.wwTintColor).addTo(bag)
-                    expect(view.tintColor).to(equal(UIColor.whiteColor()))
+                    expect(view.tintColor).to(equal(UIColor.white))
                     
-                    variable.value = UIColor.blueColor()
-                    expect(view.tintColor).to(equal(UIColor.blueColor()))
+                    variable.value = UIColor.blue
+                    expect(view.tintColor).to(equal(UIColor.blue))
                 }
             }
             describe("wwBackgroundColor") {
@@ -72,13 +72,13 @@ class UIViewSpec: QuickSpec {
                     let bag = SubscriptionBag()
                     
                     let view = UIView()
-                    let variable = Variable(UIColor.whiteColor())
+                    let variable = Variable(UIColor.white)
                     
                     variable.bindTo(view.wwBackgroundColor).addTo(bag)
-                    expect(view.backgroundColor).to(equal(UIColor.whiteColor()))
+                    expect(view.backgroundColor).to(equal(UIColor.white))
                     
-                    variable.value = UIColor.blueColor()
-                    expect(view.backgroundColor).to(equal(UIColor.blueColor()))
+                    variable.value = UIColor.blue
+                    expect(view.backgroundColor).to(equal(UIColor.blue))
                 }
             }
         }

@@ -9,15 +9,15 @@
 import UIKit
 
 func createImage(size: CGSize) -> UIImage {
-    let rect = CGRectMake(0, 0, size.width, size.height)
+    let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
     UIGraphicsBeginImageContext(rect.size)
     let context = UIGraphicsGetCurrentContext()
     
-    CGContextSetFillColorWithColor(context, UIColor.redColor().CGColor)
-    CGContextFillRect(context, rect)
+    context!.setFillColor(UIColor.red.cgColor)
+    context!.fill(rect)
     
     let image = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
     
-    return image
+    return image!
 }

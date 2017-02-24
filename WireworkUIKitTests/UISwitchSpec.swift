@@ -14,12 +14,12 @@ class UISwitchSpec: QuickSpec {
                     let bag = SubscriptionBag()
                     let variable = Variable(true)
                     
-                    sw.on = false
+                    sw.isOn = false
                     variable.bindTo(sw.wwOn(animated: false)).addTo(bag)
-                    expect(sw.on).to(beTrue())
+                    expect(sw.isOn).to(beTrue())
                     
                     variable.value = false
-                    expect(sw.on).to(beFalse())
+                    expect(sw.isOn).to(beFalse())
                 }
             }
             
@@ -31,8 +31,8 @@ class UISwitchSpec: QuickSpec {
                     var value = false
                     sw.wwOnChanged.subscribe { value = $0 }.addTo(bag)
                     
-                    sw.on = true
-                    sw.sendActionsForControlEvents(.ValueChanged)
+                    sw.isOn = true
+                    sw.sendActions(for: .valueChanged)
                     
                     expect(value).to(beTrue())
                 }

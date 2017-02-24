@@ -15,11 +15,11 @@ class UIButtonSpec: QuickSpec {
                         let button = UIButton()
                         let variable = Variable("foobar")
                         
-                        variable.bindTo(button.wwState(.Selected).title).addTo(bag)
-                        expect(button.titleForState(.Selected)).to(equal("foobar"))
+                        variable.bindTo(button.wwState(.selected).title).addTo(bag)
+                        expect(button.title(for: .selected)).to(equal("foobar"))
                         
                         variable.value = "poeee"
-                        expect(button.titleForState(.Selected)).to(equal("poeee"))
+                        expect(button.title(for: .selected)).to(equal("poeee"))
                     }
                 }
                 
@@ -33,11 +33,11 @@ class UIButtonSpec: QuickSpec {
                         let button = UIButton()
                         let variable = Variable(title1)
                         
-                        variable.bindTo(button.wwState(.Selected).attributedTitle).addTo(bag)
-                        expect(button.attributedTitleForState(.Selected)).to(equal(title1))
+                        variable.bindTo(button.wwState(.selected).attributedTitle).addTo(bag)
+                        expect(button.attributedTitle(for: .selected)).to(equal(title1))
                         
                         variable.value = title2
-                        expect(button.attributedTitleForState(.Selected)).to(equal(title2))
+                        expect(button.attributedTitle(for: .selected)).to(equal(title2))
                     }
                 }
                 
@@ -46,13 +46,13 @@ class UIButtonSpec: QuickSpec {
                         let bag = SubscriptionBag()
                         
                         let button = UIButton()
-                        let variable = Variable(UIColor.whiteColor())
+                        let variable = Variable(UIColor.white)
                         
-                        variable.bindTo(button.wwState(.Highlighted).titleColor).addTo(bag)
-                        expect(button.titleColorForState(.Highlighted)).to(equal(UIColor.whiteColor()))
+                        variable.bindTo(button.wwState(.highlighted).titleColor).addTo(bag)
+                        expect(button.titleColor(for: .highlighted)).to(equal(UIColor.white))
                         
-                        variable.value = UIColor.blueColor()
-                        expect(button.titleColorForState(.Highlighted)).to(equal(UIColor.blueColor()))
+                        variable.value = UIColor.blue
+                        expect(button.titleColor(for: .highlighted)).to(equal(UIColor.blue))
                     }
                 }
                 
@@ -61,13 +61,13 @@ class UIButtonSpec: QuickSpec {
                         let bag = SubscriptionBag()
                         
                         let button = UIButton()
-                        let variable = Variable(UIColor.whiteColor())
+                        let variable = Variable(UIColor.white)
                         
-                        variable.bindTo(button.wwState(.Highlighted).titleShadowColor).addTo(bag)
-                        expect(button.titleShadowColorForState(.Highlighted)).to(equal(UIColor.whiteColor()))
+                        variable.bindTo(button.wwState(.highlighted).titleShadowColor).addTo(bag)
+                        expect(button.titleShadowColor(for: .highlighted)).to(equal(UIColor.white))
                         
-                        variable.value = UIColor.blueColor()
-                        expect(button.titleShadowColorForState(.Highlighted)).to(equal(UIColor.blueColor()))
+                        variable.value = UIColor.blue
+                        expect(button.titleShadowColor(for: .highlighted)).to(equal(UIColor.blue))
                     }
                 }
                 
@@ -75,17 +75,17 @@ class UIButtonSpec: QuickSpec {
                     it("reflects image", andCleansUpResources: true) {
                         let bag = SubscriptionBag()
                         
-                        let image1 = createImage(CGSizeMake(100, 100))
-                        let image2 = createImage(CGSizeMake(200, 200))
+                        let image1 = createImage(size: CGSize(width: 100, height: 100))
+                        let image2 = createImage(size: CGSize(width: 200, height: 200))
                         
                         let button = UIButton()
                         let variable = Variable(image1)
                         
-                        variable.bindTo(button.wwState(.Selected).image).addTo(bag)
-                        expect(button.imageForState(.Selected)).to(equal(image1))
+                        variable.bindTo(button.wwState(.selected).image).addTo(bag)
+                        expect(button.image(for: .selected)).to(equal(image1))
                         
                         variable.value = image2
-                        expect(button.imageForState(.Selected)).to(equal(image2))
+                        expect(button.image(for: .selected)).to(equal(image2))
                     }
                 }
                 
@@ -93,17 +93,17 @@ class UIButtonSpec: QuickSpec {
                     it("reflects backgroundImage", andCleansUpResources: true) {
                         let bag = SubscriptionBag()
                         
-                        let image1 = createImage(CGSizeMake(100, 100))
-                        let image2 = createImage(CGSizeMake(200, 200))
+                        let image1 = createImage(size: CGSize(width: 100, height: 100))
+                        let image2 = createImage(size: CGSize(width: 200, height: 200))
                         
                         let button = UIButton()
                         let variable = Variable(image1)
                         
-                        variable.bindTo(button.wwState(.Selected).backgroundImage).addTo(bag)
-                        expect(button.backgroundImageForState(.Selected)).to(equal(image1))
+                        variable.bindTo(button.wwState(.selected).backgroundImage).addTo(bag)
+                        expect(button.backgroundImage(for: .selected)).to(equal(image1))
                         
                         variable.value = image2
-                        expect(button.backgroundImageForState(.Selected)).to(equal(image2))
+                        expect(button.backgroundImage(for: .selected)).to(equal(image2))
                     }
                 }
             }
@@ -116,7 +116,7 @@ class UIButtonSpec: QuickSpec {
                     button.wwTapped.subscribe {
                         tapped = true
                     }.addTo(bag)
-                    button.sendActionsForControlEvents(.TouchUpInside)
+                    button.sendActions(for: .touchUpInside)
                     expect(tapped).to(beTrue())
                 }
             }

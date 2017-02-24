@@ -96,10 +96,6 @@
 		BEC1137B1C631C9A00A68B35 /* NSNotificationCenter+Wirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC113791C631C9A00A68B35 /* NSNotificationCenter+Wirework.swift */; };
 		BEC1137D1C631DF300A68B35 /* NSNotificationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC1137C1C631DF300A68B35 /* NSNotificationSpec.swift */; };
 		BEC1137E1C631DF300A68B35 /* NSNotificationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC1137C1C631DF300A68B35 /* NSNotificationSpec.swift */; };
-		BEC9C90B1E5FDE17005747E8 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE0035CF1C60ACE2007EAFD7 /* Nimble.framework */; };
-		BEC9C90C1E5FDE17005747E8 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE0035D01C60ACE2007EAFD7 /* Quick.framework */; };
-		BEC9C90D1E5FDFEC005747E8 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE0035D61C60AD10007EAFD7 /* Nimble.framework */; };
-		BEC9C90E1E5FDFEC005747E8 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE0035D71C60AD10007EAFD7 /* Quick.framework */; };
 		BECC8E9C1C5F843A00E5BFCE /* SignalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC8E9B1C5F843A00E5BFCE /* SignalType.swift */; };
 		BECC8E9D1C5F843A00E5BFCE /* SignalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC8E9B1C5F843A00E5BFCE /* SignalType.swift */; };
 		BECC8EA21C5F89BB00E5BFCE /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC8EA11C5F89BB00E5BFCE /* Signal.swift */; };
@@ -403,8 +399,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEC9C90B1E5FDE17005747E8 /* Nimble.framework in Frameworks */,
-				BEC9C90C1E5FDE17005747E8 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,8 +416,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEC9C90D1E5FDFEC005747E8 /* Nimble.framework in Frameworks */,
-				BEC9C90E1E5FDFEC005747E8 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1301,6 +1293,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1352,6 +1345,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1408,6 +1402,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestHost-iOS.app/TestHost-iOS";
 			};
 			name = Debug;
@@ -1453,6 +1448,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.seanchas116.WireworkUIKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestHost-iOS.app/TestHost-iOS";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1512,6 +1508,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1563,6 +1560,7 @@
 				PRODUCT_NAME = WireworkFoundation;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1619,6 +1617,7 @@
 				PRODUCT_NAME = WireworkFoundationTests;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1663,6 +1662,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.seanchas116.WireworkFoundationTests;
 				PRODUCT_NAME = WireworkFoundationTests;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1723,6 +1723,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1775,6 +1776,7 @@
 				PRODUCT_NAME = WireworkFoundation;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1830,6 +1832,7 @@
 				PRODUCT_NAME = WireworkFoundationTests;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1875,6 +1878,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.seanchas116.WireworkFoundationTests;
 				PRODUCT_NAME = WireworkFoundationTests;
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1900,6 +1904,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1924,6 +1929,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -2417,6 +2423,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -2458,6 +2465,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.seanchas116.TestHost-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

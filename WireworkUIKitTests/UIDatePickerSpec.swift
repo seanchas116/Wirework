@@ -11,8 +11,8 @@ class UIDatePickerSpec: QuickSpec {
                 it("reflects date", andCleansUpResources: true) {
                     let picker = UIDatePicker()
                     let bag = SubscriptionBag()
-                    let variable = Variable(NSDate())
-                    let date = NSDate(timeIntervalSince1970: 10)
+                    let variable = Variable(Date())
+                    let date = Date(timeIntervalSince1970: 10)
                     variable.bindTo(picker.wwDate(animated: false)).addTo(bag)
                     variable.value = date
                     expect(picker.date).to(equal(date))
@@ -23,11 +23,11 @@ class UIDatePickerSpec: QuickSpec {
                 it("emits date changes by user", andCleansUpResources: true) {
                     let picker = UIDatePicker()
                     let bag = SubscriptionBag()
-                    let variable = Variable(NSDate())
-                    let date = NSDate(timeIntervalSince1970: 10)
+                    let variable = Variable(Date())
+                    let date = Date(timeIntervalSince1970: 10)
                     picker.wwDateChanged.subscribe { variable.value = $0 }.addTo(bag)
                     picker.date = date
-                    picker.sendActionsForControlEvents(.ValueChanged)
+                    picker.sendActions(for: .valueChanged)
                     expect(variable.value).to(equal(date))
                 }
             }

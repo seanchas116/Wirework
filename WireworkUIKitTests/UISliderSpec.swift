@@ -35,7 +35,7 @@ class UISliderSpec: QuickSpec {
                     slider.wwValueChanged.subscribe { value = $0 }.addTo(bag)
                     
                     slider.value = 20
-                    slider.sendActionsForControlEvents(.ValueChanged)
+                    slider.sendActions(for: .valueChanged)
                     
                     expect(value).to(equal(20))
                 }

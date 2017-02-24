@@ -11,8 +11,8 @@ class UITableViewSpec: QuickSpec {
                 it("provides rows binding for UITableView", andCleansUpResources: true) {
                     let bag = SubscriptionBag()
                     
-                    let tableView = UITableView(frame: CGRectMake(0, 0, 1000, 1000))
-                    tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+                    let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: 1000, height: 1000))
+                    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
                     
                     let items = Variable(["foo", "bar", "baz"])
                     items.bindTo(tableView.wwRows("cell") { row, elem, cell in
@@ -20,10 +20,10 @@ class UITableViewSpec: QuickSpec {
                     }).addTo(bag)
                     
                     let textAt: (Int) -> String? = {
-                        let path = NSIndexPath(forRow: $0, inSection: 0)
-                        return tableView.cellForRowAtIndexPath(path)?.textLabel?.text
+                        let path = IndexPath(row: $0, section: 0)
+                        return tableView.cellForRow(at: path)?.textLabel?.text
                     }
-                    let texts = { (0 ..< tableView.numberOfRowsInSection(0)).map(textAt) }
+                    let texts = { (0 ..< tableView.numberOfRows(inSection: 0)).map(textAt) }
                     
                     expect(texts()).to(equal([
                         "0: foo",

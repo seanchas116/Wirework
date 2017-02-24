@@ -16,10 +16,10 @@ class UIRefreshControlSpec: QuickSpec {
                     
                     control.beginRefreshing()
                     variable.bindTo(control.wwRefreshing).addTo(bag)
-                    expect(control.refreshing).to(beFalse())
+                    expect(control.isRefreshing).to(beFalse())
                     
                     variable.value = true
-                    expect(control.refreshing).to(beTrue())
+                    expect(control.isRefreshing).to(beTrue())
                 }
             }
             describe("wwRefreshingChanged") {
@@ -32,7 +32,7 @@ class UIRefreshControlSpec: QuickSpec {
                     control.wwRefreshingChanged.subscribe { refreshing = $0 }.addTo(bag)
                     
                     control.beginRefreshing()
-                    control.sendActionsForControlEvents(.ValueChanged)
+                    control.sendActions(for: .valueChanged)
                     expect(refreshing).to(beTrue())
                 }
             }

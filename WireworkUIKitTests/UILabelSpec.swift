@@ -44,13 +44,13 @@ class UILabelSpec: QuickSpec {
                     let bag = SubscriptionBag()
                     
                     let label = UILabel()
-                    let variable = Variable(UIColor.redColor())
+                    let variable = Variable(UIColor.red)
                     
                     variable.bindTo(label.wwTextColor).addTo(bag)
-                    expect(label.textColor).to(equal(UIColor.redColor()))
+                    expect(label.textColor).to(equal(UIColor.red))
                     
-                    variable.value = UIColor.blueColor()
-                    expect(label.textColor).to(equal(UIColor.blueColor()))
+                    variable.value = UIColor.blue
+                    expect(label.textColor).to(equal(UIColor.blue))
                 }
             }
             
@@ -62,10 +62,10 @@ class UILabelSpec: QuickSpec {
                     let variable = Variable(false)
                     
                     variable.bindTo(label.wwEnabled).addTo(bag)
-                    expect(label.enabled).to(beFalse())
+                    expect(label.isEnabled).to(beFalse())
                     
                     variable.value = true
-                    expect(label.enabled).to(beTrue())
+                    expect(label.isEnabled).to(beTrue())
                 }
             }
         }

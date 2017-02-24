@@ -5,8 +5,8 @@ import Wirework
 import WireworkUIKit
 
 private func createScrollView() -> UIScrollView {
-    let scrollView = UIScrollView(frame: CGRectMake(0, 0, 100, 100))
-    let view = UIView(frame: CGRectMake(0, 0, 200, 200))
+    let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+    let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
     scrollView.addSubview(view)
     scrollView.contentSize = view.bounds.size
     return scrollView
@@ -16,11 +16,11 @@ private class ScrollViewTestDelegate: NSObject, UIScrollViewDelegate {
     var scrolled = false
     var zoomed = false
     
-    @objc func scrollViewDidScroll(scrollView: UIScrollView) {
+    @objc func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrolled = true
     }
     
-    @objc func scrollViewDidZoom(scrollView: UIScrollView) {
+    @objc func scrollViewDidZoom(_ scrollView: UIScrollView) {
         zoomed = true
     }
 }
@@ -33,13 +33,13 @@ class UIScrollViewSpec: QuickSpec {
                     let scroll = createScrollView()
                     
                     let bag = SubscriptionBag()
-                    let variable = Variable(CGPointMake(20, 10))
+                    let variable = Variable(CGPoint(x: 20, y: 10))
                     
                     variable.bindTo(scroll.wwContentOffset(animated: false)).addTo(bag)
-                    expect(scroll.contentOffset).to(equal(CGPointMake(20, 10)))
+                    expect(scroll.contentOffset).to(equal(CGPoint(x: 20, y: 10)))
                     
-                    variable.value = CGPointMake(10, 20)
-                    expect(scroll.contentOffset).to(equal(CGPointMake(10, 20)))
+                    variable.value = CGPoint(x: 10, y: 20)
+                    expect(scroll.contentOffset).to(equal(CGPoint(x: 10, y: 20)))
                 }
             }
             describe("wwDidScroll") {
@@ -48,19 +48,19 @@ class UIScrollViewSpec: QuickSpec {
                     
                     let bag = SubscriptionBag()
                     
-                    var offset = CGPointMake(0, 0)
+                    var offset = CGPoint(x: 0, y: 0)
                     scroll.wwDidScroll.subscribe { offset = $0 }.addTo(bag)
-                    scroll.contentOffset = CGPointMake(20, 10)
+                    scroll.contentOffset = CGPoint(x: 20, y: 10)
                     scroll.delegate?.scrollViewDidScroll?(scroll)
                     
-                    expect(offset).to(equal(CGPointMake(20, 10)))
+                    expect(offset).to(equal(CGPoint(x: 20, y: 10)))
                 }
             }
             describe("wwForwardToDelegate") {
                 it("can forward method calls to normal delegate", andCleansUpResources: true) {
                     let scroll = createScrollView()
                     let delegate = ScrollViewTestDelegate()
-                    scroll.wwForwardToDelegate(delegate)
+                    scroll.wwForward(to: delegate)
                     
                     let bag = SubscriptionBag()
                     

@@ -15,7 +15,7 @@ class UIBarButtonItemSpec: QuickSpec {
                     item.wwTapped.subscribe {
                         tapped = true
                     }.addTo(bag)
-                    item.target?.performSelector(item.action)
+                    item.target?.perform(item.action)
                     expect(tapped).to(beTrue())
                 }
             }

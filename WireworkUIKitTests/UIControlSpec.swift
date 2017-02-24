@@ -12,10 +12,10 @@ class UIControlSpec: QuickSpec {
                     let control = UIControl()
                     let bag = SubscriptionBag()
                     var tapped = false
-                    control.wwControlEvent(.TouchUpInside).subscribe { _ in
+                    control.wwControlEvent(.touchUpInside).subscribe { _ in
                         tapped = true
                     }.addTo(bag)
-                    control.sendActionsForControlEvents(.TouchUpInside)
+                    control.sendActions(for: .touchUpInside)
                     expect(tapped).to(beTrue())
                 }
             }
@@ -27,13 +27,13 @@ class UIControlSpec: QuickSpec {
                     let control = UIControl()
                     let variable = Variable(true)
                     
-                    control.enabled = false
+                    control.isEnabled = false
                     
                     variable.bindTo(control.wwEnabled).addTo(bag)
-                    expect(control.enabled).to(beTrue())
+                    expect(control.isEnabled).to(beTrue())
                     
                     variable.value = false
-                    expect(control.enabled).to(beFalse())
+                    expect(control.isEnabled).to(beFalse())
                 }
             }
             
@@ -44,13 +44,13 @@ class UIControlSpec: QuickSpec {
                     let control = UIControl()
                     let variable = Variable(true)
                     
-                    control.selected = false
+                    control.isSelected = false
                     
                     variable.bindTo(control.wwSelected).addTo(bag)
-                    expect(control.selected).to(beTrue())
+                    expect(control.isSelected).to(beTrue())
                     
                     variable.value = false
-                    expect(control.selected).to(beFalse())
+                    expect(control.isSelected).to(beFalse())
                 }
             }
             
@@ -61,13 +61,13 @@ class UIControlSpec: QuickSpec {
                     let control = UIControl()
                     let variable = Variable(true)
                     
-                    control.highlighted = false
+                    control.isHighlighted = false
                     
                     variable.bindTo(control.wwHighlighted).addTo(bag)
-                    expect(control.highlighted).to(beTrue())
+                    expect(control.isHighlighted).to(beTrue())
                     
                     variable.value = false
-                    expect(control.highlighted).to(beFalse())
+                    expect(control.isHighlighted).to(beFalse())
                 }
             }
         }
