@@ -11,7 +11,7 @@ import Quick
 import Nimble
 import Wirework
 
-func it(description: String, andCleansUpResources: Bool, closure: () -> Void) {
+func it(_ description: String, andCleansUpResources: Bool, closure: @escaping () -> Void) {
     if andCleansUpResources {
         it(description) {
             let origCount = ResourceMonitor.totalCount

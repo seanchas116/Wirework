@@ -882,9 +882,11 @@
 					};
 					BE613B251C5F35B5005D01FB = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0820;
 					};
 					BE613B2F1C5F35B5005D01FB = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0820;
 					};
 					BE613B421C5F35C8005D01FB = {
 						CreatedOnToolsVersion = 7.2;
@@ -1936,6 +1938,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1987,6 +1990,7 @@
 				PRODUCT_NAME = Wirework;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2043,6 +2047,7 @@
 				PRODUCT_NAME = WireworkTests;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -2087,6 +2092,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.seanchas116.WireworkTests;
 				PRODUCT_NAME = WireworkTests;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
