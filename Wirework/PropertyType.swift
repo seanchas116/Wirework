@@ -42,7 +42,7 @@ extension PropertyType {
     }
     
     
-    public func bindTo(_ setter: (Value) -> Void) -> Subscription {
+    public func bindTo(_ setter: @escaping (Value) -> Void) -> Subscription {
         setter(value)
         return changed.subscribe { newValue in
             setter(newValue)

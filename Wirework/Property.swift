@@ -48,7 +48,7 @@ public func createProperty<T>(_ changedSignal: Signal<T>, getValue: @escaping ()
     return AdapterProperty(changedSignal, getValue)
 }
 
-public func createProperty<T>(_ changedSignal: Signal<Void>, getValue: () -> T) -> Property<T> {
+public func createProperty<T>(_ changedSignal: Signal<Void>, getValue: @escaping () -> T) -> Property<T> {
     return AdapterProperty(changedSignal.map(getValue), getValue)
 }
 
@@ -74,7 +74,7 @@ public func createMutableProperty<T>(_ changedSignal: Signal<T>, getValue: @esca
     return AdapterMutableProperty(changedSignal, getValue, setValue)
 }
 
-public func createMutableProperty<T>(_ changedSignal: Signal<Void>, getValue: () -> T, setValue: (T) -> Void) -> MutableProperty<T> {
+public func createMutableProperty<T>(_ changedSignal: Signal<Void>, getValue: @escaping () -> T, setValue: @escaping (T) -> Void) -> MutableProperty<T> {
     return AdapterMutableProperty(changedSignal.map(getValue), getValue, setValue)
 }
 

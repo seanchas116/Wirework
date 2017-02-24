@@ -59,16 +59,16 @@ open class EventWithBag<T>: Event<T> {
     open let bag = SubscriptionBag()
 }
 
-public func createSignal<T>(_ subscribe: @escaping (SubscriptionBag, (T) -> Void) -> Void) -> Signal<T> {
+public func createSignal<T>(_ subscribe: @escaping (SubscriptionBag, @escaping (T) -> Void) -> Void) -> Signal<T> {
     return AdapterSignal(subscribe)
 }
 
 private class AdapterSignal<T>: Signal<T> {
-    fileprivate let _subscribe: (SubscriptionBag, (T) -> Void) -> Void
+    fileprivate let _subscribe: (SubscriptionBag, @escaping (T) -> Void) -> Void
     fileprivate var _bag = SubscriptionBag()
     fileprivate let _event = Event<T>()
     
-    init(_ subscribe: @escaping (SubscriptionBag, (T) -> Void) -> Void) {
+    init(_ subscribe: @escaping (SubscriptionBag, @escaping (T) -> Void) -> Void) {
         _subscribe = subscribe
     }
     
