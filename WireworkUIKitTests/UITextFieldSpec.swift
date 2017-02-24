@@ -31,7 +31,7 @@ class UITextFieldSpec: QuickSpec {
                     textField.wwTextChanged.subscribe { value = $0! }.addTo(bag)
                     
                     textField.text = "foobar"
-                    textField.sendActionsForControlEvents(.ValueChanged)
+                    textField.sendActions(for: .valueChanged)
                     
                     expect(value).to(equal("foobar"))
                 }

@@ -26,8 +26,8 @@ class UIBarItemSpec: QuickSpec {
                 it("reflects image", andCleansUpResources: true) {
                     let bag = SubscriptionBag()
                     
-                    let image1 = createImage(CGSizeMake(100, 100))
-                    let image2 = createImage(CGSizeMake(200, 200))
+                    let image1 = createImage(size: CGSize(width: 100, height: 100))
+                    let image2 = createImage(size: CGSize(width: 200, height: 200))
                     
                     let item = UIBarButtonItem()
                     let variable = Variable(image1)
@@ -47,13 +47,13 @@ class UIBarItemSpec: QuickSpec {
                     let item = UIBarButtonItem()
                     let variable = Variable(true)
                     
-                    item.enabled = false
+                    item.isEnabled = false
                     
                     variable.bindTo(item.wwEnabled).addTo(bag)
-                    expect(item.enabled).to(beTrue())
+                    expect(item.isEnabled).to(beTrue())
                     
                     variable.value = false
-                    expect(item.enabled).to(beFalse())
+                    expect(item.isEnabled).to(beFalse())
                 }
             }
         }

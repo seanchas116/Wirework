@@ -31,7 +31,7 @@ class UISegmentedControlSpec: QuickSpec {
                     control.wwSelectedSegmentIndexChanged.subscribe { value = $0 }.addTo(bag)
                     
                     control.selectedSegmentIndex = 2
-                    control.sendActionsForControlEvents(.ValueChanged)
+                    control.sendActions(for: .valueChanged)
                     
                     expect(value).to(equal(2))
                 }

@@ -16,10 +16,10 @@ class UIActivityIndicatorViewSpec: QuickSpec {
                     
                     indicator.startAnimating()
                     variable.bindTo(indicator.wwAnimating).addTo(bag)
-                    expect(indicator.isAnimating()).to(beFalse())
+                    expect(indicator.isAnimating).to(beFalse())
                     
                     variable.value = true
-                    expect(indicator.isAnimating()).to(beTrue())
+                    expect(indicator.isAnimating).to(beTrue())
                 }
             }
         }

@@ -92,8 +92,8 @@ class PropertySpec: QuickSpec {
                     let bag = SubscriptionBag()
                     let upper = Variable("")
                     let lower = Variable("")
-                    foo.map { $0.uppercaseString }.bindTo(upper).addTo(bag)
-                    foo.map { $0.lowercaseString }.bindTo(lower).addTo(bag)
+                    foo.map { $0.uppercased() }.bindTo(upper).addTo(bag)
+                    foo.map { $0.lowercased() }.bindTo(lower).addTo(bag)
                     foo.value = "FooBar"
                     expect(foo.changed.subscribersCount).to(equal(2))
                     expect(upper.value).to(equal("FOOBAR"))
